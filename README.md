@@ -324,12 +324,14 @@ The architecture has been intentionally designed so that the AI layer can be swa
 
 ---
 
-## Technology Stack
+##  Possible Technology Stack 
 
 ### Data Engineering
 
 - Python
 - Pandas
+- Polars
+- DuckDB
 - NumPy
 - SQLAlchemy
 
@@ -339,14 +341,15 @@ The architecture has been intentionally designed so that the AI layer can be swa
 
 ### Machine Learning
 
-- Scikit-Learn
+- Scikit-Learn (Random Forest, Logistic Regression
 - XGBoost
 - LightGBM
 
 ### Dashboard & Application
 
-- Streamlit
+- Power BI
 - Plotly
+- Streamlit
 
 ### Version Control
 
@@ -389,37 +392,6 @@ The dashboard may include:
 - Recommended interventions
 - Behavioural pattern explanations
 - Executive reporting outputs
-
----
-
-## Project Structure
-
-```text
-membership-intelligence-platform/
-
-├── data/
-│   ├── raw/
-│   ├── processed/
-│   └── external/
-│
-├── notebooks/
-│
-├── src/
-│   ├── etl/
-│   ├── database/
-│   ├── modelling/
-│   ├── scoring/
-│   ├── ai/
-│   └── dashboard/
-│
-├── tests/
-│
-├── requirements.txt
-│
-├── app.py
-│
-└── README.md
-```
 
 ---
 
