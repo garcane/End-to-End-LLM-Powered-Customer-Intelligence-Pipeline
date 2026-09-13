@@ -1,0 +1,4 @@
+# Data generation and validation
+numpy>=1.26
+pandas>=2.1
+scipy>=1.11

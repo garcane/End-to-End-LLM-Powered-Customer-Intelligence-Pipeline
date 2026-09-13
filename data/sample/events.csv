@@ -1,0 +1,251 @@
+event_id,event_name,event_category,event_format,event_date,region,capacity,event_cost
+E001157,Annual Professional Ethics Conference (Sep 2021),Conference,Online,2021-09-01,All regions,1318,248.62
+E000173,Career Surgery: People Leadership (Sep 2021),Career development,Online,2021-09-01,All regions,682,23.04
+E001079,Emerging Regulation Update (Sep 2021),Webinar,Online,2021-09-02,All regions,1924,0.0
+E001368,People Leadership in Practice (Sep 2021),Webinar,Online,2021-09-03,All regions,549,42.06
+E000500,Coaching and Mentoring Update (Sep 2021),Webinar,Online,2021-09-03,All regions,1311,29.35
+E000325,Members' Networking Evening (Sep 2021),Networking,Online,2021-09-05,All regions,670,46.48
+E001237,All regions Branch Meeting (Sep 2021),Regional branch meeting,Online,2021-09-05,All regions,1474,47.57
+E001384,AI and Automation in Practice (Sep 2021),Webinar,Online,2021-09-06,All regions,1256,0.0
+E001421,Lunchtime Briefing: Emerging Regulation (Sep 2021),Webinar,Online,2021-09-06,All regions,2147,0.0
+E000040,Hands-on Workshop: Sustainability Reporting (Sep 2021),Technical workshop,Online,2021-09-07,All regions,1586,10.57
+E000121,Regulatory Compliance Update (Sep 2021),Webinar,Online,2021-09-07,All regions,1311,0.0
+E000422,Annual Awards Dinner (Sep 2021),Awards and celebration,In person,2021-09-10,North of England,107,164.39
+E000611,Coaching and Mentoring Update (Sep 2021),Webinar,Online,2021-09-10,All regions,2100,0.0
+E000606,All regions Branch Meeting (Sep 2021),Regional branch meeting,Online,2021-09-10,All regions,372,76.92
+E000033,Career Surgery: Professional Standards (Sep 2021),Career development,Online,2021-09-13,All regions,790,15.13
+E001407,Annual Data Governance Conference (Sep 2021),Conference,In person,2021-09-14,Midlands,1008,634.58
+E000030,Sustainability Reporting in Practice (Sep 2021),Webinar,Online,2021-09-15,All regions,2038,0.0
+E000728,Hands-on Workshop: Public Trust (Sep 2021),Technical workshop,In person,2021-09-17,Republic of Ireland,173,83.01
+E000267,Mentoring Circle: Professional Ethics (Sep 2021),Career development,Online,2021-09-20,All regions,1095,24.65
+E001541,All regions Members' Evening (Sep 2021),Regional branch meeting,Online,2021-09-21,All regions,833,82.23
+E001160,Hands-on Workshop: People Leadership (Sep 2021),Technical workshop,Online,2021-09-21,All regions,675,80.54
+E001085,Technical Clinic: Public Trust (Sep 2021),Technical workshop,Online,2021-09-23,All regions,1952,17.43
+E001119,Lunchtime Briefing: Emerging Regulation (Sep 2021),Webinar,Online,2021-09-24,All regions,1910,0.0
+E000086,All regions Members' Evening (Sep 2021),Regional branch meeting,Online,2021-09-27,All regions,467,21.14
+E000903,Midlands Branch Meeting (Sep 2021),Regional branch meeting,Hybrid,2021-09-27,Midlands,35,31.13
+E000660,All regions Networking Breakfast (Sep 2021),Networking,Online,2021-09-29,All regions,379,12.87
+E000866,Lunchtime Briefing: Change Management (Sep 2021),Webinar,Online,2021-09-30,All regions,1139,0.0
+E000950,Annual Change Management Conference (Sep 2021),Conference,Online,2021-09-30,All regions,497,613.01
+E000241,London & South East Branch Meeting (Oct 2021),Regional branch meeting,In person,2021-10-01,London and South East,126,141.43
+E000757,Annual Awards Dinner (Oct 2021),Awards and celebration,In person,2021-10-01,Midlands,172,157.44
+E000973,AI and Automation in Practice (Oct 2021),Webinar,Online,2021-10-01,All regions,408,21.22
+E001376,South West & Wales Members' Evening (Oct 2021),Regional branch meeting,Hybrid,2021-10-05,South West and Wales,69,45.95
+E000420,Republic of Ireland Branch Meeting (Oct 2021),Regional branch meeting,In person,2021-10-05,Republic of Ireland,180,141.06
+E000893,South West & Wales Networking Breakfast (Oct 2021),Networking,In person,2021-10-06,South West and Wales,42,60.1
+E001293,National Congress on Financial Awareness (Oct 2021),Conference,Online,2021-10-06,All regions,1339,237.75
+E000380,Emerging Regulation Update (Oct 2021),Webinar,Online,2021-10-06,All regions,2352,0.0
+E000037,Lunchtime Briefing: People Leadership (Oct 2021),Webinar,Online,2021-10-07,All regions,2332,23.04
+E000060,Hands-on Workshop: Financial Awareness (Oct 2021),Technical workshop,In person,2021-10-07,South West and Wales,78,96.27
+E000717,Public Trust Update (Oct 2021),Webinar,Online,2021-10-08,All regions,894,0.0
+E000590,Technical Clinic: Data Governance (Oct 2021),Technical workshop,Online,2021-10-11,All regions,784,86.58
+E000984,Career Surgery: People Leadership (Oct 2021),Career development,Online,2021-10-12,All regions,1314,38.7
+E000575,Emerging Regulation Update (Oct 2021),Webinar,Online,2021-10-14,All regions,462,0.0
+E000452,National Congress on Digital Transformation (Oct 2021),Conference,In person,2021-10-16,Rest of World,712,490.27
+E000878,Hands-on Workshop: Emerging Regulation (Oct 2021),Technical workshop,In person,2021-10-18,South West and Wales,128,97.63
+E001285,National Congress on Financial Awareness (Oct 2021),Conference,In person,2021-10-19,Scotland and Northern Ireland,776,258.56
+E001307,Professional Ethics Update (Oct 2021),Webinar,Online,2021-10-19,All regions,1319,0.0
+E001498,Technical Clinic: Regulatory Compliance (Oct 2021),Technical workshop,In person,2021-10-21,South West and Wales,178,64.31
+E000798,Technical Clinic: Risk Management (Oct 2021),Technical workshop,Online,2021-10-21,All regions,2054,74.37
+E001182,Republic of Ireland Members' Evening (Oct 2021),Regional branch meeting,In person,2021-10-22,Republic of Ireland,170,54.26
+E000300,Hands-on Workshop: Coaching and Mentoring (Oct 2021),Technical workshop,In person,2021-10-24,London and South East,105,38.36
+E000162,AI and Automation in Practice (Oct 2021),Webinar,Online,2021-10-24,All regions,2426,0.0
+E000446,All regions Branch Meeting (Oct 2021),Regional branch meeting,Online,2021-10-26,All regions,701,82.78
+E000096,Public Trust Update (Oct 2021),Webinar,Online,2021-10-26,All regions,1128,0.0
+E000799,Annual Awards Dinner (Oct 2021),Awards and celebration,In person,2021-10-28,Europe (non-UK),177,169.15
+E000273,Coaching and Mentoring Update (Oct 2021),Webinar,Online,2021-10-28,All regions,214,0.0
+E000289,National Congress on Regulatory Compliance (Oct 2021),Conference,In person,2021-10-29,South West and Wales,737,401.22
+E000256,All regions Networking Breakfast (Nov 2021),Networking,Online,2021-11-01,All regions,2356,68.03
+E001158,All regions Members' Evening (Nov 2021),Regional branch meeting,Online,2021-11-02,All regions,759,37.7
+E001207,Lunchtime Briefing: Project Delivery (Nov 2021),Webinar,Online,2021-11-03,All regions,1872,0.0
+E001159,Professional Standards Update (Nov 2021),Webinar,Online,2021-11-05,All regions,958,32.57
+E000022,Rest of World Networking Breakfast (Nov 2021),Networking,In person,2021-11-08,Rest of World,30,82.95
+E001275,National Congress on Regulatory Compliance (Nov 2021),Conference,Online,2021-11-11,All regions,783,215.35
+E001547,People Leadership Update (Nov 2021),Webinar,Online,2021-11-16,All regions,2406,0.0
+E001193,Public Trust Update (Nov 2021),Webinar,Online,2021-11-17,All regions,1186,0.0
+E000901,Technical Clinic: Risk Management (Nov 2021),Technical workshop,In person,2021-11-19,Europe (non-UK),27,186.36
+E000481,National Congress on Sustainability Reporting (Nov 2021),Conference,Online,2021-11-19,All regions,891,222.37
+E001213,Members' Networking Evening (Nov 2021),Networking,In person,2021-11-21,North of England,216,128.26
+E000661,All regions Members' Evening (Nov 2021),Regional branch meeting,Online,2021-11-24,All regions,1739,6.87
+E001224,All regions Branch Meeting (Nov 2021),Regional branch meeting,Online,2021-11-26,All regions,1767,11.87
+E000949,All regions Branch Meeting (Nov 2021),Regional branch meeting,Online,2021-11-26,All regions,490,28.12
+E000583,Professional Ethics in Practice (Nov 2021),Webinar,Online,2021-11-26,All regions,2057,0.0
+E001231,Mentoring Circle: Risk Management (Nov 2021),Career development,Online,2021-11-30,All regions,567,72.54
+E000722,Lunchtime Briefing: Professional Standards (Nov 2021),Webinar,Online,2021-11-30,All regions,1978,0.0
+E001132,Risk Management in Practice (Nov 2021),Webinar,Online,2021-11-30,All regions,1499,0.0
+E001125,Hands-on Workshop: Digital Transformation (Dec 2021),Technical workshop,Hybrid,2021-12-03,Midlands,70,66.62
+E000770,Career Surgery: Professional Standards (Dec 2021),Career development,In person,2021-12-06,London and South East,59,67.43
+E000411,Fellowship Admission Ceremony (Dec 2021),Awards and celebration,In person,2021-12-06,Europe (non-UK),153,69.62
+E000097,All regions Branch Meeting (Dec 2021),Regional branch meeting,Online,2021-12-06,All regions,212,41.67
+E000066,All regions Branch Meeting (Dec 2021),Regional branch meeting,Online,2021-12-07,All regions,845,39.81
+E000645,Stakeholder Communication in Practice (Dec 2021),Webinar,Online,2021-12-10,All regions,869,0.0
+E001428,Project Delivery Update (Dec 2021),Webinar,Online,2021-12-14,All regions,2411,43.85
+E000823,Project Delivery in Practice (Dec 2021),Webinar,Online,2021-12-15,All regions,1181,0.0
+E001440,Technical Clinic: AI and Automation (Dec 2021),Technical workshop,Hybrid,2021-12-17,London and South East,33,164.32
+E000837,All regions Branch Meeting (Dec 2021),Regional branch meeting,Online,2021-12-17,All regions,207,17.42
+E000856,Mentoring Circle: Professional Ethics (Jan 2022),Career development,Online,2022-01-05,All regions,2216,11.04
+E000301,National Congress on AI and Automation (Jan 2022),Conference,Online,2022-01-05,All regions,574,631.79
+E000012,Annual Project Delivery Conference (Jan 2022),Conference,Online,2022-01-06,All regions,1226,266.2
+E000415,Stakeholder Communication in Practice (Jan 2022),Webinar,Online,2022-01-06,All regions,1592,0.0
+E000239,Hands-on Workshop: Coaching and Mentoring (Jan 2022),Technical workshop,Online,2022-01-07,All regions,786,22.62
+E000494,All regions Members' Evening (Jan 2022),Regional branch meeting,Online,2022-01-11,All regions,1421,60.62
+E000484,Lunchtime Briefing: Professional Ethics (Jan 2022),Webinar,Online,2022-01-11,All regions,707,0.0
+E000232,Technical Clinic: Regulatory Compliance (Jan 2022),Technical workshop,In person,2022-01-12,Europe (non-UK),66,134.71
+E001304,Hands-on Workshop: Professional Standards (Jan 2022),Technical workshop,Hybrid,2022-01-12,South West and Wales,49,31.36
+E000410,All regions Networking Breakfast (Jan 2022),Networking,Online,2022-01-13,All regions,925,35.14
+E001033,North of England Branch Meeting (Jan 2022),Regional branch meeting,In person,2022-01-14,North of England,35,132.3
+E000050,All regions Branch Meeting (Jan 2022),Regional branch meeting,Online,2022-01-14,All regions,2183,12.89
+E001121,Financial Awareness in Practice (Jan 2022),Webinar,Online,2022-01-18,All regions,1201,0.0
+E000595,Technical Clinic: Stakeholder Communication (Jan 2022),Technical workshop,In person,2022-01-19,Republic of Ireland,94,178.78
+E000468,Lunchtime Briefing: Stakeholder Communication (Jan 2022),Webinar,Online,2022-01-20,All regions,2217,0.0
+E000921,Professional Ethics Update (Jan 2022),Webinar,Online,2022-01-20,All regions,732,0.0
+E001095,All regions Members' Evening (Jan 2022),Regional branch meeting,Online,2022-01-21,All regions,234,61.06
+E000961,London & South East Members' Evening (Jan 2022),Regional branch meeting,In person,2022-01-25,London and South East,152,168.6
+E000462,Emerging Regulation in Practice (Jan 2022),Webinar,Online,2022-01-25,All regions,2054,0.0
+E001392,Lunchtime Briefing: Financial Awareness (Jan 2022),Webinar,Online,2022-01-26,All regions,1912,22.92
+E001338,Hands-on Workshop: Coaching and Mentoring (Jan 2022),Technical workshop,Online,2022-01-27,All regions,2290,85.55
+E000998,National Congress on Stakeholder Communication (Jan 2022),Conference,Online,2022-01-27,All regions,1205,228.28
+E001443,Regulatory Compliance Update (Jan 2022),Webinar,Online,2022-01-27,All regions,1762,30.44
+E000696,Technical Clinic: Change Management (Jan 2022),Technical workshop,Online,2022-01-28,All regions,1467,85.07
+E000119,Europe (non-UK) Networking Breakfast (Jan 2022),Networking,In person,2022-01-31,Europe (non-UK),96,55.45
+E000518,Members' Networking Evening (Jan 2022),Networking,In person,2022-01-31,Scotland and Northern Ireland,174,39.91
+E001074,Hands-on Workshop: Coaching and Mentoring (Jan 2022),Technical workshop,In person,2022-01-31,Midlands,97,73.62
+E000234,Hands-on Workshop: Professional Ethics (Feb 2022),Technical workshop,Online,2022-02-01,All regions,1507,74.77
+E001229,Annual Emerging Regulation Conference (Feb 2022),Conference,In person,2022-02-03,South West and Wales,1130,633.29
+E000069,Technical Clinic: Professional Standards (Feb 2022),Technical workshop,In person,2022-02-03,Midlands,165,91.79
+E001251,Professional Standards in Practice (Feb 2022),Webinar,Online,2022-02-03,All regions,1697,0.0
+E000922,Hands-on Workshop: Regulatory Compliance (Feb 2022),Technical workshop,In person,2022-02-04,South West and Wales,73,134.67
+E000087,National Congress on Financial Awareness (Feb 2022),Conference,In person,2022-02-04,North of England,1170,565.45
+E000565,Annual Change Management Conference (Feb 2022),Conference,Online,2022-02-07,All regions,1327,547.27
+E001084,All regions Members' Evening (Feb 2022),Regional branch meeting,Online,2022-02-08,All regions,1701,67.93
+E001058,Members' Networking Evening (Feb 2022),Networking,In person,2022-02-08,London and South East,115,121.44
+E000863,Sustainability Reporting Update (Feb 2022),Webinar,Online,2022-02-09,All regions,360,0.0
+E000168,Lunchtime Briefing: AI and Automation (Feb 2022),Webinar,Online,2022-02-10,All regions,1396,30.3
+E000835,London & South East Branch Meeting (Feb 2022),Regional branch meeting,Hybrid,2022-02-10,London and South East,37,25.54
+E000605,Data Governance in Practice (Feb 2022),Webinar,Online,2022-02-10,All regions,2230,23.26
+E000681,London & South East Branch Meeting (Feb 2022),Regional branch meeting,In person,2022-02-11,London and South East,169,23.19
+E000709,Sustainability Reporting in Practice (Feb 2022),Webinar,Online,2022-02-11,All regions,1374,0.0
+E001508,Members' Networking Evening (Feb 2022),Networking,Online,2022-02-11,All regions,1508,68.94
+E000248,Lunchtime Briefing: Financial Awareness (Feb 2022),Webinar,Online,2022-02-14,All regions,490,0.0
+E001471,Technical Clinic: Project Delivery (Feb 2022),Technical workshop,Online,2022-02-15,All regions,1507,39.48
+E000651,Midlands Members' Evening (Feb 2022),Regional branch meeting,In person,2022-02-15,Midlands,74,157.82
+E000044,Scotland & Northern Ireland Members' Evening (Feb 2022),Regional branch meeting,In person,2022-02-17,Scotland and Northern Ireland,79,127.01
+E000780,North of England Members' Evening (Feb 2022),Regional branch meeting,In person,2022-02-17,North of England,34,39.19
+E000106,Stakeholder Communication Update (Feb 2022),Webinar,Online,2022-02-17,All regions,337,0.0
+E000179,Coaching and Mentoring Update (Feb 2022),Webinar,Online,2022-02-17,All regions,619,0.0
+E001412,London & South East Branch Meeting (Feb 2022),Regional branch meeting,In person,2022-02-18,London and South East,27,151.64
+E001164,North of England Members' Evening (Feb 2022),Regional branch meeting,Hybrid,2022-02-18,North of England,144,21.79
+E000793,All regions Members' Evening (Feb 2022),Regional branch meeting,Online,2022-02-21,All regions,2410,83.7
+E001473,All regions Networking Breakfast (Feb 2022),Networking,Online,2022-02-22,All regions,540,38.76
+E001113,Risk Management in Practice (Feb 2022),Webinar,Online,2022-02-24,All regions,665,0.0
+E000045,Annual Professional Standards Conference (Feb 2022),Conference,Online,2022-02-24,All regions,1357,421.04
+E000772,Rest of World Members' Evening (Feb 2022),Regional branch meeting,In person,2022-02-28,Rest of World,132,188.1
+E001264,Lunchtime Briefing: Regulatory Compliance (Mar 2022),Webinar,Online,2022-03-01,All regions,2446,35.45
+E001291,Hands-on Workshop: Financial Awareness (Mar 2022),Technical workshop,Hybrid,2022-03-03,North of England,172,21.03
+E001240,Members' Networking Evening (Mar 2022),Networking,Online,2022-03-03,All regions,870,55.53
+E001219,Technical Clinic: Project Delivery (Mar 2022),Technical workshop,Online,2022-03-03,All regions,1632,8.67
+E001372,Risk Management in Practice (Mar 2022),Webinar,Online,2022-03-04,All regions,581,17.01
+E000147,Hands-on Workshop: Financial Awareness (Mar 2022),Technical workshop,Hybrid,2022-03-04,Europe (non-UK),195,118.65
+E000324,London & South East Members' Evening (Mar 2022),Regional branch meeting,In person,2022-03-04,London and South East,152,156.12
+E001271,Career Surgery: Emerging Regulation (Mar 2022),Career development,In person,2022-03-08,London and South East,133,63.62
+E000969,Project Delivery Update (Mar 2022),Webinar,Online,2022-03-08,All regions,1438,0.0
+E000952,Hands-on Workshop: Professional Ethics (Mar 2022),Technical workshop,Online,2022-03-09,All regions,509,59.77
+E000760,All regions Members' Evening (Mar 2022),Regional branch meeting,Online,2022-03-09,All regions,1409,39.09
+E000427,Annual Regulatory Compliance Conference (Mar 2022),Conference,Online,2022-03-09,All regions,1318,288.32
+E000566,Members' Networking Evening (Mar 2022),Networking,In person,2022-03-10,Rest of World,196,181.34
+E000711,Fellowship Admission Ceremony (Mar 2022),Awards and celebration,In person,2022-03-10,London and South East,140,119.48
+E000389,Hands-on Workshop: Project Delivery (Mar 2022),Technical workshop,Online,2022-03-15,All regions,1035,39.16
+E001487,Technical Clinic: Stakeholder Communication (Mar 2022),Technical workshop,In person,2022-03-16,Midlands,29,73.87
+E000219,Risk Management Update (Mar 2022),Webinar,Online,2022-03-17,All regions,648,0.0
+E001080,Professional Standards Update (Mar 2022),Webinar,Online,2022-03-18,All regions,1373,0.0
+E000858,Annual Sustainability Reporting Conference (Mar 2022),Conference,In person,2022-03-18,London and South East,454,232.29
+E001129,Members' Networking Evening (Mar 2022),Networking,In person,2022-03-22,Midlands,164,34.91
+E001283,Professional Ethics Update (Mar 2022),Webinar,Online,2022-03-23,All regions,428,0.0
+E001295,Midlands Networking Breakfast (Mar 2022),Networking,In person,2022-03-24,Midlands,168,132.39
+E000242,Hands-on Workshop: Coaching and Mentoring (Mar 2022),Technical workshop,Online,2022-03-24,All regions,593,52.05
+E000609,Annual Public Trust Conference (Mar 2022),Conference,Online,2022-03-24,All regions,692,353.51
+E000612,Lunchtime Briefing: Data Governance (Mar 2022),Webinar,Online,2022-03-25,All regions,886,17.27
+E000620,Public Trust Update (Mar 2022),Webinar,Online,2022-03-25,All regions,1670,23.83
+E000628,Technical Clinic: Stakeholder Communication (Mar 2022),Technical workshop,Online,2022-03-25,All regions,1540,76.49
+E001439,Hands-on Workshop: Change Management (Mar 2022),Technical workshop,In person,2022-03-28,London and South East,216,120.53
+E000277,All regions Networking Breakfast (Mar 2022),Networking,Online,2022-03-28,All regions,1986,19.61
+E000675,Professional Standards in Practice (Mar 2022),Webinar,Online,2022-03-29,All regions,1131,0.0
+E001205,Coaching and Mentoring Update (Mar 2022),Webinar,Online,2022-03-29,All regions,2276,0.0
+E001416,Lunchtime Briefing: Public Trust (Mar 2022),Webinar,Online,2022-03-30,All regions,428,29.14
+E000229,Lunchtime Briefing: People Leadership (Mar 2022),Webinar,Online,2022-03-30,All regions,554,0.0
+E000542,All regions Networking Breakfast (Mar 2022),Networking,Online,2022-03-31,All regions,441,81.97
+E001051,Midlands Branch Meeting (Mar 2022),Regional branch meeting,In person,2022-03-31,Midlands,40,22.24
+E000259,Career Surgery: Project Delivery (Apr 2022),Career development,Online,2022-04-01,All regions,894,27.88
+E001444,Lunchtime Briefing: Financial Awareness (Apr 2022),Webinar,Online,2022-04-01,All regions,2001,24.6
+E000480,Europe (non-UK) Members' Evening (Apr 2022),Regional branch meeting,Hybrid,2022-04-01,Europe (non-UK),34,23.02
+E000112,Lunchtime Briefing: Sustainability Reporting (Apr 2022),Webinar,Online,2022-04-03,All regions,1275,24.07
+E000578,South West & Wales Members' Evening (Apr 2022),Regional branch meeting,Hybrid,2022-04-04,South West and Wales,132,77.3
+E001195,Members' Networking Evening (Apr 2022),Networking,Hybrid,2022-04-05,South West and Wales,126,126.98
+E000128,Technical Clinic: Financial Awareness (Apr 2022),Technical workshop,Online,2022-04-05,All regions,1500,4.73
+E000847,Career Surgery: Project Delivery (Apr 2022),Career development,In person,2022-04-05,London and South East,80,156.25
+E000832,Project Delivery Update (Apr 2022),Webinar,Online,2022-04-06,All regions,1752,0.0
+E001263,Members' Networking Evening (Apr 2022),Networking,Online,2022-04-06,All regions,1897,50.7
+E000995,South West & Wales Networking Breakfast (Apr 2022),Networking,In person,2022-04-06,South West and Wales,153,49.09
+E000810,National Congress on Change Management (Apr 2022),Conference,Online,2022-04-07,All regions,446,387.31
+E001417,Change Management in Practice (Apr 2022),Webinar,Online,2022-04-07,All regions,1151,16.75
+E000741,Members' Networking Evening (Apr 2022),Networking,Online,2022-04-07,All regions,983,87.92
+E001144,Technical Clinic: Change Management (Apr 2022),Technical workshop,Online,2022-04-08,All regions,419,74.21
+E001302,Hands-on Workshop: Sustainability Reporting (Apr 2022),Technical workshop,In person,2022-04-11,Midlands,71,185.93
+E001427,Fellowship Admission Ceremony (Apr 2022),Awards and celebration,In person,2022-04-12,London and South East,97,169.0
+E000706,Financial Awareness Update (Apr 2022),Webinar,Online,2022-04-12,All regions,516,0.0
+E000951,Hands-on Workshop: Financial Awareness (Apr 2022),Technical workshop,Online,2022-04-13,All regions,906,3.15
+E001176,All regions Branch Meeting (Apr 2022),Regional branch meeting,Online,2022-04-14,All regions,888,47.82
+E000720,Technical Clinic: Financial Awareness (Apr 2022),Technical workshop,Hybrid,2022-04-18,Europe (non-UK),98,120.11
+E001447,Members' Networking Evening (Apr 2022),Networking,Online,2022-04-19,All regions,965,85.05
+E000489,All regions Branch Meeting (Apr 2022),Regional branch meeting,Online,2022-04-20,All regions,233,70.12
+E001360,Public Trust in Practice (Apr 2022),Webinar,Online,2022-04-22,All regions,1838,0.0
+E001191,Hands-on Workshop: Professional Standards (Apr 2022),Technical workshop,Online,2022-04-22,All regions,461,8.62
+E001486,Midlands Branch Meeting (Apr 2022),Regional branch meeting,Hybrid,2022-04-22,Midlands,32,51.88
+E000732,Professional Ethics Update (Apr 2022),Webinar,Online,2022-04-25,All regions,556,0.0
+E001448,Technical Clinic: Financial Awareness (Apr 2022),Technical workshop,Hybrid,2022-04-25,Midlands,175,112.81
+E000144,Hands-on Workshop: Emerging Regulation (Apr 2022),Technical workshop,Online,2022-04-26,All regions,327,59.68
+E001044,Annual Awards Dinner (Apr 2022),Awards and celebration,In person,2022-04-26,Scotland and Northern Ireland,195,137.62
+E001022,National Congress on Digital Transformation (Apr 2022),Conference,In person,2022-04-26,London and South East,1017,408.11
+E001314,Lunchtime Briefing: AI and Automation (Apr 2022),Webinar,Online,2022-04-26,All regions,1917,0.0
+E001452,Change Management in Practice (Apr 2022),Webinar,Online,2022-04-27,All regions,2116,0.0
+E000262,Technical Clinic: Professional Standards (Apr 2022),Technical workshop,Online,2022-04-27,All regions,2102,49.87
+E000285,London & South East Networking Breakfast (Apr 2022),Networking,In person,2022-04-27,London and South East,137,95.69
+E000190,All regions Networking Breakfast (Apr 2022),Networking,Online,2022-04-27,All regions,1715,17.36
+E001067,Technical Clinic: Stakeholder Communication (Apr 2022),Technical workshop,Online,2022-04-27,All regions,569,2.78
+E000712,Professional Standards in Practice (Apr 2022),Webinar,Online,2022-04-27,All regions,1042,0.0
+E001093,Career Surgery: Change Management (Apr 2022),Career development,Online,2022-04-28,All regions,2403,58.73
+E000068,Technical Clinic: Emerging Regulation (Apr 2022),Technical workshop,In person,2022-04-28,North of England,96,144.3
+E000381,Annual Awards Dinner (Apr 2022),Awards and celebration,In person,2022-04-29,South West and Wales,185,85.53
+E001442,Lunchtime Briefing: Regulatory Compliance (May 2022),Webinar,Online,2022-05-02,All regions,543,0.0
+E000392,Technical Clinic: Risk Management (May 2022),Technical workshop,Online,2022-05-02,All regions,1927,82.73
+E000877,Technical Clinic: Risk Management (May 2022),Technical workshop,Online,2022-05-05,All regions,2095,6.77
+E000099,Annual Stakeholder Communication Conference (May 2022),Conference,In person,2022-05-05,London and South East,975,566.31
+E000876,National Congress on People Leadership (May 2022),Conference,Online,2022-05-05,All regions,1222,618.31
+E001393,Annual Emerging Regulation Conference (May 2022),Conference,Online,2022-05-06,All regions,614,532.97
+E000941,Members' Networking Evening (May 2022),Networking,Online,2022-05-09,All regions,870,58.2
+E000992,Annual Financial Awareness Conference (May 2022),Conference,Online,2022-05-09,All regions,574,458.98
+E000257,Members' Networking Evening (May 2022),Networking,Online,2022-05-09,All regions,948,73.56
+E001515,AI and Automation Update (May 2022),Webinar,Online,2022-05-10,All regions,2016,26.56
+E001496,Lunchtime Briefing: Sustainability Reporting (May 2022),Webinar,Online,2022-05-10,All regions,1924,30.59
+E000448,Lunchtime Briefing: Change Management (May 2022),Webinar,Online,2022-05-10,All regions,1869,21.94
+E001254,All regions Networking Breakfast (May 2022),Networking,Online,2022-05-11,All regions,1344,17.69
+E001026,All regions Members' Evening (May 2022),Regional branch meeting,Online,2022-05-11,All regions,1116,78.58
+E000740,Emerging Regulation Update (May 2022),Webinar,Online,2022-05-11,All regions,510,0.0
+E001181,Lunchtime Briefing: Financial Awareness (May 2022),Webinar,Online,2022-05-12,All regions,2389,0.0
+E000657,Project Delivery Update (May 2022),Webinar,Online,2022-05-12,All regions,1883,0.0
+E000296,Hands-on Workshop: Sustainability Reporting (May 2022),Technical workshop,Online,2022-05-12,All regions,277,52.35
+E000153,Hands-on Workshop: Change Management (May 2022),Technical workshop,Online,2022-05-13,All regions,920,70.68
+E000464,Midlands Members' Evening (May 2022),Regional branch meeting,Hybrid,2022-05-13,Midlands,75,91.58
+E001170,Annual People Leadership Conference (May 2022),Conference,Online,2022-05-16,All regions,620,248.92
+E000737,Midlands Branch Meeting (May 2022),Regional branch meeting,Hybrid,2022-05-17,Midlands,65,79.45
+E001334,South West & Wales Networking Breakfast (May 2022),Networking,Hybrid,2022-05-18,South West and Wales,104,173.06
+E000172,Mentoring Circle: Project Delivery (May 2022),Career development,Online,2022-05-19,All regions,561,74.15
+E000459,Mentoring Circle: Digital Transformation (May 2022),Career development,In person,2022-05-23,Europe (non-UK),67,163.69
+E001594,Stakeholder Communication in Practice (May 2022),Webinar,Online,2022-05-23,All regions,933,0.0
+E001303,Europe (non-UK) Members' Evening (May 2022),Regional branch meeting,Hybrid,2022-05-25,Europe (non-UK),92,87.99
+E001153,All regions Branch Meeting (May 2022),Regional branch meeting,Online,2022-05-25,All regions,2405,45.25
+E000953,All regions Networking Breakfast (May 2022),Networking,Online,2022-05-27,All regions,1915,64.2
+E001510,Hands-on Workshop: Professional Ethics (May 2022),Technical workshop,Online,2022-05-30,All regions,2085,63.2
+E001565,Members' Networking Evening (May 2022),Networking,Online,2022-05-30,All regions,1013,34.3
+E000425,Hands-on Workshop: Professional Standards (May 2022),Technical workshop,In person,2022-05-31,North of England,168,159.89
+E001324,Technical Clinic: Professional Standards (Jun 2022),Technical workshop,Online,2022-06-01,All regions,651,63.41

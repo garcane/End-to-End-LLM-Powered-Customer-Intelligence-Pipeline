@@ -1,0 +1,251 @@
+feedback_id,member_id,submitted_date,feedback_channel,feedback_category,rating,feedback_text,sentiment_label
+FB00000001,M0000001,2025-07-08,Event feedback form,Events and content,3,Content quality varies. Some sessions are excellent and others feel like an hour of introductions.,Neutral
+FB00000002,M0000001,2025-08-26,Cancellation survey,Events and content,2,The last conference was disappointing for the price. Largely vendor presentations.,Negative
+FB00000003,M0000002,2022-11-07,Event feedback form,Events and content,5,I attended the regional branch meeting and found it far more useful than I expected. Good mix of technical content and networking.,Positive
+FB00000004,M0000002,2024-07-30,Event feedback form,Events and content,4,The webinar programme has been excellent this year and the speakers are genuinely practitioners rather than salespeople.,Positive
+FB00000005,M0000003,2024-08-19,Event feedback form,Events and content,3,"The events are reasonable, although most of the in-person ones are a long way from where I live.",Neutral
+FB00000006,M0000003,2024-09-05,Event feedback form,Events and content,4,The webinar programme has been excellent this year and the speakers are genuinely practitioners rather than salespeople. Keep doing this.,Positive
+FB00000007,M0000004,2025-08-29,Support ticket,Website and digital services,1,The website is slow and the password reset process failed three times before it worked. I am seriously considering whether to renew.,Negative
+FB00000008,M0000006,2024-02-15,Event feedback form,Events and content,3,"The events are reasonable, although most of the in-person ones are a long way from where I live.",Neutral
+FB00000009,M0000006,2024-07-07,Website feedback widget,Website and digital services,3,"The website does what I need, though logging in on a second device is more awkward than it should be.",Neutral
+FB00000010,M0000006,2025-02-14,Event feedback form,Events and content,4,I attended the regional branch meeting and found it far more useful than I expected. Good mix of technical content and networking.,Positive
+FB00000011,M0000006,2025-03-22,Annual member survey,Customer service,4,The membership team resolved my query the same day and followed up to check I was happy. Keep doing this.,Positive
+FB00000012,M0000006,2025-05-03,Website feedback widget,Customer service,3,"My query was answered eventually, although it took a few days and one follow-up.",Neutral
+FB00000013,M0000009,2026-06-02,Event feedback form,Events and content,4,The webinar programme has been excellent this year and the speakers are genuinely practitioners rather than salespeople. Please pass my thanks on to the team.,Positive
+FB00000014,M0000011,2023-04-06,Support ticket,Website and digital services,2,I could not download the guidance I needed and the error message was meaningless.,Negative
+FB00000015,M0000011,2023-09-26,Event feedback form,Events and content,3,"The events are reasonable, although most of the in-person ones are a long way from where I live.",Neutral
+FB00000016,M0000012,2026-01-05,Cancellation survey,Membership value,4,My employer questioned the renewal cost this year and I was able to justify it easily on the CPD alone. Keep doing this.,Positive
+FB00000017,M0000013,2023-05-08,Support ticket,Communications,3,The updates are fine. I tend to skim rather than read them properly.,Neutral
+FB00000018,M0000013,2026-07-22,Event feedback form,Events and content,5,Recordings being available afterwards makes a real difference when I cannot attend live.,Positive
+FB00000019,M0000015,2022-01-28,Event feedback form,Events and content,5,The webinar programme has been excellent this year and the speakers are genuinely practitioners rather than salespeople. Keep doing this.,Positive
+FB00000020,M0000015,2022-10-01,Annual member survey,Customer service,4,Helpful and responsive when I needed to change my payment details.,Positive
+FB00000021,M0000015,2023-02-06,Annual member survey,Membership value,4,My employer questioned the renewal cost this year and I was able to justify it easily on the CPD alone. Keep doing this.,Positive
+FB00000022,M0000015,2023-04-22,Support ticket,Fees and billing,4,"Billing was clear and the receipt arrived immediately, which my finance team appreciated. Keep doing this.",Positive
+FB00000023,M0000015,2023-06-02,Event feedback form,Events and content,5,The webinar programme has been excellent this year and the speakers are genuinely practitioners rather than salespeople.,Positive
+FB00000024,M0000015,2023-07-10,Event feedback form,Events and content,5,The webinar programme has been excellent this year and the speakers are genuinely practitioners rather than salespeople.,Positive
+FB00000025,M0000015,2023-12-02,Annual member survey,Customer service,4,Helpful and responsive when I needed to change my payment details. Please pass my thanks on to the team.,Positive
+FB00000026,M0000015,2024-08-20,Event feedback form,Events and content,4,The webinar programme has been excellent this year and the speakers are genuinely practitioners rather than salespeople.,Positive
+FB00000027,M0000015,2024-12-14,Annual member survey,Communications,5,"The monthly newsletter is well edited and I read most of it, which is unusual for me.",Positive
+FB00000028,M0000015,2025-02-11,Event feedback form,Events and content,4,The webinar programme has been excellent this year and the speakers are genuinely practitioners rather than salespeople.,Positive
+FB00000029,M0000015,2025-08-23,Event feedback form,Events and content,5,I attended the regional branch meeting and found it far more useful than I expected. Good mix of technical content and networking.,Positive
+FB00000030,M0000015,2025-12-12,Event feedback form,Events and content,4,I attended the regional branch meeting and found it far more useful than I expected. Good mix of technical content and networking.,Positive
+FB00000031,M0000017,2025-05-20,Cancellation survey,Fees and billing,2,My card was charged twice and it took a month to refund.,Negative
+FB00000032,M0000018,2023-07-04,Event feedback form,Events and content,5,I attended the regional branch meeting and found it far more useful than I expected. Good mix of technical content and networking. Please pass my thanks on to the team.,Positive
+FB00000033,M0000018,2023-09-16,Annual member survey,Website and digital services,5,The mobile app is quick and I use it far more than I expected to.,Positive
+FB00000034,M0000018,2023-10-13,Annual member survey,Website and digital services,5,The site search has clearly been improved. I can now find guidance documents in a couple of clicks. Keep doing this.,Positive
+FB00000035,M0000018,2025-03-11,Annual member survey,Membership value,5,My employer questioned the renewal cost this year and I was able to justify it easily on the CPD alone.,Positive
+FB00000036,M0000018,2025-07-30,Event feedback form,Events and content,4,Recordings being available afterwards makes a real difference when I cannot attend live.,Positive
+FB00000037,M0000018,2025-09-21,Website feedback widget,Communications,3,The updates are fine. I tend to skim rather than read them properly.,Neutral
+FB00000038,M0000018,2026-01-01,Event feedback form,Events and content,4,The webinar programme has been excellent this year and the speakers are genuinely practitioners rather than salespeople.,Positive
+FB00000039,M0000019,2026-02-19,Event feedback form,Events and content,3,"I enjoy the webinars, but I have not been able to find many events relevant to my current role.",Neutral
+FB00000040,M0000020,2022-09-23,Event feedback form,Events and content,5,Recordings being available afterwards makes a real difference when I cannot attend live.,Positive
+FB00000041,M0000020,2023-09-12,Annual member survey,Communications,5,Communications are frequent enough to be useful without becoming noise.,Positive
+FB00000042,M0000020,2023-12-08,Event feedback form,Events and content,4,I attended the regional branch meeting and found it far more useful than I expected. Good mix of technical content and networking. Keep doing this.,Positive
+FB00000043,M0000020,2024-08-23,Annual member survey,Membership value,5,I have recommended membership to two colleagues in the last six months.,Positive
+FB00000044,M0000020,2024-12-05,Event feedback form,Events and content,5,Recordings being available afterwards makes a real difference when I cannot attend live.,Positive
+FB00000045,M0000020,2024-12-16,Annual member survey,Membership value,5,My employer questioned the renewal cost this year and I was able to justify it easily on the CPD alone.,Positive
+FB00000046,M0000020,2025-03-18,Event feedback form,Events and content,5,Recordings being available afterwards makes a real difference when I cannot attend live.,Positive
+FB00000047,M0000020,2025-08-29,Event feedback form,Events and content,5,The webinar programme has been excellent this year and the speakers are genuinely practitioners rather than salespeople.,Positive
+FB00000048,M0000020,2025-09-25,Annual member survey,Customer service,5,Helpful and responsive when I needed to change my payment details.,Positive
+FB00000049,M0000020,2026-03-19,Event feedback form,Events and content,4,Recordings being available afterwards makes a real difference when I cannot attend live. Keep doing this.,Positive
+FB00000050,M0000020,2026-05-16,Event feedback form,Events and content,5,The webinar programme has been excellent this year and the speakers are genuinely practitioners rather than salespeople.,Positive
+FB00000051,M0000021,2022-04-02,Support ticket,Fees and billing,2,The direct debit failed and the first I heard about it was a lapsed membership notice.,Negative
+FB00000052,M0000021,2023-01-11,Support ticket,Customer service,4,The membership team resolved my query the same day and followed up to check I was happy.,Positive
+FB00000053,M0000022,2022-12-11,Annual member survey,Communications,4,"The monthly newsletter is well edited and I read most of it, which is unusual for me.",Positive
+FB00000054,M0000022,2023-06-19,Event feedback form,Events and content,5,I attended the regional branch meeting and found it far more useful than I expected. Good mix of technical content and networking. Keep doing this.,Positive
+FB00000055,M0000023,2026-05-15,Event feedback form,Events and content,4,The webinar programme has been excellent this year and the speakers are genuinely practitioners rather than salespeople. Please pass my thanks on to the team.,Positive
+FB00000056,M0000024,2022-01-20,Support ticket,Website and digital services,2,The website is slow and the password reset process failed three times before it worked.,Negative
+FB00000057,M0000024,2024-12-09,Event feedback form,Events and content,4,The webinar programme has been excellent this year and the speakers are genuinely practitioners rather than salespeople.,Positive
+FB00000058,M0000025,2023-01-30,Website feedback widget,Customer service,2,It took three attempts and two weeks to get a straight answer about my membership grade. I would like someone to contact me about this.,Negative
+FB00000059,M0000025,2024-02-21,Support ticket,Fees and billing,3,"The renewal process worked, but the fee increase was not explained anywhere I could find.",Neutral
+FB00000060,M0000027,2023-10-12,Annual member survey,Customer service,4,Helpful and responsive when I needed to change my payment details.,Positive
+FB00000061,M0000027,2024-06-17,Annual member survey,Fees and billing,5,Spreading the fee over monthly payments made renewal straightforward this year.,Positive
+FB00000062,M0000029,2023-06-20,Event feedback form,Events and content,4,I attended the regional branch meeting and found it far more useful than I expected. Good mix of technical content and networking.,Positive
+FB00000063,M0000029,2025-04-27,Event feedback form,Events and content,2,The last conference was disappointing for the price. Largely vendor presentations. I am seriously considering whether to renew.,Negative
+FB00000064,M0000034,2023-01-31,Annual member survey,Communications,3,The updates are fine. I tend to skim rather than read them properly.,Neutral
+FB00000065,M0000034,2023-05-06,Annual member survey,Membership value,4,I have recommended membership to two colleagues in the last six months.,Positive
+FB00000066,M0000034,2025-04-01,Annual member survey,Communications,4,Communications are frequent enough to be useful without becoming noise. Keep doing this.,Positive
+FB00000067,M0000034,2025-09-25,Annual member survey,Learning and development,3,The courses are fine but there is not much at an advanced level for people who have been in the profession a while.,Neutral
+FB00000068,M0000037,2022-04-14,Event feedback form,Events and content,5,The webinar programme has been excellent this year and the speakers are genuinely practitioners rather than salespeople.,Positive
+FB00000069,M0000037,2022-12-04,Event feedback form,Events and content,5,The webinar programme has been excellent this year and the speakers are genuinely practitioners rather than salespeople.,Positive
+FB00000070,M0000037,2023-01-24,Event feedback form,Events and content,5,I attended the regional branch meeting and found it far more useful than I expected. Good mix of technical content and networking.,Positive
+FB00000071,M0000037,2023-09-08,Annual member survey,Learning and development,5,The CPD modules are well structured and the assessments actually test understanding rather than recall. Please pass my thanks on to the team.,Positive
+FB00000072,M0000037,2024-06-11,Event feedback form,Events and content,4,The webinar programme has been excellent this year and the speakers are genuinely practitioners rather than salespeople.,Positive
+FB00000073,M0000037,2024-08-22,Annual member survey,Website and digital services,5,The site search has clearly been improved. I can now find guidance documents in a couple of clicks.,Positive
+FB00000074,M0000037,2025-08-01,Event feedback form,Events and content,5,Recordings being available afterwards makes a real difference when I cannot attend live. Keep doing this.,Positive
+FB00000075,M0000037,2026-07-08,Event feedback form,Events and content,5,Recordings being available afterwards makes a real difference when I cannot attend live.,Positive
+FB00000076,M0000038,2022-07-20,Event feedback form,Events and content,4,Recordings being available afterwards makes a real difference when I cannot attend live. Please pass my thanks on to the team.,Positive
+FB00000077,M0000038,2023-07-10,Support ticket,Fees and billing,2,My card was charged twice and it took a month to refund. I am seriously considering whether to renew.,Negative
+FB00000078,M0000038,2023-09-09,Cancellation survey,Membership value,3,It is about what I would expect for the money. Nothing that stands out either way.,Neutral
+FB00000079,M0000039,2022-03-08,Annual member survey,Fees and billing,3,"The renewal process worked, but the fee increase was not explained anywhere I could find.",Neutral
+FB00000080,M0000039,2022-04-16,Annual member survey,Customer service,4,The membership team resolved my query the same day and followed up to check I was happy.,Positive
+FB00000081,M0000039,2022-08-29,Cancellation survey,Membership value,2,I cannot see what I get for the fee any more. I will not be renewing unless something changes.,Negative
+FB00000082,M0000040,2025-03-05,Annual member survey,Customer service,3,"My query was answered eventually, although it took a few days and one follow-up.",Neutral
+FB00000083,M0000041,2021-09-02,Website feedback widget,Fees and billing,2,My card was charged twice and it took a month to refund.,Negative
+FB00000084,M0000041,2022-02-06,Support ticket,Website and digital services,3,"The website does what I need, though logging in on a second device is more awkward than it should be.",Neutral
+FB00000085,M0000041,2023-09-08,Cancellation survey,Customer service,3,"My query was answered eventually, although it took a few days and one follow-up.",Neutral
+FB00000086,M0000043,2023-05-28,Website feedback widget,Fees and billing,2,The direct debit failed and the first I heard about it was a lapsed membership notice.,Negative
+FB00000087,M0000043,2023-11-28,Cancellation survey,Customer service,1,It took three attempts and two weeks to get a straight answer about my membership grade.,Negative
+FB00000088,M0000044,2022-03-10,Annual member survey,Events and content,4,I attended the regional branch meeting and found it far more useful than I expected. Good mix of technical content and networking.,Positive
+FB00000089,M0000044,2022-04-15,Annual member survey,Events and content,3,"I enjoy the webinars, but I have not been able to find many events relevant to my current role.",Neutral
+FB00000090,M0000044,2022-12-10,Annual member survey,Customer service,3,"My query was answered eventually, although it took a few days and one follow-up.",Neutral
+FB00000091,M0000044,2024-03-18,Event feedback form,Events and content,4,I attended the regional branch meeting and found it far more useful than I expected. Good mix of technical content and networking. Keep doing this.,Positive
+FB00000092,M0000044,2024-12-07,Annual member survey,Events and content,3,"I enjoy the webinars, but I have not been able to find many events relevant to my current role.",Neutral
+FB00000093,M0000044,2025-03-08,Annual member survey,Customer service,4,Helpful and responsive when I needed to change my payment details.,Positive
+FB00000094,M0000046,2023-02-02,Support ticket,Communications,2,I unsubscribed and still received two campaigns the following week.,Negative
+FB00000095,M0000046,2025-08-11,Event feedback form,Events and content,2,The last conference was disappointing for the price. Largely vendor presentations.,Negative
+FB00000096,M0000047,2024-06-10,Cancellation survey,Events and content,2,There has been nothing relevant to my specialism for over a year and the events that do run are always in London.,Negative
+FB00000097,M0000048,2022-09-29,Annual member survey,Customer service,5,The membership team resolved my query the same day and followed up to check I was happy. Please pass my thanks on to the team.,Positive
+FB00000098,M0000049,2023-09-13,Annual member survey,Customer service,3,"My query was answered eventually, although it took a few days and one follow-up.",Neutral
+FB00000099,M0000049,2023-10-22,Annual member survey,Customer service,3,"My query was answered eventually, although it took a few days and one follow-up.",Neutral
+FB00000100,M0000050,2025-01-07,Event feedback form,Events and content,3,"The events are reasonable, although most of the in-person ones are a long way from where I live.",Neutral
+FB00000101,M0000053,2023-01-30,Annual member survey,Fees and billing,3,"The renewal process worked, but the fee increase was not explained anywhere I could find.",Neutral
+FB00000102,M0000053,2023-07-08,Event feedback form,Events and content,4,I attended the regional branch meeting and found it far more useful than I expected. Good mix of technical content and networking. Please pass my thanks on to the team.,Positive
+FB00000103,M0000054,2024-01-28,Event feedback form,Events and content,5,The webinar programme has been excellent this year and the speakers are genuinely practitioners rather than salespeople.,Positive
+FB00000104,M0000054,2025-03-18,Event feedback form,Events and content,3,"The events are reasonable, although most of the in-person ones are a long way from where I live.",Neutral
+FB00000105,M0000055,2025-10-29,Annual member survey,Membership value,3,It is about what I would expect for the money. Nothing that stands out either way.,Neutral
+FB00000106,M0000057,2024-10-25,Event feedback form,Events and content,4,The webinar programme has been excellent this year and the speakers are genuinely practitioners rather than salespeople. Keep doing this.,Positive
+FB00000107,M0000059,2025-01-22,Event feedback form,Events and content,4,Recordings being available afterwards makes a real difference when I cannot attend live.,Positive
+FB00000108,M0000059,2025-10-28,Annual member survey,Events and content,4,The webinar programme has been excellent this year and the speakers are genuinely practitioners rather than salespeople. Please pass my thanks on to the team.,Positive
+FB00000109,M0000061,2024-11-18,Support ticket,Website and digital services,3,"The website does what I need, though logging in on a second device is more awkward than it should be.",Neutral
+FB00000110,M0000061,2025-10-25,Support ticket,Fees and billing,3,"The renewal process worked, but the fee increase was not explained anywhere I could find.",Neutral
+FB00000111,M0000061,2026-05-01,Support ticket,Communications,3,The updates are fine. I tend to skim rather than read them properly.,Neutral
+FB00000112,M0000061,2026-07-04,Support ticket,Fees and billing,3,"The renewal process worked, but the fee increase was not explained anywhere I could find.",Neutral
+FB00000113,M0000062,2023-08-01,Event feedback form,Events and content,2,I registered for two events that were then cancelled at short notice. That has put me off booking again. I would like someone to contact me about this.,Negative
+FB00000114,M0000062,2025-07-19,Event feedback form,Events and content,2,I registered for two events that were then cancelled at short notice. That has put me off booking again.,Negative
+FB00000115,M0000064,2025-08-14,Support ticket,Customer service,2,It took three attempts and two weeks to get a straight answer about my membership grade.,Negative
+FB00000116,M0000064,2026-02-26,Cancellation survey,Membership value,2,The fee went up again while the benefits stayed the same. That is difficult to justify to my employer. I would like someone to contact me about this.,Negative
+FB00000117,M0000066,2023-12-01,Annual member survey,Fees and billing,5,"Billing was clear and the receipt arrived immediately, which my finance team appreciated. Please pass my thanks on to the team.",Positive
+FB00000118,M0000066,2024-08-19,Annual member survey,Events and content,4,The webinar programme has been excellent this year and the speakers are genuinely practitioners rather than salespeople.,Positive
+FB00000119,M0000066,2025-02-14,Event feedback form,Events and content,4,I attended the regional branch meeting and found it far more useful than I expected. Good mix of technical content and networking.,Positive
+FB00000120,M0000066,2025-06-16,Annual member survey,Fees and billing,4,"Billing was clear and the receipt arrived immediately, which my finance team appreciated. Keep doing this.",Positive
+FB00000121,M0000066,2025-10-29,Event feedback form,Events and content,4,Recordings being available afterwards makes a real difference when I cannot attend live. Please pass my thanks on to the team.,Positive
+FB00000122,M0000067,2022-04-13,Annual member survey,Learning and development,4,I completed two courses this quarter and both were directly applicable to my current role. Keep doing this.,Positive
+FB00000123,M0000067,2022-07-24,Event feedback form,Events and content,4,The webinar programme has been excellent this year and the speakers are genuinely practitioners rather than salespeople.,Positive
+FB00000124,M0000067,2023-09-01,Cancellation survey,Fees and billing,2,The direct debit failed and the first I heard about it was a lapsed membership notice. I would like someone to contact me about this.,Negative
+FB00000125,M0000069,2023-04-14,Cancellation survey,Membership value,2,The fee went up again while the benefits stayed the same. That is difficult to justify to my employer.,Negative
+FB00000126,M0000070,2023-03-26,Event feedback form,Events and content,3,Content quality varies. Some sessions are excellent and others feel like an hour of introductions.,Neutral
+FB00000127,M0000070,2023-06-11,Support ticket,Website and digital services,4,Downloading standards is much easier than it used to be.,Positive
+FB00000128,M0000070,2023-10-11,Annual member survey,Fees and billing,4,Spreading the fee over monthly payments made renewal straightforward this year.,Positive
+FB00000129,M0000070,2024-03-04,Event feedback form,Events and content,5,Recordings being available afterwards makes a real difference when I cannot attend live.,Positive
+FB00000130,M0000070,2024-08-18,Annual member survey,Learning and development,5,The CPD modules are well structured and the assessments actually test understanding rather than recall.,Positive
+FB00000131,M0000070,2024-10-11,Event feedback form,Events and content,4,I attended the regional branch meeting and found it far more useful than I expected. Good mix of technical content and networking.,Positive
+FB00000132,M0000070,2024-12-10,Annual member survey,Events and content,4,I attended the regional branch meeting and found it far more useful than I expected. Good mix of technical content and networking. Keep doing this.,Positive
+FB00000133,M0000070,2025-04-06,Annual member survey,Website and digital services,4,The mobile app is quick and I use it far more than I expected to.,Positive
+FB00000134,M0000070,2025-06-15,Event feedback form,Events and content,5,Recordings being available afterwards makes a real difference when I cannot attend live. Keep doing this.,Positive
+FB00000135,M0000070,2025-09-16,Annual member survey,Membership value,4,I have recommended membership to two colleagues in the last six months.,Positive
+FB00000136,M0000070,2025-09-20,Annual member survey,Membership value,5,I have recommended membership to two colleagues in the last six months. Please pass my thanks on to the team.,Positive
+FB00000137,M0000075,2023-05-25,Cancellation survey,Fees and billing,1,The direct debit failed and the first I heard about it was a lapsed membership notice.,Negative
+FB00000138,M0000076,2026-03-01,Website feedback widget,Communications,3,The updates are fine. I tend to skim rather than read them properly.,Neutral
+FB00000139,M0000077,2025-04-06,Annual member survey,Learning and development,5,I completed two courses this quarter and both were directly applicable to my current role.,Positive
+FB00000140,M0000077,2025-09-13,Event feedback form,Events and content,5,Recordings being available afterwards makes a real difference when I cannot attend live.,Positive
+FB00000141,M0000077,2025-11-01,Support ticket,Customer service,3,"My query was answered eventually, although it took a few days and one follow-up.",Neutral
+FB00000142,M0000077,2026-05-01,Support ticket,Communications,4,Communications are frequent enough to be useful without becoming noise.,Positive
+FB00000143,M0000080,2022-04-14,Annual member survey,Learning and development,3,The courses are fine but there is not much at an advanced level for people who have been in the profession a while.,Neutral
+FB00000144,M0000080,2022-09-27,Event feedback form,Events and content,4,The webinar programme has been excellent this year and the speakers are genuinely practitioners rather than salespeople.,Positive
+FB00000145,M0000080,2022-10-03,Annual member survey,Customer service,4,Helpful and responsive when I needed to change my payment details.,Positive
+FB00000146,M0000080,2022-11-07,Event feedback form,Events and content,3,Content quality varies. Some sessions are excellent and others feel like an hour of introductions.,Neutral
+FB00000147,M0000080,2023-02-28,Event feedback form,Events and content,4,Recordings being available afterwards makes a real difference when I cannot attend live. Keep doing this.,Positive
+FB00000148,M0000080,2023-04-29,Annual member survey,Events and content,4,Recordings being available afterwards makes a real difference when I cannot attend live. Please pass my thanks on to the team.,Positive
+FB00000149,M0000080,2023-09-18,Event feedback form,Events and content,4,Recordings being available afterwards makes a real difference when I cannot attend live.,Positive
+FB00000150,M0000080,2023-10-15,Annual member survey,Events and content,4,I attended the regional branch meeting and found it far more useful than I expected. Good mix of technical content and networking.,Positive
+FB00000151,M0000080,2024-03-19,Event feedback form,Events and content,3,"The events are reasonable, although most of the in-person ones are a long way from where I live.",Neutral
+FB00000152,M0000080,2025-03-29,Annual member survey,Communications,3,The updates are fine. I tend to skim rather than read them properly.,Neutral
+FB00000153,M0000080,2025-09-19,Annual member survey,Events and content,4,The webinar programme has been excellent this year and the speakers are genuinely practitioners rather than salespeople.,Positive
+FB00000154,M0000080,2026-08-07,Event feedback form,Events and content,3,"I enjoy the webinars, but I have not been able to find many events relevant to my current role.",Neutral
+FB00000155,M0000081,2023-06-05,Support ticket,Website and digital services,4,The site search has clearly been improved. I can now find guidance documents in a couple of clicks.,Positive
+FB00000156,M0000082,2022-01-13,Event feedback form,Events and content,5,I attended the regional branch meeting and found it far more useful than I expected. Good mix of technical content and networking. Keep doing this.,Positive
+FB00000157,M0000082,2025-02-28,Event feedback form,Events and content,5,Recordings being available afterwards makes a real difference when I cannot attend live.,Positive
+FB00000158,M0000083,2026-08-01,Support ticket,Website and digital services,4,Downloading standards is much easier than it used to be. Please pass my thanks on to the team.,Positive
+FB00000159,M0000084,2024-11-24,Support ticket,Communications,3,I receive a reasonable volume of email but much of it is not targeted to my sector.,Neutral
+FB00000160,M0000087,2024-02-18,Support ticket,Customer service,3,"My query was answered eventually, although it took a few days and one follow-up.",Neutral
+FB00000161,M0000088,2025-03-04,Annual member survey,Customer service,3,"My query was answered eventually, although it took a few days and one follow-up.",Neutral
+FB00000162,M0000088,2025-06-15,Annual member survey,Website and digital services,4,Downloading standards is much easier than it used to be. Keep doing this.,Positive
+FB00000163,M0000089,2023-01-03,Event feedback form,Events and content,3,Content quality varies. Some sessions are excellent and others feel like an hour of introductions.,Neutral
+FB00000164,M0000090,2022-12-10,Annual member survey,Events and content,3,"The events are reasonable, although most of the in-person ones are a long way from where I live.",Neutral
+FB00000165,M0000090,2024-08-22,Annual member survey,Membership value,4,"Good value overall. The combination of events, learning and the technical library covers most of what I need.",Positive
+FB00000166,M0000090,2025-04-06,Annual member survey,Events and content,4,The webinar programme has been excellent this year and the speakers are genuinely practitioners rather than salespeople. Please pass my thanks on to the team.,Positive
+FB00000167,M0000091,2024-08-28,Annual member survey,Communications,5,Communications are frequent enough to be useful without becoming noise. Keep doing this.,Positive
+FB00000168,M0000091,2025-04-03,Cancellation survey,Membership value,3,"I am not certain I use enough of the benefits to justify the fee, but I intend to make more use of it next year.",Neutral
+FB00000169,M0000092,2025-07-01,Cancellation survey,Membership value,1,"I cannot see what I get for the fee any more. I will not be renewing unless something changes. Please do not take this as a complaint for its own sake, but something needs to change.",Negative
+FB00000170,M0000093,2024-09-09,Support ticket,Customer service,2,No one responded to my email at all. I had to telephone in the end. I am seriously considering whether to renew.,Negative
+FB00000171,M0000093,2024-10-10,Support ticket,Fees and billing,2,My card was charged twice and it took a month to refund.,Negative
+FB00000172,M0000093,2025-11-10,Support ticket,Fees and billing,2,My card was charged twice and it took a month to refund.,Negative
+FB00000173,M0000094,2023-05-13,Event feedback form,Events and content,4,I attended the regional branch meeting and found it far more useful than I expected. Good mix of technical content and networking.,Positive
+FB00000174,M0000094,2023-09-01,Event feedback form,Events and content,4,The webinar programme has been excellent this year and the speakers are genuinely practitioners rather than salespeople.,Positive
+FB00000175,M0000095,2023-03-22,Event feedback form,Events and content,5,The webinar programme has been excellent this year and the speakers are genuinely practitioners rather than salespeople. Keep doing this.,Positive
+FB00000176,M0000095,2024-07-14,Event feedback form,Events and content,4,Recordings being available afterwards makes a real difference when I cannot attend live.,Positive
+FB00000177,M0000096,2022-03-07,Annual member survey,Membership value,4,I have recommended membership to two colleagues in the last six months.,Positive
+FB00000178,M0000096,2022-11-04,Event feedback form,Events and content,5,I attended the regional branch meeting and found it far more useful than I expected. Good mix of technical content and networking. Keep doing this.,Positive
+FB00000179,M0000096,2023-04-21,Event feedback form,Events and content,4,I attended the regional branch meeting and found it far more useful than I expected. Good mix of technical content and networking.,Positive
+FB00000180,M0000096,2024-04-19,Event feedback form,Events and content,4,I attended the regional branch meeting and found it far more useful than I expected. Good mix of technical content and networking. Keep doing this.,Positive
+FB00000181,M0000096,2025-04-20,Event feedback form,Events and content,4,Recordings being available afterwards makes a real difference when I cannot attend live. Keep doing this.,Positive
+FB00000182,M0000096,2026-08-12,Event feedback form,Events and content,3,"I enjoy the webinars, but I have not been able to find many events relevant to my current role.",Neutral
+FB00000183,M0000097,2021-09-07,Cancellation survey,Fees and billing,2,My card was charged twice and it took a month to refund. I would like someone to contact me about this.,Negative
+FB00000184,M0000098,2022-07-25,Event feedback form,Events and content,4,I attended the regional branch meeting and found it far more useful than I expected. Good mix of technical content and networking.,Positive
+FB00000185,M0000098,2022-08-01,Event feedback form,Events and content,4,The webinar programme has been excellent this year and the speakers are genuinely practitioners rather than salespeople. Keep doing this.,Positive
+FB00000186,M0000098,2022-10-23,Event feedback form,Events and content,5,I attended the regional branch meeting and found it far more useful than I expected. Good mix of technical content and networking.,Positive
+FB00000187,M0000098,2022-12-09,Event feedback form,Events and content,4,The webinar programme has been excellent this year and the speakers are genuinely practitioners rather than salespeople.,Positive
+FB00000188,M0000098,2024-05-24,Event feedback form,Events and content,5,I attended the regional branch meeting and found it far more useful than I expected. Good mix of technical content and networking.,Positive
+FB00000189,M0000098,2026-05-07,Event feedback form,Events and content,5,The webinar programme has been excellent this year and the speakers are genuinely practitioners rather than salespeople.,Positive
+FB00000190,M0000099,2023-04-05,Event feedback form,Events and content,5,I attended the regional branch meeting and found it far more useful than I expected. Good mix of technical content and networking. Keep doing this.,Positive
+FB00000191,M0000100,2025-04-23,Event feedback form,Events and content,3,"I enjoy the webinars, but I have not been able to find many events relevant to my current role.",Neutral
+FB00000192,M0000102,2022-03-04,Event feedback form,Events and content,5,Recordings being available afterwards makes a real difference when I cannot attend live. Please pass my thanks on to the team.,Positive
+FB00000193,M0000102,2022-03-07,Annual member survey,Learning and development,4,The CPD modules are well structured and the assessments actually test understanding rather than recall.,Positive
+FB00000194,M0000102,2023-01-28,Cancellation survey,Fees and billing,4,Spreading the fee over monthly payments made renewal straightforward this year. Keep doing this.,Positive
+FB00000195,M0000103,2022-02-10,Event feedback form,Events and content,3,"I enjoy the webinars, but I have not been able to find many events relevant to my current role.",Neutral
+FB00000196,M0000103,2022-04-23,Support ticket,Communications,2,"Far too many emails, none of which appear to take any account of what I actually do.",Negative
+FB00000197,M0000103,2022-12-18,Annual member survey,Events and content,4,The webinar programme has been excellent this year and the speakers are genuinely practitioners rather than salespeople.,Positive
+FB00000198,M0000103,2023-01-26,Annual member survey,Learning and development,4,Being able to export a CPD record straight into my appraisal documentation saves me hours.,Positive
+FB00000199,M0000103,2023-09-15,Annual member survey,Events and content,3,"I enjoy the webinars, but I have not been able to find many events relevant to my current role.",Neutral
+FB00000200,M0000103,2024-06-20,Annual member survey,Events and content,4,Recordings being available afterwards makes a real difference when I cannot attend live.,Positive
+FB00000201,M0000103,2024-06-23,Event feedback form,Events and content,4,The webinar programme has been excellent this year and the speakers are genuinely practitioners rather than salespeople. Keep doing this.,Positive
+FB00000202,M0000103,2025-03-09,Annual member survey,Events and content,3,"The events are reasonable, although most of the in-person ones are a long way from where I live.",Neutral
+FB00000203,M0000103,2025-11-08,Support ticket,Communications,3,The updates are fine. I tend to skim rather than read them properly.,Neutral
+FB00000204,M0000103,2025-12-24,Support ticket,Customer service,2,No one responded to my email at all. I had to telephone in the end.,Negative
+FB00000205,M0000103,2026-08-22,Event feedback form,Events and content,4,The webinar programme has been excellent this year and the speakers are genuinely practitioners rather than salespeople. Keep doing this.,Positive
+FB00000206,M0000104,2023-02-12,Event feedback form,Events and content,5,I attended the regional branch meeting and found it far more useful than I expected. Good mix of technical content and networking.,Positive
+FB00000207,M0000104,2024-12-04,Event feedback form,Events and content,3,"I enjoy the webinars, but I have not been able to find many events relevant to my current role.",Neutral
+FB00000208,M0000104,2025-02-13,Event feedback form,Events and content,4,I attended the regional branch meeting and found it far more useful than I expected. Good mix of technical content and networking. Please pass my thanks on to the team.,Positive
+FB00000209,M0000104,2025-11-28,Event feedback form,Events and content,4,I attended the regional branch meeting and found it far more useful than I expected. Good mix of technical content and networking. Keep doing this.,Positive
+FB00000210,M0000104,2026-02-12,Website feedback widget,Website and digital services,3,"The website does what I need, though logging in on a second device is more awkward than it should be.",Neutral
+FB00000211,M0000105,2025-06-17,Annual member survey,Fees and billing,3,"The renewal process worked, but the fee increase was not explained anywhere I could find.",Neutral
+FB00000212,M0000105,2025-07-08,Event feedback form,Events and content,4,Recordings being available afterwards makes a real difference when I cannot attend live. Please pass my thanks on to the team.,Positive
+FB00000213,M0000105,2025-10-29,Annual member survey,Communications,4,"The monthly newsletter is well edited and I read most of it, which is unusual for me. Please pass my thanks on to the team.",Positive
+FB00000214,M0000109,2023-01-06,Event feedback form,Events and content,3,Content quality varies. Some sessions are excellent and others feel like an hour of introductions.,Neutral
+FB00000215,M0000109,2024-02-12,Event feedback form,Events and content,3,"The events are reasonable, although most of the in-person ones are a long way from where I live.",Neutral
+FB00000216,M0000109,2025-01-10,Event feedback form,Events and content,4,The webinar programme has been excellent this year and the speakers are genuinely practitioners rather than salespeople.,Positive
+FB00000217,M0000109,2025-10-18,Event feedback form,Events and content,3,"I enjoy the webinars, but I have not been able to find many events relevant to my current role.",Neutral
+FB00000218,M0000111,2023-03-25,Event feedback form,Events and content,4,I attended the regional branch meeting and found it far more useful than I expected. Good mix of technical content and networking.,Positive
+FB00000219,M0000111,2023-08-18,Cancellation survey,Membership value,3,It is about what I would expect for the money. Nothing that stands out either way.,Neutral
+FB00000220,M0000112,2024-07-29,Event feedback form,Events and content,5,Recordings being available afterwards makes a real difference when I cannot attend live.,Positive
+FB00000221,M0000112,2025-03-28,Annual member survey,Membership value,5,I have recommended membership to two colleagues in the last six months. Keep doing this.,Positive
+FB00000222,M0000112,2025-04-04,Annual member survey,Events and content,5,Recordings being available afterwards makes a real difference when I cannot attend live.,Positive
+FB00000223,M0000113,2026-02-01,Website feedback widget,Fees and billing,4,"Billing was clear and the receipt arrived immediately, which my finance team appreciated.",Positive
+FB00000224,M0000116,2024-05-25,Event feedback form,Events and content,4,Recordings being available afterwards makes a real difference when I cannot attend live.,Positive
+FB00000225,M0000117,2025-06-20,Event feedback form,Events and content,4,I attended the regional branch meeting and found it far more useful than I expected. Good mix of technical content and networking.,Positive
+FB00000226,M0000117,2025-09-11,Annual member survey,Membership value,4,I have recommended membership to two colleagues in the last six months. Keep doing this.,Positive
+FB00000227,M0000117,2025-09-25,Annual member survey,Customer service,3,"My query was answered eventually, although it took a few days and one follow-up.",Neutral
+FB00000228,M0000118,2025-04-03,Event feedback form,Events and content,4,Recordings being available afterwards makes a real difference when I cannot attend live.,Positive
+FB00000229,M0000119,2024-06-30,Event feedback form,Events and content,3,"I enjoy the webinars, but I have not been able to find many events relevant to my current role.",Neutral
+FB00000230,M0000119,2025-03-05,Annual member survey,Membership value,3,It is about what I would expect for the money. Nothing that stands out either way.,Neutral
+FB00000231,M0000119,2025-04-10,Event feedback form,Events and content,3,"The events are reasonable, although most of the in-person ones are a long way from where I live.",Neutral
+FB00000232,M0000119,2025-08-26,Website feedback widget,Website and digital services,3,Search results are hit and miss depending on the terminology I use.,Neutral
+FB00000233,M0000120,2026-04-25,Event feedback form,Events and content,3,Content quality varies. Some sessions are excellent and others feel like an hour of introductions.,Neutral
+FB00000234,M0000121,2025-03-09,Cancellation survey,Membership value,3,It is about what I would expect for the money. Nothing that stands out either way.,Neutral
+FB00000235,M0000122,2023-12-10,Event feedback form,Events and content,3,"I enjoy the webinars, but I have not been able to find many events relevant to my current role.",Neutral
+FB00000236,M0000122,2025-04-01,Annual member survey,Communications,3,The updates are fine. I tend to skim rather than read them properly.,Neutral
+FB00000237,M0000122,2026-04-15,Support ticket,Customer service,2,No one responded to my email at all. I had to telephone in the end.,Negative
+FB00000238,M0000123,2026-02-25,Event feedback form,Events and content,4,Recordings being available afterwards makes a real difference when I cannot attend live. Keep doing this.,Positive
+FB00000239,M0000124,2025-07-14,Event feedback form,Events and content,3,"I enjoy the webinars, but I have not been able to find many events relevant to my current role.",Neutral
+FB00000240,M0000127,2022-07-18,Cancellation survey,Events and content,4,Recordings being available afterwards makes a real difference when I cannot attend live.,Positive
+FB00000241,M0000128,2023-08-04,Event feedback form,Events and content,4,I attended the regional branch meeting and found it far more useful than I expected. Good mix of technical content and networking. Keep doing this.,Positive
+FB00000242,M0000130,2025-03-25,Annual member survey,Fees and billing,4,"Billing was clear and the receipt arrived immediately, which my finance team appreciated.",Positive
+FB00000243,M0000130,2026-08-14,Event feedback form,Events and content,3,Content quality varies. Some sessions are excellent and others feel like an hour of introductions.,Neutral
+FB00000244,M0000131,2022-10-18,Website feedback widget,Fees and billing,4,"Billing was clear and the receipt arrived immediately, which my finance team appreciated.",Positive
+FB00000245,M0000131,2025-06-26,Event feedback form,Events and content,4,Recordings being available afterwards makes a real difference when I cannot attend live. Please pass my thanks on to the team.,Positive
+FB00000246,M0000132,2025-02-15,Event feedback form,Events and content,2,I registered for two events that were then cancelled at short notice. That has put me off booking again.,Negative
+FB00000247,M0000133,2022-10-03,Annual member survey,Communications,4,Communications are frequent enough to be useful without becoming noise.,Positive
+FB00000248,M0000133,2023-01-01,Cancellation survey,Events and content,3,Content quality varies. Some sessions are excellent and others feel like an hour of introductions.,Neutral
+FB00000249,M0000134,2023-01-31,Annual member survey,Website and digital services,3,Search results are hit and miss depending on the terminology I use.,Neutral
+FB00000250,M0000134,2025-04-07,Annual member survey,Events and content,4,I attended the regional branch meeting and found it far more useful than I expected. Good mix of technical content and networking.,Positive

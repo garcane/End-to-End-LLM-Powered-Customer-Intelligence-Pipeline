@@ -38,6 +38,79 @@ The platform aims to:
 
 ---
 
+## Dataset
+
+The platform is built on the **Synthetic Professional Membership Engagement and
+Retention Dataset** — a relational, behaviourally coherent dataset generated for this
+project rather than taken from a single public source.
+
+It is a *hybrid*: the member dimension is calibrated against the structure and published
+marginals of the IBM Telco Customer Churn dataset, and is then extended with the
+membership activity that a real professional body would hold — membership history,
+weekly website activity, logins, events, learning, campaigns, feedback, predictions and
+data-quality results.
+
+**Scale (full profile):** 25,000 members across a five-year window, 2021-09-01 to
+2026-08-31.
+
+| Table | Rows | Grain |
+| --- | ---: | --- |
+| `members` | 25,000 | One per member (current state) |
+| `membership_history` | ~80,000 | One per membership term (SCD) |
+| `website_activity` | ~1.6M | Member × week |
+| `login_history` | ~2.3M | One per authentication attempt |
+| `events` / `event_attendance` | 1,600 / ~300,000 | Catalogue / member × registration |
+| `courses` / `learning_activity` | 90 / ~152,000 | Catalogue / member × course engagement |
+| `campaigns` / `marketing_engagement` | 265 / ~1.1M | Catalogue / member × send |
+| `member_feedback` | ~50,000 | One per free-text submission |
+| `model_predictions` | ~118,000 | Member × monthly scoring run |
+| `ai_insights` | ~6,300 | Member × latest scoring run |
+| `data_quality_results` | 2,820 | Check × pipeline run |
+
+### The point: the data is not random
+
+Churn is not assigned by a coin flip. Behaviour is generated first, from latent member
+traits with a year-on-year trend and a seasonal cycle. At each renewal anniversary,
+features are measured *from behaviour that has already happened*, a logistic model is
+applied, and the outcome is sampled. Activity after a lapse is then deleted.
+
+A model refitted on the resulting training table reaches an out-of-time AUC of **0.77**
+and recovers the generating coefficients at **r = 0.97** — genuine, learnable signal,
+with enough noise that the problem is not trivial.
+
+### Generating it
+
+```bash
+pip install -r requirements.txt
+python -m src.generators.run --scale full     # ~5 minutes, ~400 MB
+python -m src.validation.validate             # 65 structural, volume and signal checks
+```
+
+Profiles are `dev` (1,000 members, ~15 seconds), `demo` (8,000) and `full` (25,000).
+Runs are fully reproducible from `--seed`, and each run writes a
+`generation_manifest.json` recording the seed, scale, calibration source, model
+coefficients and realised row counts.
+
+The generated data is **not committed** — a 250-row extract of every table lives in
+[`data/sample/`](data/sample/) instead.
+
+### Documentation
+
+- [Data generation methodology](docs/data-generation-methodology.md) — the business
+  rules, the churn model, the validation results and the known simplifications
+- [Data dictionary](data/data_dictionary/data_dictionary.md) — every table and column
+- [`data/seed/README.md`](data/seed/README.md) — the optional IBM Telco calibration file
+- [`database/schema/`](database/schema/) — PostgreSQL DDL (keys, check constraints,
+  indexes) and a `psql` load script for the generated CSVs
+
+### Privacy
+
+No names, addresses, dates of birth, email addresses, telephone numbers or payment
+details are generated. Age is banded. Every member, event, course and campaign is
+fictional.
+
+---
+
 ## Solution Architecture
 
 ```text

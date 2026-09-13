@@ -1,0 +1,20 @@
+# Generated data. Roughly 400 MB at full scale; regenerate with
+#   python -m src.generators.run --scale full
+# A 250-row extract of every table is committed under data/sample/ instead.
+data/synthetic/
+
+# Seed data downloaded from third parties, not redistributed here.
+data/seed/*.csv
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

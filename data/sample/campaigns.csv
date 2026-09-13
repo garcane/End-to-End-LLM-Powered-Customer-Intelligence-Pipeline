@@ -1,0 +1,251 @@
+campaign_id,campaign_name,campaign_type,start_date,end_date,target_segment,channel,campaign_cost
+C00001,Q3 2021 Events Programme,Event promotion,2021-09-05,2021-09-26,New joiners,Email,164.36
+C00002,Member Update September 2021,Newsletter,2021-09-07,2021-09-08,All members,Email,5320.15
+C00003,Member Update September 2021,Newsletter,2021-09-12,2021-09-13,All members,Email,3925.18
+C00004,Q3 2021 Events Programme,Event promotion,2021-09-20,2021-10-12,Student and early career,Email,3282.72
+C00005,We Miss You September 2021,Win-back,2021-09-24,2021-10-12,Lapsing risk,In-app,4991.78
+C00006,Member Update October 2021,Newsletter,2021-10-04,2021-10-05,All members,Email,4665.44
+C00007,2021 Renewal Reminder Wave 1,Renewal reminder,2021-10-05,2021-10-08,Lapsing risk,Email,193.12
+C00008,We Miss You October 2021,Win-back,2021-10-08,2021-10-18,Lapsing risk,SMS,1358.82
+C00009,Member Update October 2021,Newsletter,2021-10-15,2021-10-16,All members,Email,5452.27
+C00010,2021 Renewal Reminder Wave 2,Renewal reminder,2021-10-16,2021-10-27,Lapsing risk,Email,6040.64
+C00011,Member Update October 2021,Newsletter,2021-10-17,2021-10-18,All members,Email,1564.81
+C00012,Member Update October 2021,Newsletter,2021-10-25,2021-10-26,All members,Email,5408.68
+C00013,We Miss You November 2021,Win-back,2021-11-02,2021-11-10,Lapsing risk,Email,4098.28
+C00014,Member Update November 2021,Newsletter,2021-11-15,2021-11-16,All members,Email,4874.87
+C00015,Q4 2021 Events Programme,Event promotion,2021-11-20,2021-12-06,Learning audience,Direct mail,13395.33
+C00016,Chartered Pathway Offer Q4 2021,Upgrade offer,2021-11-26,2021-12-19,Student and early career,Email,5560.84
+C00017,2021 Renewal Reminder Wave 2,Renewal reminder,2021-12-12,2021-12-28,Lapsing risk,Email,3956.89
+C00018,Q4 2021 Events Programme,Event promotion,2021-12-30,2022-01-16,New joiners,Direct mail,21690.54
+C00019,CPD Spotlight January 2022,Learning promotion,2022-01-04,2022-01-28,Learning audience,Email,1083.79
+C00020,Member Update January 2022,Newsletter,2022-01-08,2022-01-09,All members,Email,2650.63
+C00021,Member Update January 2022,Newsletter,2022-01-12,2022-01-13,All members,Email,4978.48
+C00022,Member Update January 2022,Newsletter,2022-01-14,2022-01-15,All members,Email,4474.18
+C00023,CPD Spotlight January 2022,Learning promotion,2022-01-24,2022-02-10,Learning audience,Email,2682.66
+C00024,Member Update January 2022,Newsletter,2022-01-28,2022-01-29,All members,Email,3177.03
+C00025,We Miss You February 2022,Win-back,2022-02-01,2022-02-06,Lapsing risk,Email,898.23
+C00026,Q1 2022 Events Programme,Event promotion,2022-02-16,2022-02-20,Student and early career,Email,4753.85
+C00027,Member Update February 2022,Newsletter,2022-02-23,2022-02-24,All members,Email,2383.96
+C00028,2022 Member Voice Survey,Member survey,2022-02-28,2022-03-25,All members,Email,4397.36
+C00029,Chartered Pathway Offer Q1 2022,Upgrade offer,2022-03-08,2022-03-18,Student and early career,Email,2070.81
+C00030,Q2 2022 Events Programme,Event promotion,2022-04-05,2022-04-24,Lapsing risk,Email,4250.78
+C00031,2022 Renewal Reminder Wave 1,Renewal reminder,2022-04-08,2022-04-18,Lapsing risk,Email,2255.85
+C00032,Member Update April 2022,Newsletter,2022-04-09,2022-04-10,All members,Email,5361.69
+C00033,2022 Member Voice Survey,Member survey,2022-04-11,2022-04-19,All members,SMS,1990.29
+C00034,Member Update April 2022,Newsletter,2022-04-20,2022-04-21,All members,Email,3418.37
+C00035,CPD Spotlight April 2022,Learning promotion,2022-04-20,2022-05-06,Learning audience,Email,5190.61
+C00036,CPD Spotlight April 2022,Learning promotion,2022-04-24,2022-05-01,Learning audience,SMS,1525.1
+C00037,Member Update May 2022,Newsletter,2022-05-09,2022-05-10,All members,Email,4355.67
+C00038,We Miss You May 2022,Win-back,2022-05-23,2022-05-31,Lapsing risk,Email,2569.52
+C00039,Member Update May 2022,Newsletter,2022-05-28,2022-05-29,All members,Email,6456.42
+C00040,Member Update June 2022,Newsletter,2022-06-29,2022-06-30,All members,Email,1040.39
+C00041,2022 Renewal Reminder Wave 2,Renewal reminder,2022-07-11,2022-07-27,Lapsing risk,Email,3887.39
+C00042,Member Update July 2022,Newsletter,2022-07-20,2022-07-21,All members,Email,2645.82
+C00043,2022 Member Voice Survey,Member survey,2022-07-31,2022-08-14,All members,SMS,1438.89
+C00044,2022 Renewal Reminder Wave 1,Renewal reminder,2022-08-28,2022-09-10,Lapsing risk,Email,268.59
+C00045,Member Update September 2022,Newsletter,2022-09-11,2022-09-12,All members,Email,2923.83
+C00046,CPD Spotlight September 2022,Learning promotion,2022-09-22,2022-10-16,Learning audience,Email,322.55
+C00047,2022 Member Voice Survey,Member survey,2022-09-25,2022-10-07,All members,Email,2665.73
+C00048,Q3 2022 Events Programme,Event promotion,2022-09-28,2022-10-25,Highly engaged,Email,1544.84
+C00049,Q4 2022 Events Programme,Event promotion,2022-10-04,2022-10-16,New joiners,Email,1959.85
+C00050,2022 Renewal Reminder Wave 2,Renewal reminder,2022-10-07,2022-10-21,Lapsing risk,In-app,5415.39
+C00051,2022 Renewal Reminder Wave 3,Renewal reminder,2022-10-10,2022-10-31,Lapsing risk,SMS,2280.4
+C00052,Chartered Pathway Offer Q4 2022,Upgrade offer,2022-10-10,2022-10-24,Student and early career,Email,690.96
+C00053,CPD Spotlight October 2022,Learning promotion,2022-10-19,2022-11-12,Learning audience,Email,6487.74
+C00054,CPD Spotlight November 2022,Learning promotion,2022-11-12,2022-12-09,Learning audience,SMS,1989.91
+C00055,Member Update November 2022,Newsletter,2022-11-12,2022-11-13,All members,Email,3242.55
+C00056,Q4 2022 Events Programme,Event promotion,2022-11-13,2022-11-26,Highly engaged,Email,2245.21
+C00057,CPD Spotlight November 2022,Learning promotion,2022-11-18,2022-11-26,Learning audience,Email,4168.08
+C00058,Member Update November 2022,Newsletter,2022-11-20,2022-11-21,All members,Email,3123.65
+C00059,Member Update November 2022,Newsletter,2022-11-22,2022-11-23,All members,Email,5649.74
+C00060,2022 Member Voice Survey,Member survey,2022-12-09,2022-12-13,All members,In-app,6014.34
+C00061,CPD Spotlight December 2022,Learning promotion,2022-12-25,2023-01-19,Learning audience,Email,852.52
+C00062,Member Update December 2022,Newsletter,2022-12-26,2022-12-27,All members,Email,3492.64
+C00063,2022 Renewal Reminder Wave 3,Renewal reminder,2022-12-27,2023-01-01,Lapsing risk,Email,3949.91
+C00064,Chartered Pathway Offer Q1 2023,Upgrade offer,2023-01-03,2023-01-10,Student and early career,Email,2061.8
+C00065,Member Update January 2023,Newsletter,2023-01-05,2023-01-06,All members,Email,2325.63
+C00066,CPD Spotlight January 2023,Learning promotion,2023-01-09,2023-01-15,Learning audience,Email,3745.14
+C00067,Member Update January 2023,Newsletter,2023-01-13,2023-01-14,All members,Email,4156.98
+C00068,Member Update January 2023,Newsletter,2023-01-13,2023-01-14,All members,Email,5510.71
+C00069,2023 Member Voice Survey,Member survey,2023-01-24,2023-02-19,All members,Email,3556.27
+C00070,Q1 2023 Events Programme,Event promotion,2023-02-21,2023-02-25,Regional audience,Email,4347.69
+C00071,Member Update February 2023,Newsletter,2023-02-28,2023-03-01,All members,Email,3832.51
+C00072,2023 Renewal Reminder Wave 2,Renewal reminder,2023-03-08,2023-04-03,Lapsing risk,Email,1204.18
+C00073,2023 Renewal Reminder Wave 3,Renewal reminder,2023-03-19,2023-04-13,Lapsing risk,Email,2438.38
+C00074,Member Update March 2023,Newsletter,2023-03-24,2023-03-25,All members,Email,1127.08
+C00075,Q1 2023 Events Programme,Event promotion,2023-03-31,2023-04-04,Highly engaged,Email,6411.44
+C00076,2023 Renewal Reminder Wave 3,Renewal reminder,2023-04-20,2023-04-26,Lapsing risk,Email,1072.25
+C00077,Member Update April 2023,Newsletter,2023-04-23,2023-04-24,All members,Email,4906.45
+C00078,2023 Member Voice Survey,Member survey,2023-04-29,2023-05-15,All members,Email,5466.03
+C00079,CPD Spotlight April 2023,Learning promotion,2023-04-30,2023-05-14,Learning audience,SMS,3068.61
+C00080,Q2 2023 Events Programme,Event promotion,2023-05-01,2023-05-16,Learning audience,SMS,1023.34
+C00081,We Miss You May 2023,Win-back,2023-05-04,2023-05-19,Lapsing risk,Email,4391.6
+C00082,Q2 2023 Events Programme,Event promotion,2023-05-08,2023-05-13,All members,Email,6462.61
+C00083,2023 Renewal Reminder Wave 2,Renewal reminder,2023-05-09,2023-05-29,Lapsing risk,Email,2872.95
+C00084,Q2 2023 Events Programme,Event promotion,2023-05-11,2023-05-30,Learning audience,Email,5799.88
+C00085,Member Update May 2023,Newsletter,2023-05-24,2023-05-25,All members,Email,2265.48
+C00086,2023 Renewal Reminder Wave 1,Renewal reminder,2023-06-05,2023-06-20,Lapsing risk,Email,2358.16
+C00087,Q2 2023 Events Programme,Event promotion,2023-06-06,2023-06-19,Regional audience,In-app,567.46
+C00088,Q2 2023 Events Programme,Event promotion,2023-06-18,2023-07-13,Regional audience,Email,5170.68
+C00089,2023 Renewal Reminder Wave 3,Renewal reminder,2023-06-21,2023-07-06,Lapsing risk,Email,6109.48
+C00090,Member Update June 2023,Newsletter,2023-06-28,2023-06-29,All members,Email,902.72
+C00091,Chartered Pathway Offer Q2 2023,Upgrade offer,2023-06-29,2023-07-04,Student and early career,Email,5691.39
+C00092,Member Update July 2023,Newsletter,2023-07-02,2023-07-03,All members,Email,3580.66
+C00093,Q3 2023 Events Programme,Event promotion,2023-07-07,2023-07-19,Student and early career,Email,3559.75
+C00094,2023 Renewal Reminder Wave 3,Renewal reminder,2023-07-11,2023-08-06,Lapsing risk,Email,3627.24
+C00095,Member Update July 2023,Newsletter,2023-07-12,2023-07-13,All members,Email,3333.39
+C00096,2023 Renewal Reminder Wave 3,Renewal reminder,2023-07-14,2023-08-03,Lapsing risk,In-app,574.73
+C00097,2023 Renewal Reminder Wave 1,Renewal reminder,2023-07-15,2023-07-24,Lapsing risk,Email,5334.51
+C00098,Q3 2023 Events Programme,Event promotion,2023-07-15,2023-08-07,New joiners,Email,231.01
+C00099,Q3 2023 Events Programme,Event promotion,2023-07-31,2023-08-24,Learning audience,Email,1085.59
+C00100,Member Update August 2023,Newsletter,2023-08-04,2023-08-05,All members,Email,6458.14
+C00101,Q3 2023 Events Programme,Event promotion,2023-08-16,2023-09-02,Student and early career,Email,2944.92
+C00102,We Miss You August 2023,Win-back,2023-08-25,2023-09-14,Lapsing risk,Email,3132.62
+C00103,2023 Member Voice Survey,Member survey,2023-09-04,2023-09-16,All members,In-app,421.88
+C00104,2023 Renewal Reminder Wave 2,Renewal reminder,2023-09-04,2023-09-16,Lapsing risk,In-app,1366.78
+C00105,Chartered Pathway Offer Q3 2023,Upgrade offer,2023-09-23,2023-10-16,Student and early career,Email,4514.78
+C00106,CPD Spotlight September 2023,Learning promotion,2023-09-30,2023-10-27,Learning audience,Email,6445.9
+C00107,2023 Member Voice Survey,Member survey,2023-10-09,2023-10-30,All members,Email,4684.5
+C00108,Member Update October 2023,Newsletter,2023-10-13,2023-10-14,All members,Email,4561.75
+C00109,We Miss You November 2023,Win-back,2023-11-07,2023-11-24,Lapsing risk,Email,2150.75
+C00110,Q4 2023 Events Programme,Event promotion,2023-11-15,2023-11-20,Learning audience,Direct mail,19305.59
+C00111,2023 Member Voice Survey,Member survey,2023-11-26,2023-12-11,All members,Email,5952.24
+C00112,2023 Renewal Reminder Wave 1,Renewal reminder,2023-11-27,2023-12-21,Lapsing risk,Email,2885.6
+C00113,Q4 2023 Events Programme,Event promotion,2023-12-03,2023-12-09,Lapsing risk,Email,5152.03
+C00114,Q4 2023 Events Programme,Event promotion,2023-12-14,2024-01-05,New joiners,Email,5246.35
+C00115,2023 Renewal Reminder Wave 3,Renewal reminder,2023-12-17,2024-01-06,Lapsing risk,Email,6435.46
+C00116,Q4 2023 Events Programme,Event promotion,2023-12-31,2024-01-20,New joiners,Direct mail,6168.19
+C00117,Chartered Pathway Offer Q1 2024,Upgrade offer,2024-01-16,2024-01-25,Student and early career,Email,155.24
+C00118,Q1 2024 Events Programme,Event promotion,2024-01-16,2024-02-03,Learning audience,Email,4035.49
+C00119,Q1 2024 Events Programme,Event promotion,2024-01-26,2024-01-30,All members,Email,4902.6
+C00120,Chartered Pathway Offer Q1 2024,Upgrade offer,2024-01-26,2024-02-08,Student and early career,Email,1533.14
+C00121,Member Update February 2024,Newsletter,2024-02-03,2024-02-04,All members,Email,1581.18
+C00122,We Miss You February 2024,Win-back,2024-02-03,2024-02-06,Lapsing risk,Direct mail,17399.86
+C00123,CPD Spotlight February 2024,Learning promotion,2024-02-05,2024-03-02,Learning audience,Email,5618.02
+C00124,CPD Spotlight February 2024,Learning promotion,2024-02-15,2024-03-05,Learning audience,SMS,1398.59
+C00125,Member Update February 2024,Newsletter,2024-02-16,2024-02-17,All members,Email,4883.92
+C00126,Q1 2024 Events Programme,Event promotion,2024-02-19,2024-02-25,Lapsing risk,Direct mail,15836.75
+C00127,Member Update February 2024,Newsletter,2024-02-27,2024-02-28,All members,Email,2367.57
+C00128,Member Update March 2024,Newsletter,2024-03-10,2024-03-11,All members,Email,3481.37
+C00129,2024 Renewal Reminder Wave 2,Renewal reminder,2024-03-12,2024-03-22,Lapsing risk,Email,5769.19
+C00130,Q1 2024 Events Programme,Event promotion,2024-03-29,2024-04-15,Lapsing risk,Email,6072.48
+C00131,Q2 2024 Events Programme,Event promotion,2024-04-02,2024-04-27,New joiners,Email,265.74
+C00132,CPD Spotlight April 2024,Learning promotion,2024-04-09,2024-05-02,Learning audience,Email,1349.06
+C00133,Member Update April 2024,Newsletter,2024-04-11,2024-04-12,All members,Email,4359.89
+C00134,Q2 2024 Events Programme,Event promotion,2024-04-28,2024-05-11,New joiners,Email,3826.06
+C00135,CPD Spotlight May 2024,Learning promotion,2024-05-01,2024-05-21,Learning audience,In-app,3133.93
+C00136,2024 Renewal Reminder Wave 2,Renewal reminder,2024-05-10,2024-05-22,Lapsing risk,Direct mail,17099.46
+C00137,CPD Spotlight May 2024,Learning promotion,2024-05-25,2024-05-30,Learning audience,Email,1489.73
+C00138,2024 Renewal Reminder Wave 3,Renewal reminder,2024-05-27,2024-05-31,Lapsing risk,SMS,1230.75
+C00139,Member Update June 2024,Newsletter,2024-06-02,2024-06-03,All members,Email,5441.46
+C00140,2024 Renewal Reminder Wave 2,Renewal reminder,2024-06-11,2024-07-03,Lapsing risk,Email,3515.39
+C00141,Q2 2024 Events Programme,Event promotion,2024-06-13,2024-07-09,Lapsing risk,SMS,1799.68
+C00142,2024 Member Voice Survey,Member survey,2024-06-16,2024-07-04,All members,Email,2723.81
+C00143,Member Update June 2024,Newsletter,2024-06-29,2024-06-30,All members,Email,4053.56
+C00144,CPD Spotlight July 2024,Learning promotion,2024-07-11,2024-07-15,Learning audience,Email,842.71
+C00145,Q3 2024 Events Programme,Event promotion,2024-07-18,2024-08-14,Lapsing risk,SMS,2227.03
+C00146,CPD Spotlight July 2024,Learning promotion,2024-07-22,2024-07-26,Learning audience,Email,4988.42
+C00147,CPD Spotlight August 2024,Learning promotion,2024-08-15,2024-09-08,Learning audience,Email,5299.2
+C00148,Member Update August 2024,Newsletter,2024-08-15,2024-08-16,All members,Email,5447.92
+C00149,2024 Member Voice Survey,Member survey,2024-08-18,2024-08-28,All members,Direct mail,16430.65
+C00150,CPD Spotlight August 2024,Learning promotion,2024-08-24,2024-09-15,Learning audience,Email,4490.42
+C00151,2024 Renewal Reminder Wave 3,Renewal reminder,2024-08-25,2024-08-28,Lapsing risk,Email,681.56
+C00152,Q3 2024 Events Programme,Event promotion,2024-08-28,2024-09-12,Student and early career,Email,4374.48
+C00153,Member Update August 2024,Newsletter,2024-08-31,2024-09-01,All members,Email,5450.12
+C00154,Q3 2024 Events Programme,Event promotion,2024-09-01,2024-09-26,Highly engaged,In-app,5987.31
+C00155,Q3 2024 Events Programme,Event promotion,2024-09-05,2024-09-23,Regional audience,Email,6414.69
+C00156,Chartered Pathway Offer Q3 2024,Upgrade offer,2024-09-10,2024-09-23,Student and early career,Email,431.71
+C00157,2024 Renewal Reminder Wave 3,Renewal reminder,2024-09-14,2024-09-17,Lapsing risk,Email,640.19
+C00158,Q3 2024 Events Programme,Event promotion,2024-09-19,2024-10-12,Lapsing risk,Email,3919.92
+C00159,Member Update September 2024,Newsletter,2024-09-25,2024-09-26,All members,Email,1218.84
+C00160,Q4 2024 Events Programme,Event promotion,2024-10-05,2024-10-18,Lapsing risk,Email,493.8
+C00161,CPD Spotlight October 2024,Learning promotion,2024-10-09,2024-10-21,Learning audience,Email,1737.92
+C00162,Member Update October 2024,Newsletter,2024-10-15,2024-10-16,All members,Email,2064.48
+C00163,CPD Spotlight October 2024,Learning promotion,2024-10-31,2024-11-18,Learning audience,Email,4352.64
+C00164,Q4 2024 Events Programme,Event promotion,2024-10-31,2024-11-18,All members,Direct mail,15665.19
+C00165,Q4 2024 Events Programme,Event promotion,2024-11-06,2024-11-25,Student and early career,Email,4723.26
+C00166,We Miss You November 2024,Win-back,2024-11-07,2024-11-27,Lapsing risk,Email,2932.79
+C00167,CPD Spotlight November 2024,Learning promotion,2024-11-15,2024-12-11,Learning audience,SMS,3068.75
+C00168,CPD Spotlight November 2024,Learning promotion,2024-11-15,2024-12-11,Learning audience,Email,1318.07
+C00169,Q4 2024 Events Programme,Event promotion,2024-11-16,2024-12-11,Student and early career,Email,5675.94
+C00170,Q4 2024 Events Programme,Event promotion,2024-12-03,2024-12-21,New joiners,In-app,2795.47
+C00171,2024 Member Voice Survey,Member survey,2024-12-05,2024-12-27,All members,SMS,1047.39
+C00172,2024 Renewal Reminder Wave 3,Renewal reminder,2024-12-12,2025-01-04,Lapsing risk,SMS,3455.03
+C00173,2024 Renewal Reminder Wave 3,Renewal reminder,2024-12-18,2024-12-22,Lapsing risk,Direct mail,15929.6
+C00174,CPD Spotlight December 2024,Learning promotion,2024-12-25,2025-01-04,Learning audience,SMS,1518.16
+C00175,We Miss You December 2024,Win-back,2024-12-25,2025-01-20,Lapsing risk,Email,1553.55
+C00176,We Miss You January 2025,Win-back,2025-01-06,2025-01-29,Lapsing risk,In-app,4204.42
+C00177,Q1 2025 Events Programme,Event promotion,2025-01-18,2025-02-13,Regional audience,Email,4007.28
+C00178,Member Update January 2025,Newsletter,2025-01-21,2025-01-22,All members,Email,1052.64
+C00179,Member Update January 2025,Newsletter,2025-01-22,2025-01-23,All members,Email,3201.98
+C00180,Chartered Pathway Offer Q1 2025,Upgrade offer,2025-01-29,2025-02-04,Student and early career,Email,276.09
+C00181,2025 Renewal Reminder Wave 1,Renewal reminder,2025-02-01,2025-02-26,Lapsing risk,In-app,3608.54
+C00182,2025 Renewal Reminder Wave 2,Renewal reminder,2025-02-10,2025-03-02,Lapsing risk,Email,2675.26
+C00183,2025 Renewal Reminder Wave 3,Renewal reminder,2025-02-13,2025-02-27,Lapsing risk,Email,1296.27
+C00184,2025 Renewal Reminder Wave 3,Renewal reminder,2025-02-17,2025-02-24,Lapsing risk,Email,6001.48
+C00185,Q1 2025 Events Programme,Event promotion,2025-02-25,2025-03-14,New joiners,Email,5262.17
+C00186,Q1 2025 Events Programme,Event promotion,2025-02-28,2025-03-13,Student and early career,Email,247.83
+C00187,2025 Member Voice Survey,Member survey,2025-03-02,2025-03-27,All members,Email,2141.96
+C00188,Q1 2025 Events Programme,Event promotion,2025-03-06,2025-04-01,Regional audience,Email,5284.66
+C00189,Q1 2025 Events Programme,Event promotion,2025-03-10,2025-03-24,Highly engaged,In-app,2470.72
+C00190,2025 Renewal Reminder Wave 2,Renewal reminder,2025-03-19,2025-04-05,Lapsing risk,Email,192.97
+C00191,2025 Member Voice Survey,Member survey,2025-03-20,2025-03-26,All members,In-app,3983.97
+C00192,Member Update March 2025,Newsletter,2025-03-26,2025-03-27,All members,Email,1246.68
+C00193,2025 Member Voice Survey,Member survey,2025-03-29,2025-04-20,All members,Email,4530.84
+C00194,2025 Renewal Reminder Wave 3,Renewal reminder,2025-04-08,2025-04-22,Lapsing risk,Direct mail,9546.61
+C00195,Member Update May 2025,Newsletter,2025-05-05,2025-05-06,All members,Email,3415.39
+C00196,2025 Renewal Reminder Wave 3,Renewal reminder,2025-05-07,2025-05-21,Lapsing risk,SMS,3269.2
+C00197,We Miss You May 2025,Win-back,2025-05-13,2025-06-02,Lapsing risk,Email,3812.27
+C00198,Q2 2025 Events Programme,Event promotion,2025-05-16,2025-06-06,Learning audience,Email,6025.45
+C00199,2025 Renewal Reminder Wave 1,Renewal reminder,2025-05-17,2025-05-30,Lapsing risk,Direct mail,18670.58
+C00200,Q2 2025 Events Programme,Event promotion,2025-05-28,2025-06-03,Highly engaged,Email,4422.58
+C00201,Member Update June 2025,Newsletter,2025-06-09,2025-06-10,All members,Email,6121.21
+C00202,2025 Renewal Reminder Wave 2,Renewal reminder,2025-06-09,2025-06-26,Lapsing risk,Email,426.33
+C00203,2025 Member Voice Survey,Member survey,2025-06-14,2025-06-28,All members,Email,2863.17
+C00204,Member Update June 2025,Newsletter,2025-06-15,2025-06-16,All members,Email,1300.09
+C00205,Q2 2025 Events Programme,Event promotion,2025-06-23,2025-07-12,Learning audience,In-app,1635.22
+C00206,CPD Spotlight June 2025,Learning promotion,2025-06-23,2025-07-05,Learning audience,Email,2285.62
+C00207,2025 Renewal Reminder Wave 2,Renewal reminder,2025-06-27,2025-07-14,Lapsing risk,SMS,2656.7
+C00208,Member Update July 2025,Newsletter,2025-07-15,2025-07-16,All members,Email,1793.11
+C00209,Chartered Pathway Offer Q3 2025,Upgrade offer,2025-07-19,2025-08-04,Student and early career,Email,4062.57
+C00210,Q3 2025 Events Programme,Event promotion,2025-08-03,2025-08-24,Highly engaged,Email,2769.4
+C00211,Q3 2025 Events Programme,Event promotion,2025-08-06,2025-08-29,Student and early career,In-app,1506.34
+C00212,CPD Spotlight August 2025,Learning promotion,2025-08-14,2025-08-26,Learning audience,Email,531.65
+C00213,Q3 2025 Events Programme,Event promotion,2025-08-19,2025-09-01,Student and early career,Email,4310.6
+C00214,2025 Member Voice Survey,Member survey,2025-09-06,2025-09-19,All members,In-app,1694.15
+C00215,Member Update September 2025,Newsletter,2025-09-09,2025-09-10,All members,Email,1273.47
+C00216,2025 Member Voice Survey,Member survey,2025-09-18,2025-10-07,All members,Direct mail,11374.65
+C00217,CPD Spotlight September 2025,Learning promotion,2025-09-26,2025-10-02,Learning audience,Email,3491.63
+C00218,CPD Spotlight September 2025,Learning promotion,2025-09-30,2025-10-11,Learning audience,Email,2186.93
+C00219,Member Update October 2025,Newsletter,2025-10-01,2025-10-02,All members,Email,3271.98
+C00220,Q4 2025 Events Programme,Event promotion,2025-10-01,2025-10-24,Regional audience,Email,4905.69
+C00221,Q4 2025 Events Programme,Event promotion,2025-10-03,2025-10-24,Regional audience,Email,3856.08
+C00222,Chartered Pathway Offer Q4 2025,Upgrade offer,2025-10-06,2025-10-15,Student and early career,Direct mail,20949.05
+C00223,Member Update October 2025,Newsletter,2025-10-14,2025-10-15,All members,Email,2856.96
+C00224,2025 Member Voice Survey,Member survey,2025-10-26,2025-11-03,All members,Email,1940.52
+C00225,2025 Renewal Reminder Wave 2,Renewal reminder,2025-10-30,2025-11-26,Lapsing risk,In-app,4804.54
+C00226,2025 Renewal Reminder Wave 3,Renewal reminder,2025-12-01,2025-12-06,Lapsing risk,Email,5018.84
+C00227,2025 Renewal Reminder Wave 2,Renewal reminder,2025-12-02,2025-12-15,Lapsing risk,Direct mail,13546.56
+C00228,Member Update December 2025,Newsletter,2025-12-06,2025-12-07,All members,Email,911.86
+C00229,CPD Spotlight December 2025,Learning promotion,2025-12-06,2025-12-10,Learning audience,Direct mail,12521.44
+C00230,2025 Renewal Reminder Wave 3,Renewal reminder,2025-12-15,2026-01-06,Lapsing risk,Email,2180.37
+C00231,Q4 2025 Events Programme,Event promotion,2025-12-17,2026-01-09,Regional audience,Email,1531.45
+C00232,Member Update January 2026,Newsletter,2026-01-01,2026-01-02,All members,Email,5229.51
+C00233,Member Update January 2026,Newsletter,2026-01-01,2026-01-02,All members,Email,1299.23
+C00234,Q1 2026 Events Programme,Event promotion,2026-01-17,2026-01-30,Lapsing risk,Email,4771.58
+C00235,2026 Renewal Reminder Wave 2,Renewal reminder,2026-01-17,2026-01-31,Lapsing risk,Email,5778.95
+C00236,CPD Spotlight January 2026,Learning promotion,2026-01-23,2026-01-28,Learning audience,Email,2621.69
+C00237,Member Update January 2026,Newsletter,2026-01-24,2026-01-25,All members,Email,2027.35
+C00238,Q1 2026 Events Programme,Event promotion,2026-02-07,2026-02-12,Regional audience,Email,1253.13
+C00239,Q1 2026 Events Programme,Event promotion,2026-02-08,2026-02-15,Highly engaged,Email,2878.3
+C00240,2026 Renewal Reminder Wave 1,Renewal reminder,2026-02-22,2026-03-19,Lapsing risk,Email,1489.61
+C00241,CPD Spotlight February 2026,Learning promotion,2026-02-23,2026-03-18,Learning audience,Email,561.72
+C00242,2026 Renewal Reminder Wave 2,Renewal reminder,2026-02-23,2026-03-11,Lapsing risk,Email,1294.31
+C00243,Chartered Pathway Offer Q1 2026,Upgrade offer,2026-03-12,2026-03-26,Student and early career,Email,1182.45
+C00244,Q2 2026 Events Programme,Event promotion,2026-04-07,2026-04-21,Regional audience,Email,2312.63
+C00245,Q2 2026 Events Programme,Event promotion,2026-04-12,2026-05-08,Highly engaged,Email,1335.85
+C00246,Member Update April 2026,Newsletter,2026-04-16,2026-04-17,All members,Email,5500.72
+C00247,Q2 2026 Events Programme,Event promotion,2026-04-17,2026-04-28,Learning audience,Email,6375.02
+C00248,Member Update April 2026,Newsletter,2026-04-19,2026-04-20,All members,Email,4635.35
+C00249,CPD Spotlight April 2026,Learning promotion,2026-04-21,2026-05-03,Learning audience,Email,451.78
+C00250,We Miss You April 2026,Win-back,2026-04-21,2026-05-05,Lapsing risk,Email,2715.96
