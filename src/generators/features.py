@@ -16,7 +16,7 @@ from dataclasses import dataclass
 
 import numpy as np
 
-from .config import CHURN_COEFFICIENTS, RISK_THRESHOLDS
+from .config import ADVOCACY_WINDOW_DAYS, CHURN_COEFFICIENTS, RISK_THRESHOLDS
 
 #: Human-readable labels used for top_risk_factor_* and LLM prompts.
 RISK_FACTOR_LABELS = {
@@ -33,6 +33,7 @@ RISK_FACTOR_LABELS = {
     "auto_renewal": "Continuous payment mandate in place",
     "long_tenure": "Long-standing member (5+ years)",
     "multi_service_user": "Uses three or more member services",
+    "no_recent_advocacy": "Has not referred anyone in the last year",
 }
 
 #: Features that raise churn risk, ordered for tie-breaking in explanations.
@@ -45,6 +46,7 @@ RISK_FEATURES = [
     "student_to_full_transition",
     "low_campaign_engagement",
     "fee_increase",
+    "no_recent_advocacy",
 ]
 
 PROTECTIVE_FEATURES = [
@@ -71,6 +73,7 @@ class MemberTimeline:
     campaign_opened: np.ndarray
     feedback_ords: np.ndarray
     feedback_ratings: np.ndarray
+    referral_ords: np.ndarray
 
 
 def _count_between(sorted_ords: np.ndarray, lo: int, hi: int) -> int:
@@ -141,6 +144,9 @@ def compute_features(
         "fee_increase": int(fee_increase),
         "student_to_full_transition": int(student_transition),
         "multi_service_user": int(services_used >= 3),
+        # IBM's strongest leak-free protective signal: customers who referred someone
+        # churned at a fraction of the rate of those who did not.
+        "no_recent_advocacy": int(_count_between(tl.referral_ords, at - ADVOCACY_WINDOW_DAYS, at) == 0),
         # --- descriptive features (exported, not used by the churn model) -------------
         "logins_90d": logins_90,
         "logins_prior_90d": logins_prior_90,
@@ -153,6 +159,7 @@ def compute_features(
         "campaigns_sent_180d": sent_180,
         "tenure_years": round(tenure_years, 3),
         "services_used": services_used,
+        "referrals_365d": _count_between(tl.referral_ords, at - 365, at),
         "min_rating_365d": float(recent_ratings.min()) if recent_ratings.size else None,
     }
 
@@ -192,12 +199,13 @@ def top_protective_factors(features: dict, k: int = 2) -> list[str]:
 def engagement_score(features: dict) -> float:
     """A 0-100 composite engagement score derived from observed behaviour."""
     score = (
-        22 * np.tanh(features["logins_90d"] / 8.0)
-        + 20 * np.tanh(features["web_sessions_90d"] / 12.0)
+        20 * np.tanh(features["logins_90d"] / 8.0)
+        + 18 * np.tanh(features["web_sessions_90d"] / 12.0)
         + 20 * np.tanh(features["events_attended_365d"] / 2.5)
         + 18 * np.tanh(features["learning_completions_365d"] / 2.0)
         + 12 * features["campaign_open_rate_180d"]
         + 8 * (features["services_used"] / 4.0)
+        + 8 * np.tanh(features["referrals_365d"] / 1.5)
     )
     return float(np.round(np.clip(score, 0, 100), 1))
 

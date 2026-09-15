@@ -44,11 +44,14 @@ The platform is built on the **Synthetic Professional Membership Engagement and
 Retention Dataset** — a relational, behaviourally coherent dataset generated for this
 project rather than taken from a single public source.
 
-It is a *hybrid*: the member dimension is calibrated against the structure and published
-marginals of the IBM Telco Customer Churn dataset, and is then extended with the
-membership activity that a real professional body would hold — membership history,
-weekly website activity, logins, events, learning, campaigns, feedback, predictions and
-data-quality results.
+It is a *hybrid*: the member dimension is calibrated against the **extended IBM Cognos
+Telco Customer Churn sample** (7,043 customers across six workbooks), and is then
+extended with the membership activity a real professional body would hold — membership
+history, weekly website activity, logins, events, learning, campaigns, referrals,
+feedback, predictions and data-quality results.
+
+IBM contributes structure, marginals and statistical evidence; no IBM record is copied
+into the output.
 
 **Scale (full profile):** 25,000 members across a five-year window, 2021-09-01 to
 2026-08-31.
@@ -61,11 +64,13 @@ data-quality results.
 | `login_history` | ~2.3M | One per authentication attempt |
 | `events` / `event_attendance` | 1,600 / ~300,000 | Catalogue / member × registration |
 | `courses` / `learning_activity` | 90 / ~152,000 | Catalogue / member × course engagement |
-| `campaigns` / `marketing_engagement` | 265 / ~1.1M | Catalogue / member × send |
+| `campaigns` / `marketing_engagement` | 295 / ~1.05M | Catalogue / member × send |
+| `member_referrals` | ~48,000 | Member-to-member advocacy graph |
 | `member_feedback` | ~50,000 | One per free-text submission |
 | `model_predictions` | ~118,000 | Member × monthly scoring run |
 | `ai_insights` | ~6,300 | Member × latest scoring run |
 | `data_quality_results` | 2,820 | Check × pipeline run |
+| `segments` | 7 | Behavioural segment reference data |
 
 ### The point: the data is not random
 
@@ -78,13 +83,50 @@ A model refitted on the resulting training table reaches an out-of-time AUC of *
 and recovers the generating coefficients at **r = 0.97** — genuine, learnable signal,
 with enough noise that the problem is not trivial.
 
+### What the IBM seed actually contributes
+
+Not rows — evidence. Three of the churn model's coefficients are **estimated** from the
+seed rather than asserted, by fitting a logistic model on mapped analogue predictors:
+
+| IBM predictor | Fitted | Membership feature |
+| --- | ---: | --- |
+| `high_charge` | +0.765 | `fee_increase` |
+| `multi_service` | −0.249 | `multi_service_user` |
+| `referred` | −0.206 | `no_recent_advocacy` |
+
+Two of the coefficients published in `Data Recomendations.md` — `auto_renewal` and
+`long_tenure` — are independently corroborated by the same fit.
+
+**The extended workbook has a trap in it.** Its `Payment Method` column relabels the
+original four categories into three, folding every manual `Electronic check` customer
+into `Bank Withdrawal`. Taken at face value that puts the automatic-payment share at
+95.6% instead of 43.5%. The calibration reads payment method from the original workbook
+instead — which moved the fitted coefficient from −0.43 to **−0.53**, turning a loose
+match with the published −0.50 into a near-exact one.
+
+**Two columns in the seed are leaked, and are excluded automatically.** `Satisfaction
+Score` churns at exactly 100% for scores of 1–2 and exactly 0% for 4–5; `Churn Score` is
+IBM's own model output and nearly separates the classes. The calibration module detects
+both and drops them from the fit, keeping only their marginal distributions.
+
+The seed also earned the dataset a table it did not previously have: referral behaviour
+is one of the strongest leak-free signals in it — retained customers referred 4.8× as
+many people as churned ones — so `member_referrals` now models advocacy as a real
+member-to-member graph.
+
 ### Generating it
 
 ```bash
 pip install -r requirements.txt
-python -m src.generators.run --scale full     # ~5 minutes, ~400 MB
-python -m src.validation.validate             # 65 structural, volume and signal checks
+python -m src.generators.calibrate            # measure the IBM seed, write the report
+python -m src.generators.run --scale full     # ~6 minutes, ~400 MB
+python -m src.validation.validate             # 84 checks, including fidelity to the seed
 ```
+
+The IBM workbooks live in `IBM Source Files/` and are **not committed**. The calibration
+they produce is cached to `data/seed/ibm_calibration.json`, so generation runs without
+Excel; if the workbooks are absent entirely, the generator falls back to published
+marginals and records which path it took in the manifest.
 
 Profiles are `dev` (1,000 members, ~15 seconds), `demo` (8,000) and `full` (25,000).
 Runs are fully reproducible from `--seed`, and each run writes a
@@ -99,7 +141,9 @@ The generated data is **not committed** — a 250-row extract of every table liv
 - [Data generation methodology](docs/data-generation-methodology.md) — the business
   rules, the churn model, the validation results and the known simplifications
 - [Data dictionary](data/data_dictionary/data_dictionary.md) — every table and column
-- [`data/seed/README.md`](data/seed/README.md) — the optional IBM Telco calibration file
+- [IBM Telco calibration report](docs/ibm-telco-calibration.md) — every number measured
+  from the seed, the leakage audit, and where each churn coefficient comes from
+- [`data/seed/README.md`](data/seed/README.md) — how the seed files are used
 - [`database/schema/`](database/schema/) — PostgreSQL DDL (keys, check constraints,
   indexes) and a `psql` load script for the generated CSVs
 
@@ -108,6 +152,44 @@ The generated data is **not committed** — a 250-row extract of every table liv
 No names, addresses, dates of birth, email addresses, telephone numbers or payment
 details are generated. Age is banded. Every member, event, course and campaign is
 fictional.
+
+## Churn model
+
+`model_predictions` in the PostgreSQL database is **no longer simulated data**. Three
+classifiers — Logistic Regression, Random Forest, Gradient Boosting — were trained on
+`member_training_features` and compared on a strict out-of-time split (train on earlier
+renewal decisions, test on the most recent 25%, so nothing from the future leaks into
+training). The comparison, feature importance analysis, and live-scoring pipeline are
+all in [`main.ipynb`](main.ipynb).
+
+| Model | ROC-AUC (out-of-time) | PR-AUC | Brier score |
+| --- | ---: | ---: | ---: |
+| **Logistic Regression (winner)** | **0.762** | 0.291 | 0.077 |
+| Gradient Boosting | 0.757 | 0.276 | 0.078 |
+| Random Forest | 0.753 | 0.272 | 0.078 |
+| _Ceiling (true generating propensity)_ | _0.762_ | — | — |
+
+Logistic Regression essentially matched the theoretical ceiling — expected, since the
+underlying data-generating process is itself a logistic model on these features — and
+every fitted coefficient's sign matches the known generating process (e.g. inactivity,
+non-attendance and negative feedback raise odds; completed learning, auto-renewal and
+long tenure lower them).
+
+**Live scoring, not just a training-table replay.** The deployed model is applied to
+features computed *independently* from the raw activity tables
+(`login_history`, `event_attendance`, `learning_activity`, `marketing_engagement`,
+`member_feedback`, `member_referrals`) as of each of the six existing monthly run dates
+— mirroring how a real pipeline trains once offline and scores current data on a
+schedule, rather than reusing the training table at inference time.
+
+**Validated against real subsequent outcomes**, not just held-out metrics: members the
+pipeline classified "High risk" in March 2026 went on to churn at **13.2%** over the
+following months, versus **2.1%** for "Low risk" — a genuine, database-verified gradient.
+
+Rerunning `main.ipynb` **truncates and reloads `model_predictions`** (and, via its
+foreign key, `ai_insights` — currently empty, since its template placeholder text was
+tied to the old simulated predictions; regenerating it with a real LLM layer is the next
+phase of this project).
 
 ---
 

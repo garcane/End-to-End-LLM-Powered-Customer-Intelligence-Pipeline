@@ -6,46 +6,46 @@ DQ00000004,PIPE-20637,members,membership_type_in_reference_list,Validity,23672,6
 DQ00000005,PIPE-20637,members,annual_fee_within_expected_range,Validity,23672,12,0.000507,Medium,2026-07-03 02:22:00
 DQ00000006,PIPE-20637,members,region_not_null,Completeness,23672,23,0.000972,Low,2026-07-03 02:52:00
 DQ00000007,PIPE-20637,members,churn_date_after_join_date,Consistency,23672,0,0.0,Critical,2026-07-03 02:46:00
-DQ00000008,PIPE-20637,membership_history,no_overlapping_terms,Consistency,75864,84,0.001107,High,2026-07-03 02:35:00
-DQ00000009,PIPE-20637,membership_history,member_id_foreign_key,Referential integrity,75864,39,0.000514,Critical,2026-07-03 02:45:00
-DQ00000010,PIPE-20637,membership_history,effective_to_after_effective_from,Validity,75864,9,0.000119,High,2026-07-03 03:06:00
-DQ00000011,PIPE-20637,membership_history,annual_fee_not_null,Completeness,75864,42,0.000554,Medium,2026-07-03 03:00:00
-DQ00000012,PIPE-20637,website_activity,member_id_foreign_key,Referential integrity,1554572,3643,0.002343,Critical,2026-07-03 02:38:00
-DQ00000013,PIPE-20637,website_activity,activity_date_within_window,Validity,1554572,6888,0.004431,High,2026-07-03 02:23:00
-DQ00000014,PIPE-20637,website_activity,page_views_ge_session_count,Consistency,1554572,6681,0.004298,Medium,2026-07-03 02:56:00
-DQ00000015,PIPE-20637,website_activity,no_duplicate_member_week,Uniqueness,1554572,245,0.000158,High,2026-07-03 02:21:00
-DQ00000016,PIPE-20637,website_activity,average_session_minutes_positive,Validity,1554572,536,0.000345,Low,2026-07-03 02:27:00
-DQ00000017,PIPE-20637,login_history,member_id_foreign_key,Referential integrity,2204686,1559,0.000707,Critical,2026-07-03 03:15:00
-DQ00000018,PIPE-20637,login_history,login_timestamp_parseable,Validity,2204686,702,0.000318,High,2026-07-03 02:01:00
-DQ00000019,PIPE-20637,login_history,session_duration_within_range,Validity,2204686,9718,0.004408,Low,2026-07-03 03:14:00
-DQ00000020,PIPE-20637,login_history,no_duplicate_login_id,Uniqueness,2204686,0,0.0,Critical,2026-07-03 03:01:00
+DQ00000008,PIPE-20637,membership_history,no_overlapping_terms,Consistency,72119,81,0.001123,High,2026-07-03 02:35:00
+DQ00000009,PIPE-20637,membership_history,member_id_foreign_key,Referential integrity,72119,36,0.000499,Critical,2026-07-03 02:45:00
+DQ00000010,PIPE-20637,membership_history,effective_to_after_effective_from,Validity,72119,9,0.000125,High,2026-07-03 03:06:00
+DQ00000011,PIPE-20637,membership_history,annual_fee_not_null,Completeness,72119,39,0.000541,Medium,2026-07-03 03:00:00
+DQ00000012,PIPE-20637,website_activity,member_id_foreign_key,Referential integrity,1441597,3380,0.002345,Critical,2026-07-03 02:38:00
+DQ00000013,PIPE-20637,website_activity,activity_date_within_window,Validity,1441597,6391,0.004433,High,2026-07-03 02:23:00
+DQ00000014,PIPE-20637,website_activity,page_views_ge_session_count,Consistency,1441597,6196,0.004298,Medium,2026-07-03 02:56:00
+DQ00000015,PIPE-20637,website_activity,no_duplicate_member_week,Uniqueness,1441597,228,0.000158,High,2026-07-03 02:21:00
+DQ00000016,PIPE-20637,website_activity,average_session_minutes_positive,Validity,1441597,497,0.000345,Low,2026-07-03 02:27:00
+DQ00000017,PIPE-20637,login_history,member_id_foreign_key,Referential integrity,2102030,1486,0.000707,Critical,2026-07-03 03:15:00
+DQ00000018,PIPE-20637,login_history,login_timestamp_parseable,Validity,2102030,671,0.000319,High,2026-07-03 02:01:00
+DQ00000019,PIPE-20637,login_history,session_duration_within_range,Validity,2102030,9268,0.004409,Low,2026-07-03 03:14:00
+DQ00000020,PIPE-20637,login_history,no_duplicate_login_id,Uniqueness,2102030,0,0.0,Critical,2026-07-03 03:01:00
 DQ00000021,PIPE-20637,events,event_id_unique,Uniqueness,1515,0,0.0,Critical,2026-07-03 02:53:00
 DQ00000022,PIPE-20637,events,capacity_positive,Validity,1515,1,0.00066,Medium,2026-07-03 02:26:00
 DQ00000023,PIPE-20637,events,event_cost_not_negative,Validity,1515,0,0.0,Medium,2026-07-03 02:24:00
-DQ00000024,PIPE-20637,event_attendance,event_id_foreign_key,Referential integrity,285747,364,0.001274,Critical,2026-07-03 03:14:00
-DQ00000025,PIPE-20637,event_attendance,member_id_foreign_key,Referential integrity,285747,389,0.001361,Critical,2026-07-03 02:30:00
-DQ00000026,PIPE-20637,event_attendance,attendance_status_in_reference_list,Validity,285747,28,9.8e-05,High,2026-07-03 02:00:00
-DQ00000027,PIPE-20637,event_attendance,registration_before_event_date,Consistency,285747,277,0.000969,Medium,2026-07-03 02:55:00
-DQ00000028,PIPE-20637,event_attendance,feedback_score_between_1_and_5,Validity,285747,81,0.000283,Low,2026-07-03 03:09:00
-DQ00000029,PIPE-20637,learning_activity,course_id_foreign_key,Referential integrity,144472,143,0.00099,Critical,2026-07-03 02:19:00
-DQ00000030,PIPE-20637,learning_activity,completion_percentage_between_0_and_100,Validity,144472,62,0.000429,High,2026-07-03 02:36:00
-DQ00000031,PIPE-20637,learning_activity,completed_implies_100_percent,Consistency,144472,246,0.001703,Medium,2026-07-03 03:09:00
-DQ00000032,PIPE-20637,learning_activity,assessment_score_present_when_completed,Completeness,144472,290,0.002007,Low,2026-07-03 02:05:00
-DQ00000033,PIPE-20637,campaigns,campaign_id_unique,Uniqueness,250,0,0.0,Critical,2026-07-03 02:45:00
-DQ00000034,PIPE-20637,campaigns,end_date_after_start_date,Validity,250,0,0.0,Medium,2026-07-03 02:55:00
-DQ00000035,PIPE-20637,marketing_engagement,campaign_id_foreign_key,Referential integrity,1031857,920,0.000892,Critical,2026-07-03 03:09:00
-DQ00000036,PIPE-20637,marketing_engagement,opened_implies_delivered,Consistency,1031857,725,0.000703,High,2026-07-03 02:54:00
-DQ00000037,PIPE-20637,marketing_engagement,clicked_implies_opened,Consistency,1031857,136,0.000132,High,2026-07-03 03:19:00
-DQ00000038,PIPE-20637,marketing_engagement,sent_date_within_campaign_window,Validity,1031857,5012,0.004857,Low,2026-07-03 02:55:00
-DQ00000039,PIPE-20637,member_feedback,rating_between_1_and_5,Validity,47563,18,0.000378,High,2026-07-03 03:05:00
-DQ00000040,PIPE-20637,member_feedback,feedback_text_not_empty,Completeness,47563,260,0.005466,Medium,2026-07-03 02:35:00
-DQ00000041,PIPE-20637,member_feedback,sentiment_label_in_reference_list,Validity,47563,11,0.000231,Medium,2026-07-03 02:14:00
-DQ00000042,PIPE-20637,model_predictions,churn_probability_between_0_and_1,Validity,111227,0,0.0,Critical,2026-07-03 02:20:00
-DQ00000043,PIPE-20637,model_predictions,one_row_per_member_per_run,Uniqueness,111227,15,0.000135,High,2026-07-03 02:15:00
-DQ00000044,PIPE-20637,model_predictions,risk_category_matches_probability_band,Consistency,111227,122,0.001097,Medium,2026-07-03 02:12:00
-DQ00000045,PIPE-20637,ai_insights,prediction_run_id_foreign_key,Referential integrity,5978,2,0.000335,Critical,2026-07-03 03:17:00
-DQ00000046,PIPE-20637,ai_insights,executive_summary_not_empty,Completeness,5978,45,0.007528,Medium,2026-07-03 03:04:00
-DQ00000047,PIPE-20637,ai_insights,validation_status_reviewed,Governance,5978,110,0.018401,Low,2026-07-03 03:19:00
+DQ00000024,PIPE-20637,event_attendance,event_id_foreign_key,Referential integrity,271267,345,0.001272,Critical,2026-07-03 03:14:00
+DQ00000025,PIPE-20637,event_attendance,member_id_foreign_key,Referential integrity,271267,369,0.00136,Critical,2026-07-03 02:30:00
+DQ00000026,PIPE-20637,event_attendance,attendance_status_in_reference_list,Validity,271267,27,0.0001,High,2026-07-03 02:00:00
+DQ00000027,PIPE-20637,event_attendance,registration_before_event_date,Consistency,271267,264,0.000973,Medium,2026-07-03 02:55:00
+DQ00000028,PIPE-20637,event_attendance,feedback_score_between_1_and_5,Validity,271267,77,0.000284,Low,2026-07-03 03:09:00
+DQ00000029,PIPE-20637,learning_activity,course_id_foreign_key,Referential integrity,137550,136,0.000989,Critical,2026-07-03 02:19:00
+DQ00000030,PIPE-20637,learning_activity,completion_percentage_between_0_and_100,Validity,137550,59,0.000429,High,2026-07-03 02:36:00
+DQ00000031,PIPE-20637,learning_activity,completed_implies_100_percent,Consistency,137550,234,0.001701,Medium,2026-07-03 03:09:00
+DQ00000032,PIPE-20637,learning_activity,assessment_score_present_when_completed,Completeness,137550,276,0.002007,Low,2026-07-03 02:05:00
+DQ00000033,PIPE-20637,campaigns,campaign_id_unique,Uniqueness,279,0,0.0,Critical,2026-07-03 02:45:00
+DQ00000034,PIPE-20637,campaigns,end_date_after_start_date,Validity,279,0,0.0,Medium,2026-07-03 02:55:00
+DQ00000035,PIPE-20637,marketing_engagement,campaign_id_foreign_key,Referential integrity,1006103,897,0.000892,Critical,2026-07-03 03:09:00
+DQ00000036,PIPE-20637,marketing_engagement,opened_implies_delivered,Consistency,1006103,708,0.000704,High,2026-07-03 02:54:00
+DQ00000037,PIPE-20637,marketing_engagement,clicked_implies_opened,Consistency,1006103,132,0.000131,High,2026-07-03 03:19:00
+DQ00000038,PIPE-20637,marketing_engagement,sent_date_within_campaign_window,Validity,1006103,4885,0.004855,Low,2026-07-03 02:55:00
+DQ00000039,PIPE-20637,member_feedback,rating_between_1_and_5,Validity,43139,17,0.000394,High,2026-07-03 03:05:00
+DQ00000040,PIPE-20637,member_feedback,feedback_text_not_empty,Completeness,43139,236,0.005471,Medium,2026-07-03 02:35:00
+DQ00000041,PIPE-20637,member_feedback,sentiment_label_in_reference_list,Validity,43139,10,0.000232,Medium,2026-07-03 02:14:00
+DQ00000042,PIPE-20637,model_predictions,churn_probability_between_0_and_1,Validity,97166,0,0.0,Critical,2026-07-03 02:20:00
+DQ00000043,PIPE-20637,model_predictions,one_row_per_member_per_run,Uniqueness,97166,13,0.000134,High,2026-07-03 02:15:00
+DQ00000044,PIPE-20637,model_predictions,risk_category_matches_probability_band,Consistency,97166,106,0.001091,Medium,2026-07-03 02:12:00
+DQ00000045,PIPE-20637,ai_insights,prediction_run_id_foreign_key,Referential integrity,7295,2,0.000274,Critical,2026-07-03 03:17:00
+DQ00000046,PIPE-20637,ai_insights,executive_summary_not_empty,Completeness,7295,55,0.007539,Medium,2026-07-03 03:04:00
+DQ00000047,PIPE-20637,ai_insights,validation_status_reviewed,Governance,7295,133,0.018232,Low,2026-07-03 03:19:00
 DQ00000048,PIPE-20638,members,member_id_not_null,Completeness,23695,0,0.0,Critical,2026-07-04 02:48:00
 DQ00000049,PIPE-20638,members,member_id_unique,Uniqueness,23695,0,0.0,Critical,2026-07-04 02:40:00
 DQ00000050,PIPE-20638,members,join_date_not_future,Validity,23695,10,0.000422,High,2026-07-04 02:29:00
@@ -53,199 +53,199 @@ DQ00000051,PIPE-20638,members,membership_type_in_reference_list,Validity,23695,7
 DQ00000052,PIPE-20638,members,annual_fee_within_expected_range,Validity,23695,22,0.000928,Medium,2026-07-04 02:38:00
 DQ00000053,PIPE-20638,members,region_not_null,Completeness,23695,32,0.00135,Low,2026-07-04 03:10:00
 DQ00000054,PIPE-20638,members,churn_date_after_join_date,Consistency,23695,0,0.0,Critical,2026-07-04 02:36:00
-DQ00000055,PIPE-20638,membership_history,no_overlapping_terms,Consistency,75936,167,0.002199,High,2026-07-04 03:12:00
-DQ00000056,PIPE-20638,membership_history,member_id_foreign_key,Referential integrity,75936,16,0.000211,Critical,2026-07-04 02:46:00
-DQ00000057,PIPE-20638,membership_history,effective_to_after_effective_from,Validity,75936,14,0.000184,High,2026-07-04 02:44:00
-DQ00000058,PIPE-20638,membership_history,annual_fee_not_null,Completeness,75936,57,0.000751,Medium,2026-07-04 03:17:00
-DQ00000059,PIPE-20638,website_activity,member_id_foreign_key,Referential integrity,1556049,1148,0.000738,Critical,2026-07-04 02:27:00
-DQ00000060,PIPE-20638,website_activity,activity_date_within_window,Validity,1556049,645,0.000415,High,2026-07-04 03:19:00
-DQ00000061,PIPE-20638,website_activity,page_views_ge_session_count,Consistency,1556049,10476,0.006732,Medium,2026-07-04 03:03:00
-DQ00000062,PIPE-20638,website_activity,no_duplicate_member_week,Uniqueness,1556049,1105,0.00071,High,2026-07-04 02:00:00
-DQ00000063,PIPE-20638,website_activity,average_session_minutes_positive,Validity,1556049,1513,0.000972,Low,2026-07-04 03:18:00
-DQ00000064,PIPE-20638,login_history,member_id_foreign_key,Referential integrity,2206781,2047,0.000928,Critical,2026-07-04 03:19:00
-DQ00000065,PIPE-20638,login_history,login_timestamp_parseable,Validity,2206781,254,0.000115,High,2026-07-04 02:38:00
-DQ00000066,PIPE-20638,login_history,session_duration_within_range,Validity,2206781,4844,0.002195,Low,2026-07-04 02:33:00
-DQ00000067,PIPE-20638,login_history,no_duplicate_login_id,Uniqueness,2206781,0,0.0,Critical,2026-07-04 02:15:00
+DQ00000055,PIPE-20638,membership_history,no_overlapping_terms,Consistency,72188,160,0.002216,High,2026-07-04 03:12:00
+DQ00000056,PIPE-20638,membership_history,member_id_foreign_key,Referential integrity,72188,15,0.000208,Critical,2026-07-04 02:46:00
+DQ00000057,PIPE-20638,membership_history,effective_to_after_effective_from,Validity,72188,13,0.00018,High,2026-07-04 02:44:00
+DQ00000058,PIPE-20638,membership_history,annual_fee_not_null,Completeness,72188,55,0.000762,Medium,2026-07-04 03:17:00
+DQ00000059,PIPE-20638,website_activity,member_id_foreign_key,Referential integrity,1442967,1063,0.000737,Critical,2026-07-04 02:27:00
+DQ00000060,PIPE-20638,website_activity,activity_date_within_window,Validity,1442967,598,0.000414,High,2026-07-04 03:19:00
+DQ00000061,PIPE-20638,website_activity,page_views_ge_session_count,Consistency,1442967,9717,0.006734,Medium,2026-07-04 03:03:00
+DQ00000062,PIPE-20638,website_activity,no_duplicate_member_week,Uniqueness,1442967,1024,0.00071,High,2026-07-04 02:00:00
+DQ00000063,PIPE-20638,website_activity,average_session_minutes_positive,Validity,1442967,1403,0.000972,Low,2026-07-04 03:18:00
+DQ00000064,PIPE-20638,login_history,member_id_foreign_key,Referential integrity,2104028,1953,0.000928,Critical,2026-07-04 03:19:00
+DQ00000065,PIPE-20638,login_history,login_timestamp_parseable,Validity,2104028,189,9e-05,High,2026-07-04 02:38:00
+DQ00000066,PIPE-20638,login_history,session_duration_within_range,Validity,2104028,4619,0.002195,Low,2026-07-04 02:33:00
+DQ00000067,PIPE-20638,login_history,no_duplicate_login_id,Uniqueness,2104028,0,0.0,Critical,2026-07-04 02:15:00
 DQ00000068,PIPE-20638,events,event_id_unique,Uniqueness,1516,0,0.0,Critical,2026-07-04 03:00:00
 DQ00000069,PIPE-20638,events,capacity_positive,Validity,1516,1,0.00066,Medium,2026-07-04 02:43:00
 DQ00000070,PIPE-20638,events,event_cost_not_negative,Validity,1516,0,0.0,Medium,2026-07-04 02:15:00
-DQ00000071,PIPE-20638,event_attendance,event_id_foreign_key,Referential integrity,286019,355,0.001241,Critical,2026-07-04 03:18:00
-DQ00000072,PIPE-20638,event_attendance,member_id_foreign_key,Referential integrity,286019,179,0.000626,Critical,2026-07-04 02:15:00
-DQ00000073,PIPE-20638,event_attendance,attendance_status_in_reference_list,Validity,286019,31,0.000108,High,2026-07-04 02:06:00
-DQ00000074,PIPE-20638,event_attendance,registration_before_event_date,Consistency,286019,588,0.002056,Medium,2026-07-04 03:15:00
-DQ00000075,PIPE-20638,event_attendance,feedback_score_between_1_and_5,Validity,286019,232,0.000811,Low,2026-07-04 02:04:00
-DQ00000076,PIPE-20638,learning_activity,course_id_foreign_key,Referential integrity,144609,232,0.001604,Critical,2026-07-04 02:30:00
-DQ00000077,PIPE-20638,learning_activity,completion_percentage_between_0_and_100,Validity,144609,43,0.000297,High,2026-07-04 02:04:00
-DQ00000078,PIPE-20638,learning_activity,completed_implies_100_percent,Consistency,144609,233,0.001611,Medium,2026-07-04 02:12:00
-DQ00000079,PIPE-20638,learning_activity,assessment_score_present_when_completed,Completeness,144609,455,0.003146,Low,2026-07-04 02:13:00
-DQ00000080,PIPE-20638,campaigns,campaign_id_unique,Uniqueness,251,0,0.0,Critical,2026-07-04 02:05:00
-DQ00000081,PIPE-20638,campaigns,end_date_after_start_date,Validity,251,0,0.0,Medium,2026-07-04 02:26:00
-DQ00000082,PIPE-20638,marketing_engagement,campaign_id_foreign_key,Referential integrity,1032838,496,0.00048,Critical,2026-07-04 02:39:00
-DQ00000083,PIPE-20638,marketing_engagement,opened_implies_delivered,Consistency,1032838,913,0.000884,High,2026-07-04 03:15:00
-DQ00000084,PIPE-20638,marketing_engagement,clicked_implies_opened,Consistency,1032838,855,0.000828,High,2026-07-04 02:33:00
-DQ00000085,PIPE-20638,marketing_engagement,sent_date_within_campaign_window,Validity,1032838,1541,0.001492,Low,2026-07-04 02:08:00
-DQ00000086,PIPE-20638,member_feedback,rating_between_1_and_5,Validity,47608,12,0.000252,High,2026-07-04 03:04:00
-DQ00000087,PIPE-20638,member_feedback,feedback_text_not_empty,Completeness,47608,72,0.001512,Medium,2026-07-04 03:06:00
-DQ00000088,PIPE-20638,member_feedback,sentiment_label_in_reference_list,Validity,47608,18,0.000378,Medium,2026-07-04 02:23:00
-DQ00000089,PIPE-20638,model_predictions,churn_probability_between_0_and_1,Validity,111333,0,0.0,Critical,2026-07-04 02:22:00
-DQ00000090,PIPE-20638,model_predictions,one_row_per_member_per_run,Uniqueness,111333,40,0.000359,High,2026-07-04 02:08:00
-DQ00000091,PIPE-20638,model_predictions,risk_category_matches_probability_band,Consistency,111333,228,0.002048,Medium,2026-07-04 02:56:00
-DQ00000092,PIPE-20638,ai_insights,prediction_run_id_foreign_key,Referential integrity,5984,7,0.00117,Critical,2026-07-04 03:11:00
-DQ00000093,PIPE-20638,ai_insights,executive_summary_not_empty,Completeness,5984,14,0.00234,Medium,2026-07-04 02:25:00
-DQ00000094,PIPE-20638,ai_insights,validation_status_reviewed,Governance,5984,91,0.015207,Low,2026-07-04 02:56:00
-DQ00000095,PIPE-20639,members,member_id_not_null,Completeness,23717,0,0.0,Critical,2026-07-05 02:43:00
-DQ00000096,PIPE-20639,members,member_id_unique,Uniqueness,23717,0,0.0,Critical,2026-07-05 03:01:00
-DQ00000097,PIPE-20639,members,join_date_not_future,Validity,23717,1,4.2e-05,High,2026-07-05 02:10:00
-DQ00000098,PIPE-20639,members,membership_type_in_reference_list,Validity,23717,5,0.000211,Medium,2026-07-05 02:45:00
-DQ00000099,PIPE-20639,members,annual_fee_within_expected_range,Validity,23717,31,0.001307,Medium,2026-07-05 02:58:00
-DQ00000100,PIPE-20639,members,region_not_null,Completeness,23717,36,0.001518,Low,2026-07-05 02:28:00
-DQ00000101,PIPE-20639,members,churn_date_after_join_date,Consistency,23717,0,0.0,Critical,2026-07-05 02:26:00
-DQ00000102,PIPE-20639,membership_history,no_overlapping_terms,Consistency,76008,90,0.001184,High,2026-07-05 02:32:00
-DQ00000103,PIPE-20639,membership_history,member_id_foreign_key,Referential integrity,76008,15,0.000197,Critical,2026-07-05 03:02:00
-DQ00000104,PIPE-20639,membership_history,effective_to_after_effective_from,Validity,76008,12,0.000158,High,2026-07-05 02:12:00
-DQ00000105,PIPE-20639,membership_history,annual_fee_not_null,Completeness,76008,29,0.000382,Medium,2026-07-05 02:54:00
-DQ00000106,PIPE-20639,website_activity,member_id_foreign_key,Referential integrity,1557527,1909,0.001226,Critical,2026-07-05 03:14:00
-DQ00000107,PIPE-20639,website_activity,activity_date_within_window,Validity,1557527,1133,0.000727,High,2026-07-05 02:25:00
-DQ00000108,PIPE-20639,website_activity,page_views_ge_session_count,Consistency,1557527,7171,0.004604,Medium,2026-07-05 02:10:00
-DQ00000109,PIPE-20639,website_activity,no_duplicate_member_week,Uniqueness,1557527,602,0.000387,High,2026-07-05 02:06:00
-DQ00000110,PIPE-20639,website_activity,average_session_minutes_positive,Validity,1557527,622,0.000399,Low,2026-07-05 02:31:00
-DQ00000111,PIPE-20639,login_history,member_id_foreign_key,Referential integrity,2208877,1327,0.000601,Critical,2026-07-05 03:04:00
-DQ00000112,PIPE-20639,login_history,login_timestamp_parseable,Validity,2208877,1072,0.000485,High,2026-07-05 02:42:00
-DQ00000113,PIPE-20639,login_history,session_duration_within_range,Validity,2208877,2370,0.001073,Low,2026-07-05 02:20:00
-DQ00000114,PIPE-20639,login_history,no_duplicate_login_id,Uniqueness,2208877,0,0.0,Critical,2026-07-05 02:33:00
-DQ00000115,PIPE-20639,events,event_id_unique,Uniqueness,1517,0,0.0,Critical,2026-07-05 02:49:00
-DQ00000116,PIPE-20639,events,capacity_positive,Validity,1517,1,0.000659,Medium,2026-07-05 02:23:00
-DQ00000117,PIPE-20639,events,event_cost_not_negative,Validity,1517,0,0.0,Medium,2026-07-05 03:07:00
-DQ00000118,PIPE-20639,event_attendance,event_id_foreign_key,Referential integrity,286291,195,0.000681,Critical,2026-07-05 02:59:00
-DQ00000119,PIPE-20639,event_attendance,member_id_foreign_key,Referential integrity,286291,181,0.000632,Critical,2026-07-05 02:50:00
-DQ00000120,PIPE-20639,event_attendance,attendance_status_in_reference_list,Validity,286291,84,0.000293,High,2026-07-05 02:02:00
-DQ00000121,PIPE-20639,event_attendance,registration_before_event_date,Consistency,286291,979,0.00342,Medium,2026-07-05 02:41:00
-DQ00000122,PIPE-20639,event_attendance,feedback_score_between_1_and_5,Validity,286291,83,0.00029,Low,2026-07-05 03:16:00
-DQ00000123,PIPE-20639,learning_activity,course_id_foreign_key,Referential integrity,144746,128,0.000884,Critical,2026-07-05 02:47:00
-DQ00000124,PIPE-20639,learning_activity,completion_percentage_between_0_and_100,Validity,144746,69,0.000477,High,2026-07-05 03:04:00
-DQ00000125,PIPE-20639,learning_activity,completed_implies_100_percent,Consistency,144746,201,0.001389,Medium,2026-07-05 02:15:00
-DQ00000126,PIPE-20639,learning_activity,assessment_score_present_when_completed,Completeness,144746,311,0.002149,Low,2026-07-05 03:04:00
-DQ00000127,PIPE-20639,campaigns,campaign_id_unique,Uniqueness,251,0,0.0,Critical,2026-07-05 02:06:00
-DQ00000128,PIPE-20639,campaigns,end_date_after_start_date,Validity,251,0,0.0,Medium,2026-07-05 02:39:00
-DQ00000129,PIPE-20639,marketing_engagement,campaign_id_foreign_key,Referential integrity,1033819,659,0.000637,Critical,2026-07-05 02:33:00
-DQ00000130,PIPE-20639,marketing_engagement,opened_implies_delivered,Consistency,1033819,559,0.000541,High,2026-07-05 03:07:00
-DQ00000131,PIPE-20639,marketing_engagement,clicked_implies_opened,Consistency,1033819,259,0.000251,High,2026-07-05 02:06:00
-DQ00000132,PIPE-20639,marketing_engagement,sent_date_within_campaign_window,Validity,1033819,4588,0.004438,Low,2026-07-05 02:27:00
-DQ00000133,PIPE-20639,member_feedback,rating_between_1_and_5,Validity,47654,10,0.00021,High,2026-07-05 02:55:00
-DQ00000134,PIPE-20639,member_feedback,feedback_text_not_empty,Completeness,47654,82,0.001721,Medium,2026-07-05 02:23:00
-DQ00000135,PIPE-20639,member_feedback,sentiment_label_in_reference_list,Validity,47654,36,0.000755,Medium,2026-07-05 02:33:00
-DQ00000136,PIPE-20639,model_predictions,churn_probability_between_0_and_1,Validity,111439,0,0.0,Critical,2026-07-05 02:19:00
-DQ00000137,PIPE-20639,model_predictions,one_row_per_member_per_run,Uniqueness,111439,40,0.000359,High,2026-07-05 03:05:00
-DQ00000138,PIPE-20639,model_predictions,risk_category_matches_probability_band,Consistency,111439,75,0.000673,Medium,2026-07-05 02:39:00
-DQ00000139,PIPE-20639,ai_insights,prediction_run_id_foreign_key,Referential integrity,5990,6,0.001002,Critical,2026-07-05 02:56:00
-DQ00000140,PIPE-20639,ai_insights,executive_summary_not_empty,Completeness,5990,15,0.002504,Medium,2026-07-05 03:17:00
-DQ00000141,PIPE-20639,ai_insights,validation_status_reviewed,Governance,5990,124,0.020701,Low,2026-07-05 03:11:00
-DQ00000142,PIPE-20640,members,member_id_not_null,Completeness,23740,0,0.0,Critical,2026-07-06 02:43:00
-DQ00000143,PIPE-20640,members,member_id_unique,Uniqueness,23740,0,0.0,Critical,2026-07-06 03:14:00
-DQ00000144,PIPE-20640,members,join_date_not_future,Validity,23740,2,8.4e-05,High,2026-07-06 02:27:00
-DQ00000145,PIPE-20640,members,membership_type_in_reference_list,Validity,23740,5,0.000211,Medium,2026-07-06 02:34:00
-DQ00000146,PIPE-20640,members,annual_fee_within_expected_range,Validity,23740,31,0.001306,Medium,2026-07-06 02:54:00
-DQ00000147,PIPE-20640,members,region_not_null,Completeness,23740,43,0.001811,Low,2026-07-06 02:18:00
-DQ00000148,PIPE-20640,members,churn_date_after_join_date,Consistency,23740,0,0.0,Critical,2026-07-06 02:20:00
-DQ00000149,PIPE-20640,membership_history,no_overlapping_terms,Consistency,76081,169,0.002221,High,2026-07-06 02:51:00
-DQ00000150,PIPE-20640,membership_history,member_id_foreign_key,Referential integrity,76081,18,0.000237,Critical,2026-07-06 02:46:00
-DQ00000151,PIPE-20640,membership_history,effective_to_after_effective_from,Validity,76081,10,0.000131,High,2026-07-06 02:31:00
-DQ00000152,PIPE-20640,membership_history,annual_fee_not_null,Completeness,76081,71,0.000933,Medium,2026-07-06 02:32:00
-DQ00000153,PIPE-20640,website_activity,member_id_foreign_key,Referential integrity,1559004,2255,0.001446,Critical,2026-07-06 03:07:00
-DQ00000154,PIPE-20640,website_activity,activity_date_within_window,Validity,1559004,507,0.000325,High,2026-07-06 02:52:00
-DQ00000155,PIPE-20640,website_activity,page_views_ge_session_count,Consistency,1559004,5847,0.00375,Medium,2026-07-06 03:11:00
-DQ00000156,PIPE-20640,website_activity,no_duplicate_member_week,Uniqueness,1559004,720,0.000462,High,2026-07-06 03:12:00
-DQ00000157,PIPE-20640,website_activity,average_session_minutes_positive,Validity,1559004,1389,0.000891,Low,2026-07-06 03:02:00
-DQ00000158,PIPE-20640,login_history,member_id_foreign_key,Referential integrity,2210972,1360,0.000615,Critical,2026-07-06 03:13:00
-DQ00000159,PIPE-20640,login_history,login_timestamp_parseable,Validity,2210972,1100,0.000498,High,2026-07-06 02:35:00
-DQ00000160,PIPE-20640,login_history,session_duration_within_range,Validity,2210972,5812,0.002629,Low,2026-07-06 02:10:00
-DQ00000161,PIPE-20640,login_history,no_duplicate_login_id,Uniqueness,2210972,0,0.0,Critical,2026-07-06 02:17:00
-DQ00000162,PIPE-20640,events,event_id_unique,Uniqueness,1519,0,0.0,Critical,2026-07-06 02:07:00
-DQ00000163,PIPE-20640,events,capacity_positive,Validity,1519,1,0.000658,Medium,2026-07-06 02:24:00
-DQ00000164,PIPE-20640,events,event_cost_not_negative,Validity,1519,0,0.0,Medium,2026-07-06 02:36:00
-DQ00000165,PIPE-20640,event_attendance,event_id_foreign_key,Referential integrity,286562,402,0.001403,Critical,2026-07-06 02:05:00
-DQ00000166,PIPE-20640,event_attendance,member_id_foreign_key,Referential integrity,286562,362,0.001263,Critical,2026-07-06 03:16:00
-DQ00000167,PIPE-20640,event_attendance,attendance_status_in_reference_list,Validity,286562,56,0.000195,High,2026-07-06 03:16:00
-DQ00000168,PIPE-20640,event_attendance,registration_before_event_date,Consistency,286562,180,0.000628,Medium,2026-07-06 02:54:00
-DQ00000169,PIPE-20640,event_attendance,feedback_score_between_1_and_5,Validity,286562,145,0.000506,Low,2026-07-06 02:24:00
-DQ00000170,PIPE-20640,learning_activity,course_id_foreign_key,Referential integrity,144884,100,0.00069,Critical,2026-07-06 02:17:00
-DQ00000171,PIPE-20640,learning_activity,completion_percentage_between_0_and_100,Validity,144884,54,0.000373,High,2026-07-06 02:28:00
-DQ00000172,PIPE-20640,learning_activity,completed_implies_100_percent,Consistency,144884,166,0.001146,Medium,2026-07-06 02:31:00
-DQ00000173,PIPE-20640,learning_activity,assessment_score_present_when_completed,Completeness,144884,458,0.003161,Low,2026-07-06 02:04:00
-DQ00000174,PIPE-20640,campaigns,campaign_id_unique,Uniqueness,251,0,0.0,Critical,2026-07-06 02:10:00
-DQ00000175,PIPE-20640,campaigns,end_date_after_start_date,Validity,251,0,0.0,Medium,2026-07-06 02:36:00
-DQ00000176,PIPE-20640,marketing_engagement,campaign_id_foreign_key,Referential integrity,1034800,440,0.000425,Critical,2026-07-06 02:41:00
-DQ00000177,PIPE-20640,marketing_engagement,opened_implies_delivered,Consistency,1034800,1636,0.001581,High,2026-07-06 02:45:00
-DQ00000178,PIPE-20640,marketing_engagement,clicked_implies_opened,Consistency,1034800,333,0.000322,High,2026-07-06 02:30:00
-DQ00000179,PIPE-20640,marketing_engagement,sent_date_within_campaign_window,Validity,1034800,7180,0.006939,Low,2026-07-06 02:37:00
-DQ00000180,PIPE-20640,member_feedback,rating_between_1_and_5,Validity,47699,10,0.00021,High,2026-07-06 02:44:00
-DQ00000181,PIPE-20640,member_feedback,feedback_text_not_empty,Completeness,47699,102,0.002138,Medium,2026-07-06 02:25:00
-DQ00000182,PIPE-20640,member_feedback,sentiment_label_in_reference_list,Validity,47699,14,0.000294,Medium,2026-07-06 02:54:00
-DQ00000183,PIPE-20640,model_predictions,churn_probability_between_0_and_1,Validity,111544,0,0.0,Critical,2026-07-06 02:50:00
-DQ00000184,PIPE-20640,model_predictions,one_row_per_member_per_run,Uniqueness,111544,19,0.00017,High,2026-07-06 03:02:00
-DQ00000185,PIPE-20640,model_predictions,risk_category_matches_probability_band,Consistency,111544,66,0.000592,Medium,2026-07-06 02:04:00
-DQ00000186,PIPE-20640,ai_insights,prediction_run_id_foreign_key,Referential integrity,5995,5,0.000834,Critical,2026-07-06 03:15:00
-DQ00000187,PIPE-20640,ai_insights,executive_summary_not_empty,Completeness,5995,11,0.001835,Medium,2026-07-06 02:42:00
-DQ00000188,PIPE-20640,ai_insights,validation_status_reviewed,Governance,5995,113,0.018849,Low,2026-07-06 03:08:00
-DQ00000189,PIPE-20641,members,member_id_not_null,Completeness,23762,0,0.0,Critical,2026-07-07 03:13:00
-DQ00000190,PIPE-20641,members,member_id_unique,Uniqueness,23762,0,0.0,Critical,2026-07-07 02:04:00
-DQ00000191,PIPE-20641,members,join_date_not_future,Validity,23762,2,8.4e-05,High,2026-07-07 03:04:00
-DQ00000192,PIPE-20641,members,membership_type_in_reference_list,Validity,23762,17,0.000715,Medium,2026-07-07 02:51:00
-DQ00000193,PIPE-20641,members,annual_fee_within_expected_range,Validity,23762,65,0.002735,Medium,2026-07-07 02:42:00
-DQ00000194,PIPE-20641,members,region_not_null,Completeness,23762,16,0.000673,Low,2026-07-07 02:30:00
-DQ00000195,PIPE-20641,members,churn_date_after_join_date,Consistency,23762,0,0.0,Critical,2026-07-07 02:37:00
-DQ00000196,PIPE-20641,membership_history,no_overlapping_terms,Consistency,76153,78,0.001024,High,2026-07-07 02:36:00
-DQ00000197,PIPE-20641,membership_history,member_id_foreign_key,Referential integrity,76153,13,0.000171,Critical,2026-07-07 02:15:00
-DQ00000198,PIPE-20641,membership_history,effective_to_after_effective_from,Validity,76153,9,0.000118,High,2026-07-07 02:00:00
-DQ00000199,PIPE-20641,membership_history,annual_fee_not_null,Completeness,76153,10,0.000131,Medium,2026-07-07 02:34:00
-DQ00000200,PIPE-20641,website_activity,member_id_foreign_key,Referential integrity,1560482,900,0.000577,Critical,2026-07-07 02:28:00
-DQ00000201,PIPE-20641,website_activity,activity_date_within_window,Validity,1560482,1285,0.000823,High,2026-07-07 02:35:00
-DQ00000202,PIPE-20641,website_activity,page_views_ge_session_count,Consistency,1560482,3294,0.002111,Medium,2026-07-07 03:16:00
-DQ00000203,PIPE-20641,website_activity,no_duplicate_member_week,Uniqueness,1560482,794,0.000509,High,2026-07-07 02:14:00
-DQ00000204,PIPE-20641,website_activity,average_session_minutes_positive,Validity,1560482,2734,0.001752,Low,2026-07-07 02:40:00
-DQ00000205,PIPE-20641,login_history,member_id_foreign_key,Referential integrity,2213068,1443,0.000652,Critical,2026-07-07 03:17:00
-DQ00000206,PIPE-20641,login_history,login_timestamp_parseable,Validity,2213068,978,0.000442,High,2026-07-07 03:10:00
-DQ00000207,PIPE-20641,login_history,session_duration_within_range,Validity,2213068,12490,0.005644,Low,2026-07-07 02:59:00
-DQ00000208,PIPE-20641,login_history,no_duplicate_login_id,Uniqueness,2213068,0,0.0,Critical,2026-07-07 02:21:00
-DQ00000209,PIPE-20641,events,event_id_unique,Uniqueness,1520,0,0.0,Critical,2026-07-07 03:18:00
-DQ00000210,PIPE-20641,events,capacity_positive,Validity,1520,1,0.000658,Medium,2026-07-07 02:57:00
-DQ00000211,PIPE-20641,events,event_cost_not_negative,Validity,1520,0,0.0,Medium,2026-07-07 02:05:00
-DQ00000212,PIPE-20641,event_attendance,event_id_foreign_key,Referential integrity,286834,725,0.002528,Critical,2026-07-07 03:00:00
-DQ00000213,PIPE-20641,event_attendance,member_id_foreign_key,Referential integrity,286834,206,0.000718,Critical,2026-07-07 02:43:00
-DQ00000214,PIPE-20641,event_attendance,attendance_status_in_reference_list,Validity,286834,65,0.000227,High,2026-07-07 02:36:00
-DQ00000215,PIPE-20641,event_attendance,registration_before_event_date,Consistency,286834,470,0.001639,Medium,2026-07-07 03:10:00
-DQ00000216,PIPE-20641,event_attendance,feedback_score_between_1_and_5,Validity,286834,171,0.000596,Low,2026-07-07 02:32:00
-DQ00000217,PIPE-20641,learning_activity,course_id_foreign_key,Referential integrity,145021,74,0.00051,Critical,2026-07-07 02:57:00
-DQ00000218,PIPE-20641,learning_activity,completion_percentage_between_0_and_100,Validity,145021,33,0.000228,High,2026-07-07 02:21:00
-DQ00000219,PIPE-20641,learning_activity,completed_implies_100_percent,Consistency,145021,181,0.001248,Medium,2026-07-07 03:11:00
-DQ00000220,PIPE-20641,learning_activity,assessment_score_present_when_completed,Completeness,145021,494,0.003406,Low,2026-07-07 02:24:00
-DQ00000221,PIPE-20641,campaigns,campaign_id_unique,Uniqueness,251,0,0.0,Critical,2026-07-07 02:32:00
-DQ00000222,PIPE-20641,campaigns,end_date_after_start_date,Validity,251,0,0.0,Medium,2026-07-07 02:54:00
-DQ00000223,PIPE-20641,marketing_engagement,campaign_id_foreign_key,Referential integrity,1035780,723,0.000698,Critical,2026-07-07 02:32:00
-DQ00000224,PIPE-20641,marketing_engagement,opened_implies_delivered,Consistency,1035780,255,0.000246,High,2026-07-07 02:54:00
-DQ00000225,PIPE-20641,marketing_engagement,clicked_implies_opened,Consistency,1035780,225,0.000217,High,2026-07-07 02:53:00
-DQ00000226,PIPE-20641,marketing_engagement,sent_date_within_campaign_window,Validity,1035780,3105,0.002998,Low,2026-07-07 03:10:00
-DQ00000227,PIPE-20641,member_feedback,rating_between_1_and_5,Validity,47744,9,0.000189,High,2026-07-07 03:04:00
-DQ00000228,PIPE-20641,member_feedback,feedback_text_not_empty,Completeness,47744,71,0.001487,Medium,2026-07-07 02:01:00
-DQ00000229,PIPE-20641,member_feedback,sentiment_label_in_reference_list,Validity,47744,81,0.001697,Medium,2026-07-07 03:05:00
-DQ00000230,PIPE-20641,model_predictions,churn_probability_between_0_and_1,Validity,111650,0,0.0,Critical,2026-07-07 02:57:00
-DQ00000231,PIPE-20641,model_predictions,one_row_per_member_per_run,Uniqueness,111650,70,0.000627,High,2026-07-07 02:53:00
-DQ00000232,PIPE-20641,model_predictions,risk_category_matches_probability_band,Consistency,111650,65,0.000582,Medium,2026-07-07 02:26:00
-DQ00000233,PIPE-20641,ai_insights,prediction_run_id_foreign_key,Referential integrity,6001,3,0.0005,Critical,2026-07-07 03:12:00
-DQ00000234,PIPE-20641,ai_insights,executive_summary_not_empty,Completeness,6001,5,0.000833,Medium,2026-07-07 02:44:00
-DQ00000235,PIPE-20641,ai_insights,validation_status_reviewed,Governance,6001,71,0.011831,Low,2026-07-07 02:50:00
-DQ00000236,PIPE-20642,members,member_id_not_null,Completeness,23785,0,0.0,Critical,2026-07-08 02:30:00
-DQ00000237,PIPE-20642,members,member_id_unique,Uniqueness,23785,0,0.0,Critical,2026-07-08 03:08:00
-DQ00000238,PIPE-20642,members,join_date_not_future,Validity,23785,3,0.000126,High,2026-07-08 02:14:00
-DQ00000239,PIPE-20642,members,membership_type_in_reference_list,Validity,23785,23,0.000967,Medium,2026-07-08 02:34:00
-DQ00000240,PIPE-20642,members,annual_fee_within_expected_range,Validity,23785,34,0.001429,Medium,2026-07-08 02:06:00
-DQ00000241,PIPE-20642,members,region_not_null,Completeness,23785,68,0.002859,Low,2026-07-08 03:03:00
-DQ00000242,PIPE-20642,members,churn_date_after_join_date,Consistency,23785,0,0.0,Critical,2026-07-08 02:37:00
-DQ00000243,PIPE-20642,membership_history,no_overlapping_terms,Consistency,76225,62,0.000813,High,2026-07-08 02:05:00
-DQ00000244,PIPE-20642,membership_history,member_id_foreign_key,Referential integrity,76225,12,0.000157,Critical,2026-07-08 02:26:00
-DQ00000245,PIPE-20642,membership_history,effective_to_after_effective_from,Validity,76225,6,7.9e-05,High,2026-07-08 02:17:00
-DQ00000246,PIPE-20642,membership_history,annual_fee_not_null,Completeness,76225,34,0.000446,Medium,2026-07-08 02:43:00
-DQ00000247,PIPE-20642,website_activity,member_id_foreign_key,Referential integrity,1561959,1273,0.000815,Critical,2026-07-08 03:06:00
-DQ00000248,PIPE-20642,website_activity,activity_date_within_window,Validity,1561959,665,0.000426,High,2026-07-08 02:33:00
-DQ00000249,PIPE-20642,website_activity,page_views_ge_session_count,Consistency,1561959,3920,0.00251,Medium,2026-07-08 03:17:00
-DQ00000250,PIPE-20642,website_activity,no_duplicate_member_week,Uniqueness,1561959,690,0.000442,High,2026-07-08 02:13:00
+DQ00000071,PIPE-20638,event_attendance,event_id_foreign_key,Referential integrity,271525,338,0.001245,Critical,2026-07-04 03:18:00
+DQ00000072,PIPE-20638,event_attendance,member_id_foreign_key,Referential integrity,271525,171,0.00063,Critical,2026-07-04 02:15:00
+DQ00000073,PIPE-20638,event_attendance,attendance_status_in_reference_list,Validity,271525,48,0.000177,High,2026-07-04 02:31:00
+DQ00000074,PIPE-20638,event_attendance,registration_before_event_date,Consistency,271525,281,0.001035,Medium,2026-07-04 02:34:00
+DQ00000075,PIPE-20638,event_attendance,feedback_score_between_1_and_5,Validity,271525,51,0.000188,Low,2026-07-04 02:20:00
+DQ00000076,PIPE-20638,learning_activity,course_id_foreign_key,Referential integrity,137681,170,0.001235,Critical,2026-07-04 02:18:00
+DQ00000077,PIPE-20638,learning_activity,completion_percentage_between_0_and_100,Validity,137681,31,0.000225,High,2026-07-04 02:16:00
+DQ00000078,PIPE-20638,learning_activity,completed_implies_100_percent,Consistency,137681,93,0.000675,Medium,2026-07-04 03:03:00
+DQ00000079,PIPE-20638,learning_activity,assessment_score_present_when_completed,Completeness,137681,327,0.002375,Low,2026-07-04 02:04:00
+DQ00000080,PIPE-20638,campaigns,campaign_id_unique,Uniqueness,279,0,0.0,Critical,2026-07-04 02:12:00
+DQ00000081,PIPE-20638,campaigns,end_date_after_start_date,Validity,279,0,0.0,Medium,2026-07-04 02:57:00
+DQ00000082,PIPE-20638,marketing_engagement,campaign_id_foreign_key,Referential integrity,1007060,314,0.000312,Critical,2026-07-04 02:21:00
+DQ00000083,PIPE-20638,marketing_engagement,opened_implies_delivered,Consistency,1007060,300,0.000298,High,2026-07-04 02:26:00
+DQ00000084,PIPE-20638,marketing_engagement,clicked_implies_opened,Consistency,1007060,242,0.00024,High,2026-07-04 02:39:00
+DQ00000085,PIPE-20638,marketing_engagement,sent_date_within_campaign_window,Validity,1007060,5399,0.005361,Low,2026-07-04 03:15:00
+DQ00000086,PIPE-20638,member_feedback,rating_between_1_and_5,Validity,43180,17,0.000394,High,2026-07-04 02:33:00
+DQ00000087,PIPE-20638,member_feedback,feedback_text_not_empty,Completeness,43180,152,0.00352,Medium,2026-07-04 02:44:00
+DQ00000088,PIPE-20638,member_feedback,sentiment_label_in_reference_list,Validity,43180,28,0.000648,Medium,2026-07-04 03:00:00
+DQ00000089,PIPE-20638,model_predictions,churn_probability_between_0_and_1,Validity,97258,0,0.0,Critical,2026-07-04 02:23:00
+DQ00000090,PIPE-20638,model_predictions,one_row_per_member_per_run,Uniqueness,97258,13,0.000134,High,2026-07-04 02:07:00
+DQ00000091,PIPE-20638,model_predictions,risk_category_matches_probability_band,Consistency,97258,106,0.00109,Medium,2026-07-04 02:31:00
+DQ00000092,PIPE-20638,ai_insights,prediction_run_id_foreign_key,Referential integrity,7302,13,0.00178,Critical,2026-07-04 02:13:00
+DQ00000093,PIPE-20638,ai_insights,executive_summary_not_empty,Completeness,7302,64,0.008765,Medium,2026-07-04 02:56:00
+DQ00000094,PIPE-20638,ai_insights,validation_status_reviewed,Governance,7302,156,0.021364,Low,2026-07-04 03:11:00
+DQ00000095,PIPE-20639,members,member_id_not_null,Completeness,23717,0,0.0,Critical,2026-07-05 02:42:00
+DQ00000096,PIPE-20639,members,member_id_unique,Uniqueness,23717,0,0.0,Critical,2026-07-05 02:59:00
+DQ00000097,PIPE-20639,members,join_date_not_future,Validity,23717,7,0.000295,High,2026-07-05 02:17:00
+DQ00000098,PIPE-20639,members,membership_type_in_reference_list,Validity,23717,8,0.000337,Medium,2026-07-05 02:35:00
+DQ00000099,PIPE-20639,members,annual_fee_within_expected_range,Validity,23717,8,0.000337,Medium,2026-07-05 02:10:00
+DQ00000100,PIPE-20639,members,region_not_null,Completeness,23717,34,0.001434,Low,2026-07-05 02:45:00
+DQ00000101,PIPE-20639,members,churn_date_after_join_date,Consistency,23717,0,0.0,Critical,2026-07-05 02:58:00
+DQ00000102,PIPE-20639,membership_history,no_overlapping_terms,Consistency,72256,56,0.000775,High,2026-07-05 02:28:00
+DQ00000103,PIPE-20639,membership_history,member_id_foreign_key,Referential integrity,72256,9,0.000125,Critical,2026-07-05 03:16:00
+DQ00000104,PIPE-20639,membership_history,effective_to_after_effective_from,Validity,72256,12,0.000166,High,2026-07-05 02:53:00
+DQ00000105,PIPE-20639,membership_history,annual_fee_not_null,Completeness,72256,26,0.00036,Medium,2026-07-05 02:46:00
+DQ00000106,PIPE-20639,website_activity,member_id_foreign_key,Referential integrity,1444337,1116,0.000773,Critical,2026-07-05 02:19:00
+DQ00000107,PIPE-20639,website_activity,activity_date_within_window,Validity,1444337,562,0.000389,High,2026-07-05 02:17:00
+DQ00000108,PIPE-20639,website_activity,page_views_ge_session_count,Consistency,1444337,4334,0.003001,Medium,2026-07-05 02:46:00
+DQ00000109,PIPE-20639,website_activity,no_duplicate_member_week,Uniqueness,1444337,559,0.000387,High,2026-07-05 02:44:00
+DQ00000110,PIPE-20639,website_activity,average_session_minutes_positive,Validity,1444337,984,0.000681,Low,2026-07-05 03:09:00
+DQ00000111,PIPE-20639,login_history,member_id_foreign_key,Referential integrity,2106026,1488,0.000707,Critical,2026-07-05 02:16:00
+DQ00000112,PIPE-20639,login_history,login_timestamp_parseable,Validity,2106026,426,0.000202,High,2026-07-05 03:11:00
+DQ00000113,PIPE-20639,login_history,session_duration_within_range,Validity,2106026,4768,0.002264,Low,2026-07-05 02:13:00
+DQ00000114,PIPE-20639,login_history,no_duplicate_login_id,Uniqueness,2106026,0,0.0,Critical,2026-07-05 02:45:00
+DQ00000115,PIPE-20639,events,event_id_unique,Uniqueness,1517,0,0.0,Critical,2026-07-05 03:12:00
+DQ00000116,PIPE-20639,events,capacity_positive,Validity,1517,0,0.0,Medium,2026-07-05 02:44:00
+DQ00000117,PIPE-20639,events,event_cost_not_negative,Validity,1517,0,0.0,Medium,2026-07-05 02:49:00
+DQ00000118,PIPE-20639,event_attendance,event_id_foreign_key,Referential integrity,271783,370,0.001361,Critical,2026-07-05 02:23:00
+DQ00000119,PIPE-20639,event_attendance,member_id_foreign_key,Referential integrity,271783,787,0.002896,Critical,2026-07-05 02:58:00
+DQ00000120,PIPE-20639,event_attendance,attendance_status_in_reference_list,Validity,271783,30,0.00011,High,2026-07-05 03:12:00
+DQ00000121,PIPE-20639,event_attendance,registration_before_event_date,Consistency,271783,495,0.001821,Medium,2026-07-05 02:41:00
+DQ00000122,PIPE-20639,event_attendance,feedback_score_between_1_and_5,Validity,271783,58,0.000213,Low,2026-07-05 02:25:00
+DQ00000123,PIPE-20639,learning_activity,course_id_foreign_key,Referential integrity,137811,101,0.000733,Critical,2026-07-05 02:19:00
+DQ00000124,PIPE-20639,learning_activity,completion_percentage_between_0_and_100,Validity,137811,26,0.000189,High,2026-07-05 03:03:00
+DQ00000125,PIPE-20639,learning_activity,completed_implies_100_percent,Consistency,137811,283,0.002054,Medium,2026-07-05 02:16:00
+DQ00000126,PIPE-20639,learning_activity,assessment_score_present_when_completed,Completeness,137811,434,0.003149,Low,2026-07-05 03:03:00
+DQ00000127,PIPE-20639,campaigns,campaign_id_unique,Uniqueness,279,0,0.0,Critical,2026-07-05 02:11:00
+DQ00000128,PIPE-20639,campaigns,end_date_after_start_date,Validity,279,0,0.0,Medium,2026-07-05 02:34:00
+DQ00000129,PIPE-20639,marketing_engagement,campaign_id_foreign_key,Referential integrity,1008016,640,0.000635,Critical,2026-07-05 02:55:00
+DQ00000130,PIPE-20639,marketing_engagement,opened_implies_delivered,Consistency,1008016,473,0.000469,High,2026-07-05 02:46:00
+DQ00000131,PIPE-20639,marketing_engagement,clicked_implies_opened,Consistency,1008016,1054,0.001046,High,2026-07-05 02:04:00
+DQ00000132,PIPE-20639,marketing_engagement,sent_date_within_campaign_window,Validity,1008016,2301,0.002283,Low,2026-07-05 02:31:00
+DQ00000133,PIPE-20639,member_feedback,rating_between_1_and_5,Validity,43221,8,0.000185,High,2026-07-05 02:42:00
+DQ00000134,PIPE-20639,member_feedback,feedback_text_not_empty,Completeness,43221,199,0.004604,Medium,2026-07-05 02:44:00
+DQ00000135,PIPE-20639,member_feedback,sentiment_label_in_reference_list,Validity,43221,42,0.000972,Medium,2026-07-05 02:32:00
+DQ00000136,PIPE-20639,model_predictions,churn_probability_between_0_and_1,Validity,97350,0,0.0,Critical,2026-07-05 02:02:00
+DQ00000137,PIPE-20639,model_predictions,one_row_per_member_per_run,Uniqueness,97350,33,0.000339,High,2026-07-05 02:33:00
+DQ00000138,PIPE-20639,model_predictions,risk_category_matches_probability_band,Consistency,97350,72,0.00074,Medium,2026-07-05 02:19:00
+DQ00000139,PIPE-20639,ai_insights,prediction_run_id_foreign_key,Referential integrity,7309,4,0.000547,Critical,2026-07-05 02:14:00
+DQ00000140,PIPE-20639,ai_insights,executive_summary_not_empty,Completeness,7309,38,0.005199,Medium,2026-07-05 03:02:00
+DQ00000141,PIPE-20639,ai_insights,validation_status_reviewed,Governance,7309,166,0.022712,Low,2026-07-05 02:16:00
+DQ00000142,PIPE-20640,members,member_id_not_null,Completeness,23740,0,0.0,Critical,2026-07-06 02:28:00
+DQ00000143,PIPE-20640,members,member_id_unique,Uniqueness,23740,0,0.0,Critical,2026-07-06 02:24:00
+DQ00000144,PIPE-20640,members,join_date_not_future,Validity,23740,1,4.2e-05,High,2026-07-06 02:58:00
+DQ00000145,PIPE-20640,members,membership_type_in_reference_list,Validity,23740,17,0.000716,Medium,2026-07-06 02:40:00
+DQ00000146,PIPE-20640,members,annual_fee_within_expected_range,Validity,23740,45,0.001896,Medium,2026-07-06 02:34:00
+DQ00000147,PIPE-20640,members,region_not_null,Completeness,23740,49,0.002064,Low,2026-07-06 02:54:00
+DQ00000148,PIPE-20640,members,churn_date_after_join_date,Consistency,23740,0,0.0,Critical,2026-07-06 03:17:00
+DQ00000149,PIPE-20640,membership_history,no_overlapping_terms,Consistency,72325,127,0.001756,High,2026-07-06 02:32:00
+DQ00000150,PIPE-20640,membership_history,member_id_foreign_key,Referential integrity,72325,26,0.000359,Critical,2026-07-06 02:01:00
+DQ00000151,PIPE-20640,membership_history,effective_to_after_effective_from,Validity,72325,0,0.0,High,2026-07-06 02:17:00
+DQ00000152,PIPE-20640,membership_history,annual_fee_not_null,Completeness,72325,144,0.001991,Medium,2026-07-06 02:20:00
+DQ00000153,PIPE-20640,website_activity,member_id_foreign_key,Referential integrity,1445708,2458,0.0017,Critical,2026-07-06 02:40:00
+DQ00000154,PIPE-20640,website_activity,activity_date_within_window,Validity,1445708,1467,0.001015,High,2026-07-06 02:52:00
+DQ00000155,PIPE-20640,website_activity,page_views_ge_session_count,Consistency,1445708,3674,0.002541,Medium,2026-07-06 03:19:00
+DQ00000156,PIPE-20640,website_activity,no_duplicate_member_week,Uniqueness,1445708,700,0.000484,High,2026-07-06 02:26:00
+DQ00000157,PIPE-20640,website_activity,average_session_minutes_positive,Validity,1445708,1839,0.001272,Low,2026-07-06 02:58:00
+DQ00000158,PIPE-20640,login_history,member_id_foreign_key,Referential integrity,2108024,1541,0.000731,Critical,2026-07-06 02:26:00
+DQ00000159,PIPE-20640,login_history,login_timestamp_parseable,Validity,2108024,230,0.000109,High,2026-07-06 02:48:00
+DQ00000160,PIPE-20640,login_history,session_duration_within_range,Validity,2108024,5667,0.002688,Low,2026-07-06 02:00:00
+DQ00000161,PIPE-20640,login_history,no_duplicate_login_id,Uniqueness,2108024,0,0.0,Critical,2026-07-06 02:42:00
+DQ00000162,PIPE-20640,events,event_id_unique,Uniqueness,1519,0,0.0,Critical,2026-07-06 02:30:00
+DQ00000163,PIPE-20640,events,capacity_positive,Validity,1519,0,0.0,Medium,2026-07-06 02:37:00
+DQ00000164,PIPE-20640,events,event_cost_not_negative,Validity,1519,0,0.0,Medium,2026-07-06 02:22:00
+DQ00000165,PIPE-20640,event_attendance,event_id_foreign_key,Referential integrity,272041,200,0.000735,Critical,2026-07-06 02:18:00
+DQ00000166,PIPE-20640,event_attendance,member_id_foreign_key,Referential integrity,272041,149,0.000548,Critical,2026-07-06 02:41:00
+DQ00000167,PIPE-20640,event_attendance,attendance_status_in_reference_list,Validity,272041,74,0.000272,High,2026-07-06 03:07:00
+DQ00000168,PIPE-20640,event_attendance,registration_before_event_date,Consistency,272041,911,0.003349,Medium,2026-07-06 03:17:00
+DQ00000169,PIPE-20640,event_attendance,feedback_score_between_1_and_5,Validity,272041,304,0.001117,Low,2026-07-06 02:19:00
+DQ00000170,PIPE-20640,learning_activity,course_id_foreign_key,Referential integrity,137942,5612,0.040684,Critical,2026-07-06 02:02:00
+DQ00000171,PIPE-20640,learning_activity,completion_percentage_between_0_and_100,Validity,137942,2800,0.020298,High,2026-07-06 02:27:00
+DQ00000172,PIPE-20640,learning_activity,completed_implies_100_percent,Consistency,137942,5770,0.041829,Medium,2026-07-06 02:47:00
+DQ00000173,PIPE-20640,learning_activity,assessment_score_present_when_completed,Completeness,137942,18589,0.13476,Low,2026-07-06 02:27:00
+DQ00000174,PIPE-20640,campaigns,campaign_id_unique,Uniqueness,280,0,0.0,Critical,2026-07-06 02:04:00
+DQ00000175,PIPE-20640,campaigns,end_date_after_start_date,Validity,280,0,0.0,Medium,2026-07-06 02:10:00
+DQ00000176,PIPE-20640,marketing_engagement,campaign_id_foreign_key,Referential integrity,1008972,837,0.00083,Critical,2026-07-06 02:44:00
+DQ00000177,PIPE-20640,marketing_engagement,opened_implies_delivered,Consistency,1008972,785,0.000778,High,2026-07-06 02:59:00
+DQ00000178,PIPE-20640,marketing_engagement,clicked_implies_opened,Consistency,1008972,1277,0.001266,High,2026-07-06 02:45:00
+DQ00000179,PIPE-20640,marketing_engagement,sent_date_within_campaign_window,Validity,1008972,2361,0.00234,Low,2026-07-06 02:30:00
+DQ00000180,PIPE-20640,member_feedback,rating_between_1_and_5,Validity,43262,17,0.000393,High,2026-07-06 03:14:00
+DQ00000181,PIPE-20640,member_feedback,feedback_text_not_empty,Completeness,43262,152,0.003513,Medium,2026-07-06 03:08:00
+DQ00000182,PIPE-20640,member_feedback,sentiment_label_in_reference_list,Validity,43262,29,0.00067,Medium,2026-07-06 02:17:00
+DQ00000183,PIPE-20640,model_predictions,churn_probability_between_0_and_1,Validity,97443,0,0.0,Critical,2026-07-06 02:23:00
+DQ00000184,PIPE-20640,model_predictions,one_row_per_member_per_run,Uniqueness,97443,12,0.000123,High,2026-07-06 02:43:00
+DQ00000185,PIPE-20640,model_predictions,risk_category_matches_probability_band,Consistency,97443,69,0.000708,Medium,2026-07-06 02:10:00
+DQ00000186,PIPE-20640,ai_insights,prediction_run_id_foreign_key,Referential integrity,7316,7,0.000957,Critical,2026-07-06 02:21:00
+DQ00000187,PIPE-20640,ai_insights,executive_summary_not_empty,Completeness,7316,12,0.00164,Medium,2026-07-06 02:52:00
+DQ00000188,PIPE-20640,ai_insights,validation_status_reviewed,Governance,7316,48,0.006561,Low,2026-07-06 03:11:00
+DQ00000189,PIPE-20641,members,member_id_not_null,Completeness,23762,0,0.0,Critical,2026-07-07 03:02:00
+DQ00000190,PIPE-20641,members,member_id_unique,Uniqueness,23762,0,0.0,Critical,2026-07-07 03:13:00
+DQ00000191,PIPE-20641,members,join_date_not_future,Validity,23762,8,0.000337,High,2026-07-07 02:04:00
+DQ00000192,PIPE-20641,members,membership_type_in_reference_list,Validity,23762,9,0.000379,Medium,2026-07-07 03:16:00
+DQ00000193,PIPE-20641,members,annual_fee_within_expected_range,Validity,23762,36,0.001515,Medium,2026-07-07 02:58:00
+DQ00000194,PIPE-20641,members,region_not_null,Completeness,23762,53,0.00223,Low,2026-07-07 02:14:00
+DQ00000195,PIPE-20641,members,churn_date_after_join_date,Consistency,23762,0,0.0,Critical,2026-07-07 02:13:00
+DQ00000196,PIPE-20641,membership_history,no_overlapping_terms,Consistency,72393,59,0.000815,High,2026-07-07 03:03:00
+DQ00000197,PIPE-20641,membership_history,member_id_foreign_key,Referential integrity,72393,12,0.000166,Critical,2026-07-07 02:07:00
+DQ00000198,PIPE-20641,membership_history,effective_to_after_effective_from,Validity,72393,10,0.000138,High,2026-07-07 02:18:00
+DQ00000199,PIPE-20641,membership_history,annual_fee_not_null,Completeness,72393,9,0.000124,Medium,2026-07-07 02:22:00
+DQ00000200,PIPE-20641,website_activity,member_id_foreign_key,Referential integrity,1447078,3377,0.002334,Critical,2026-07-07 03:11:00
+DQ00000201,PIPE-20641,website_activity,activity_date_within_window,Validity,1447078,1193,0.000824,High,2026-07-07 03:12:00
+DQ00000202,PIPE-20641,website_activity,page_views_ge_session_count,Consistency,1447078,1501,0.001037,Medium,2026-07-07 03:10:00
+DQ00000203,PIPE-20641,website_activity,no_duplicate_member_week,Uniqueness,1447078,737,0.000509,High,2026-07-07 02:55:00
+DQ00000204,PIPE-20641,website_activity,average_session_minutes_positive,Validity,1447078,1003,0.000693,Low,2026-07-07 02:03:00
+DQ00000205,PIPE-20641,login_history,member_id_foreign_key,Referential integrity,2110022,1376,0.000652,Critical,2026-07-07 02:48:00
+DQ00000206,PIPE-20641,login_history,login_timestamp_parseable,Validity,2110022,627,0.000297,High,2026-07-07 02:55:00
+DQ00000207,PIPE-20641,login_history,session_duration_within_range,Validity,2110022,11910,0.005644,Low,2026-07-07 02:33:00
+DQ00000208,PIPE-20641,login_history,no_duplicate_login_id,Uniqueness,2110022,0,0.0,Critical,2026-07-07 02:41:00
+DQ00000209,PIPE-20641,events,event_id_unique,Uniqueness,1520,0,0.0,Critical,2026-07-07 02:10:00
+DQ00000210,PIPE-20641,events,capacity_positive,Validity,1520,0,0.0,Medium,2026-07-07 03:12:00
+DQ00000211,PIPE-20641,events,event_cost_not_negative,Validity,1520,0,0.0,Medium,2026-07-07 02:34:00
+DQ00000212,PIPE-20641,event_attendance,event_id_foreign_key,Referential integrity,272299,409,0.001502,Critical,2026-07-07 02:46:00
+DQ00000213,PIPE-20641,event_attendance,member_id_foreign_key,Referential integrity,272299,196,0.00072,Critical,2026-07-07 03:19:00
+DQ00000214,PIPE-20641,event_attendance,attendance_status_in_reference_list,Validity,272299,92,0.000338,High,2026-07-07 03:05:00
+DQ00000215,PIPE-20641,event_attendance,registration_before_event_date,Consistency,272299,264,0.00097,Medium,2026-07-07 03:18:00
+DQ00000216,PIPE-20641,event_attendance,feedback_score_between_1_and_5,Validity,272299,87,0.00032,Low,2026-07-07 03:11:00
+DQ00000217,PIPE-20641,learning_activity,course_id_foreign_key,Referential integrity,138073,70,0.000507,Critical,2026-07-07 02:48:00
+DQ00000218,PIPE-20641,learning_activity,completion_percentage_between_0_and_100,Validity,138073,44,0.000319,High,2026-07-07 02:20:00
+DQ00000219,PIPE-20641,learning_activity,completed_implies_100_percent,Consistency,138073,135,0.000978,Medium,2026-07-07 02:17:00
+DQ00000220,PIPE-20641,learning_activity,assessment_score_present_when_completed,Completeness,138073,191,0.001383,Low,2026-07-07 02:21:00
+DQ00000221,PIPE-20641,campaigns,campaign_id_unique,Uniqueness,280,0,0.0,Critical,2026-07-07 02:22:00
+DQ00000222,PIPE-20641,campaigns,end_date_after_start_date,Validity,280,1,0.003571,Medium,2026-07-07 02:21:00
+DQ00000223,PIPE-20641,marketing_engagement,campaign_id_foreign_key,Referential integrity,1009929,717,0.00071,Critical,2026-07-07 02:07:00
+DQ00000224,PIPE-20641,marketing_engagement,opened_implies_delivered,Consistency,1009929,249,0.000247,High,2026-07-07 02:59:00
+DQ00000225,PIPE-20641,marketing_engagement,clicked_implies_opened,Consistency,1009929,326,0.000323,High,2026-07-07 02:45:00
+DQ00000226,PIPE-20641,marketing_engagement,sent_date_within_campaign_window,Validity,1009929,2944,0.002915,Low,2026-07-07 02:51:00
+DQ00000227,PIPE-20641,member_feedback,rating_between_1_and_5,Validity,43303,1,2.3e-05,High,2026-07-07 02:38:00
+DQ00000228,PIPE-20641,member_feedback,feedback_text_not_empty,Completeness,43303,117,0.002702,Medium,2026-07-07 02:45:00
+DQ00000229,PIPE-20641,member_feedback,sentiment_label_in_reference_list,Validity,43303,14,0.000323,Medium,2026-07-07 02:47:00
+DQ00000230,PIPE-20641,model_predictions,churn_probability_between_0_and_1,Validity,97535,0,0.0,Critical,2026-07-07 02:55:00
+DQ00000231,PIPE-20641,model_predictions,one_row_per_member_per_run,Uniqueness,97535,49,0.000502,High,2026-07-07 02:01:00
+DQ00000232,PIPE-20641,model_predictions,risk_category_matches_probability_band,Consistency,97535,138,0.001415,Medium,2026-07-07 02:11:00
+DQ00000233,PIPE-20641,ai_insights,prediction_run_id_foreign_key,Referential integrity,7323,3,0.00041,Critical,2026-07-07 02:04:00
+DQ00000234,PIPE-20641,ai_insights,executive_summary_not_empty,Completeness,7323,13,0.001775,Medium,2026-07-07 02:50:00
+DQ00000235,PIPE-20641,ai_insights,validation_status_reviewed,Governance,7323,151,0.02062,Low,2026-07-07 02:30:00
+DQ00000236,PIPE-20642,members,member_id_not_null,Completeness,23785,0,0.0,Critical,2026-07-08 02:55:00
+DQ00000237,PIPE-20642,members,member_id_unique,Uniqueness,23785,0,0.0,Critical,2026-07-08 02:40:00
+DQ00000238,PIPE-20642,members,join_date_not_future,Validity,23785,2,8.4e-05,High,2026-07-08 02:13:00
+DQ00000239,PIPE-20642,members,membership_type_in_reference_list,Validity,23785,13,0.000547,Medium,2026-07-08 03:12:00
+DQ00000240,PIPE-20642,members,annual_fee_within_expected_range,Validity,23785,41,0.001724,Medium,2026-07-08 03:03:00
+DQ00000241,PIPE-20642,members,region_not_null,Completeness,23785,75,0.003153,Low,2026-07-08 02:37:00
+DQ00000242,PIPE-20642,members,churn_date_after_join_date,Consistency,23785,0,0.0,Critical,2026-07-08 02:05:00
+DQ00000243,PIPE-20642,membership_history,no_overlapping_terms,Consistency,72462,31,0.000428,High,2026-07-08 02:26:00
+DQ00000244,PIPE-20642,membership_history,member_id_foreign_key,Referential integrity,72462,19,0.000262,Critical,2026-07-08 02:17:00
+DQ00000245,PIPE-20642,membership_history,effective_to_after_effective_from,Validity,72462,6,8.3e-05,High,2026-07-08 02:43:00
+DQ00000246,PIPE-20642,membership_history,annual_fee_not_null,Completeness,72462,58,0.0008,Medium,2026-07-08 02:24:00
+DQ00000247,PIPE-20642,website_activity,member_id_foreign_key,Referential integrity,1448448,1329,0.000918,Critical,2026-07-08 02:45:00
+DQ00000248,PIPE-20642,website_activity,activity_date_within_window,Validity,1448448,616,0.000425,High,2026-07-08 03:06:00
+DQ00000249,PIPE-20642,website_activity,page_views_ge_session_count,Consistency,1448448,2043,0.00141,Medium,2026-07-08 02:42:00
+DQ00000250,PIPE-20642,website_activity,no_duplicate_member_week,Uniqueness,1448448,641,0.000443,High,2026-07-08 02:02:00

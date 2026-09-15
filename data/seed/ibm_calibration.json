@@ -1,0 +1,123 @@
+{
+  "source": "IBM Source Files",
+  "n_source_rows": 7043,
+  "tenure_mean_months": 32.387,
+  "tenure_sd_months": 24.542,
+  "tenure_max_months": 72,
+  "tenure_deciles": [
+    1.0,
+    2.0,
+    6.0,
+    12.0,
+    20.0,
+    29.0,
+    40.0,
+    50.0,
+    60.0,
+    69.0,
+    72.0
+  ],
+  "month_to_month_share": 0.5126,
+  "automatic_payment_share": 0.4353,
+  "payment_method_source": "original workbook (labels carry the automatic marker)",
+  "paperless_billing_share": 0.5922,
+  "churn_rate": 0.2654,
+  "joined_share": 0.0645,
+  "churn_charge_ratio": 1.2151,
+  "cltv_mean": 4400.3,
+  "cltv_cv": 0.2689,
+  "cltv_churn_ratio": 0.924,
+  "age_shares_raw": {
+    "18-24": 0.1106,
+    "25-34": 0.1772,
+    "35-44": 0.187,
+    "45-54": 0.1826,
+    "55-64": 0.1805,
+    "65+": 0.1621
+  },
+  "age_shares_adjusted": {
+    "18-24": 0.0926,
+    "25-34": 0.2357,
+    "35-44": 0.2487,
+    "45-54": 0.2159,
+    "55-64": 0.1511,
+    "65+": 0.0559
+  },
+  "referrer_share": 0.4575,
+  "referrals_mean_among_referrers": 4.267,
+  "referrals_max": 11,
+  "referrals_churn_ratio": 0.2111,
+  "satisfaction_shares": {
+    "1": 0.1309,
+    "2": 0.0735,
+    "3": 0.3784,
+    "4": 0.254,
+    "5": 0.1631
+  },
+  "churn_category_shares": {
+    "Competitor": 0.45,
+    "Attitude": 0.168,
+    "Dissatisfaction": 0.1621,
+    "Price": 0.1129,
+    "Other": 0.107
+  },
+  "churn_reason_shares": {
+    "Competitor had better devices": 0.1675,
+    "Competitor made better offer": 0.1664,
+    "Attitude of support person": 0.1177,
+    "Don't know": 0.0696,
+    "Competitor offered more data": 0.0626,
+    "Competitor offered higher download speeds": 0.0535,
+    "Attitude of service provider": 0.0503,
+    "Price too high": 0.0417,
+    "Product dissatisfaction": 0.0412,
+    "Network reliability": 0.0385,
+    "Long distance charges": 0.0342,
+    "Service dissatisfaction": 0.0337,
+    "Moved": 0.0246,
+    "Extra data charges": 0.0209,
+    "Limited range of services": 0.0198,
+    "Poor expertise of online support": 0.0166,
+    "Lack of affordable download/upload speed": 0.0161,
+    "Lack of self-service on Website": 0.0155,
+    "Poor expertise of phone support": 0.0064,
+    "Deceased": 0.0032
+  },
+  "reason_tenure_spread_months": 2.19,
+  "analogue_coefficients": {
+    "intercept": -1.7178,
+    "auto_payment": -0.5325,
+    "long_tenure": -0.6376,
+    "multi_service": -0.2495,
+    "high_charge": 0.7655,
+    "referred": -0.2064,
+    "month_to_month": 1.9478
+  },
+  "analogue_auc": 0.789,
+  "analogue_n": 5517,
+  "analogue_churn_rate": 0.3183,
+  "leakage": {
+    "Satisfaction Score": {
+      "verdict": "leaked",
+      "degenerate_groups": 4,
+      "rows_affected": 4378,
+      "share_of_rows": 0.6216,
+      "detail": "4 value groups covering 4,378 rows have a churn rate of exactly 0 or exactly 1"
+    },
+    "Churn Score": {
+      "verdict": "leaked",
+      "degenerate_groups": 6,
+      "rows_affected": 4221,
+      "share_of_rows": 0.5993,
+      "detail": "6 value groups covering 4,221 rows have a churn rate of exactly 0 or exactly 1",
+      "class_overlap_points": 15.0
+    }
+  },
+  "notes": [
+    "Calibrated from the extended IBM Cognos sample (7,043 customers) in 'IBM Source Files'.",
+    "Satisfaction Score and Churn Score are post-hoc annotations and are excluded from the analogue model; only their marginal distributions are used.",
+    "Tenure is censored at 72 months in the source, so the membership tenure tail is extended beyond what the seed can evidence.",
+    "Payment method is taken from the original workbook: the extended workbook relabels the four original categories into three and folds manual 'Electronic check' customers into 'Bank Withdrawal', which would overstate the automatic-payment share as 95.6% instead of 43.5%.",
+    "Location, population, gender, marital status and dependants are deliberately not carried over: US geography, and sensitive attributes of no analytical value to a membership model."
+  ]
+}

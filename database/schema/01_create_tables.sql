@@ -6,14 +6,21 @@
 -- in a later migration, not here.
 --
 --   psql -d membership -f database/schema/01_create_tables.sql
---   psql -d membership -f database/schema/02_load_csv.sql   (edit the path first)
+--   psql -d membership -v datadir=... -f database/schema/02_load_csv.sql
+--   psql -d membership -f database/schema/03_create_indexes.sql
+--
+-- Indexes live in 03 and are built AFTER the bulk load. Maintaining ~25 B-trees while
+-- copying 5.4 million rows in is pure overhead; building them once at the end against
+-- the finished table is substantially faster. Primary keys and foreign keys stay here,
+-- because they are correctness constraints and the load is meant to be checked by them.
 
 BEGIN;
 
 DROP TABLE IF EXISTS data_quality_results, ai_insights, model_predictions,
-    member_training_features, member_feedback, marketing_engagement, learning_activity,
-    event_attendance, login_history, website_activity, membership_history,
-    campaigns, courses, events, members CASCADE;
+    member_training_features, member_referrals, member_feedback, marketing_engagement,
+    segments,
+    learning_activity, event_attendance, login_history, website_activity,
+    membership_history, campaigns, courses, events, members CASCADE;
 
 -- ---------------------------------------------------------------------------------
 -- Dimensions
@@ -66,6 +73,12 @@ CREATE TABLE courses (
     launch_date      DATE        NOT NULL
 );
 
+CREATE TABLE segments (
+    segment_id       SMALLINT    PRIMARY KEY,
+    segment_name     VARCHAR(40) NOT NULL,
+    segment_strategy TEXT        NOT NULL
+);
+
 CREATE TABLE campaigns (
     campaign_id    VARCHAR(12) PRIMARY KEY,
     campaign_name  TEXT        NOT NULL,
@@ -91,8 +104,15 @@ CREATE TABLE membership_history (
     membership_status     VARCHAR(20) NOT NULL,
     annual_fee            NUMERIC(10, 2) NOT NULL,
     renewal_outcome       VARCHAR(20),
+    churn_category        VARCHAR(20),
     cancellation_reason   VARCHAR(60),
-    CONSTRAINT mh_dates_chk CHECK (effective_to IS NULL OR effective_to >= effective_from)
+    CONSTRAINT mh_dates_chk CHECK (effective_to IS NULL OR effective_to >= effective_from),
+    CONSTRAINT mh_category_chk CHECK (
+        churn_category IS NULL
+     OR churn_category IN ('Price','Dissatisfaction','Attitude','Competitor','Other')
+    ),
+    -- A churn category and a reason travel together or not at all.
+    CONSTRAINT mh_reason_chk CHECK ((churn_category IS NULL) = (cancellation_reason IS NULL))
 );
 
 -- ---------------------------------------------------------------------------------
@@ -169,6 +189,24 @@ CREATE TABLE marketing_engagement (
     )
 );
 
+-- Member-to-member advocacy graph. Added because the IBM seed shows referral
+-- behaviour is one of its strongest leak-free retention signals.
+CREATE TABLE member_referrals (
+    referral_id          VARCHAR(12) PRIMARY KEY,
+    referring_member_id  VARCHAR(12) NOT NULL REFERENCES members (member_id),
+    referral_date        DATE        NOT NULL,
+    referral_channel     VARCHAR(30) NOT NULL,
+    referral_status      VARCHAR(12) NOT NULL,
+    referred_member_id   VARCHAR(12) REFERENCES members (member_id),
+    CONSTRAINT mr_status_chk CHECK (referral_status IN ('Invited','Joined','Declined','Expired')),
+    -- Only a converted referral names the member it brought in.
+    CONSTRAINT mr_joined_chk CHECK (
+        (referral_status = 'Joined' AND referred_member_id IS NOT NULL)
+     OR (referral_status <> 'Joined' AND referred_member_id IS NULL)
+    ),
+    CONSTRAINT mr_self_chk CHECK (referred_member_id IS DISTINCT FROM referring_member_id)
+);
+
 CREATE TABLE member_feedback (
     feedback_id       VARCHAR(12) PRIMARY KEY,
     member_id         VARCHAR(12) NOT NULL REFERENCES members (member_id),
@@ -200,7 +238,8 @@ CREATE TABLE model_predictions (
     risk_category     VARCHAR(10) NOT NULL CHECK (risk_category IN ('Low','Medium','High')),
     predicted_churn   SMALLINT    NOT NULL CHECK (predicted_churn IN (0, 1)),
     engagement_score  NUMERIC(5, 1) NOT NULL CHECK (engagement_score BETWEEN 0 AND 100),
-    segment_id        SMALLINT    NOT NULL CHECK (segment_id BETWEEN 1 AND 7),
+    predicted_lifetime_value NUMERIC(12, 2) NOT NULL CHECK (predicted_lifetime_value >= 0),
+    segment_id        SMALLINT    NOT NULL REFERENCES segments (segment_id),
     model_name        VARCHAR(60) NOT NULL,
     model_version     VARCHAR(20) NOT NULL,
     top_risk_factor_1 TEXT,
@@ -259,6 +298,7 @@ CREATE TABLE member_training_features (
     campaigns_sent_180d        INTEGER     NOT NULL,
     campaign_open_rate_180d    NUMERIC(6, 4) NOT NULL,
     services_used              SMALLINT    NOT NULL,
+    referrals_365d             SMALLINT    NOT NULL,
     min_rating_365d            NUMERIC(3, 1),
     inactive_90_days           SMALLINT    NOT NULL,
     negative_feedback          SMALLINT    NOT NULL,
@@ -273,53 +313,10 @@ CREATE TABLE member_training_features (
     fee_increase               SMALLINT    NOT NULL,
     student_to_full_transition SMALLINT    NOT NULL,
     multi_service_user         SMALLINT    NOT NULL,
+    no_recent_advocacy         SMALLINT    NOT NULL,
     true_churn_probability     NUMERIC(6, 4) NOT NULL,
     churn_flag                 SMALLINT    NOT NULL CHECK (churn_flag IN (0, 1)),
     PRIMARY KEY (member_id, observation_date)
 );
-
--- ---------------------------------------------------------------------------------
--- Indexes
---
--- Every fact is queried the same two ways: by member (drill-through from a member
--- profile) and by date (trend pages and incremental refresh windows).
--- ---------------------------------------------------------------------------------
-
-CREATE INDEX idx_members_status        ON members (membership_status);
-CREATE INDEX idx_members_join_date     ON members (join_date);
-CREATE INDEX idx_members_churn_date    ON members (churn_date) WHERE churn_date IS NOT NULL;
-
-CREATE INDEX idx_mh_member             ON membership_history (member_id, effective_from);
-
-CREATE INDEX idx_wa_member_date        ON website_activity (member_id, activity_date);
-CREATE INDEX idx_wa_date               ON website_activity (activity_date);
-
-CREATE INDEX idx_lh_member_ts          ON login_history (member_id, login_timestamp);
-CREATE INDEX idx_lh_ts                 ON login_history (login_timestamp);
-
-CREATE INDEX idx_ea_member             ON event_attendance (member_id);
-CREATE INDEX idx_ea_event              ON event_attendance (event_id);
-CREATE INDEX idx_ea_reg_date           ON event_attendance (registration_date);
-
-CREATE INDEX idx_la_member_date        ON learning_activity (member_id, activity_date);
-CREATE INDEX idx_la_course             ON learning_activity (course_id);
-
-CREATE INDEX idx_me_member_date        ON marketing_engagement (member_id, sent_date);
-CREATE INDEX idx_me_campaign           ON marketing_engagement (campaign_id);
-
-CREATE INDEX idx_fb_member_date        ON member_feedback (member_id, submitted_date);
-CREATE INDEX idx_fb_sentiment          ON member_feedback (sentiment_label);
-
-CREATE INDEX idx_mp_run                ON model_predictions (prediction_run_id);
-CREATE INDEX idx_mp_member_date        ON model_predictions (member_id, prediction_date);
-CREATE INDEX idx_mp_risk               ON model_predictions (risk_category) WHERE risk_category <> 'Low';
-
-CREATE INDEX idx_ai_run                ON ai_insights (prediction_run_id);
-
-CREATE INDEX idx_dq_run                ON data_quality_results (pipeline_run_id);
-CREATE INDEX idx_dq_table_ts           ON data_quality_results (source_table, check_timestamp);
-
-CREATE INDEX idx_events_date           ON events (event_date);
-CREATE INDEX idx_campaigns_start       ON campaigns (start_date);
 
 COMMIT;

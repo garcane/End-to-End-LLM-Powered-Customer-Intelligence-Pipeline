@@ -1,54 +1,46 @@
 -- Load the generated CSV files into the schema created by 01_create_tables.sql.
 --
--- \copy runs client-side, so no server-side file permissions are needed. Pass the data
--- directory as a psql variable:
+-- \copy runs client-side, so no server-side file permissions are needed.
 --
---   psql -d membership -v datadir=/absolute/path/to/data/synthetic \
---        -f database/schema/02_load_csv.sql
+-- Paths below are hardcoded absolute paths rather than built from a psql variable.
+-- An earlier version used the `\set f :datadir '/x.csv'` concatenation trick, which is
+-- fragile when the two setup lines are pasted into a GUI terminal panel (pgAdmin's PSQL
+-- Tool, VS Code, etc.) rather than typed at a native psql prompt -- line-ending and
+-- buffering differences can silently corrupt the variable, producing a \copy against an
+-- empty or malformed filename. Hardcoding avoids that class of failure entirely.
+--
+-- To point this at a different checkout, edit DATA_DIR below (search and replace).
 --
 -- Order matters: dimensions before facts, and model_predictions before ai_insights,
 -- because an insight's foreign key points at the scoring run it explains.
 
 \set ON_ERROR_STOP on
+\set DATA_DIR 'C:/Users/Student/End-to-End-LLM-Powered-Customer-Intelligence-Pipeline/data/synthetic'
 
 \echo 'Loading dimensions ...'
-\set f :datadir '/members.csv'
-\copy members FROM :'f' WITH (FORMAT csv, HEADER true, NULL '')
-\set f :datadir '/events.csv'
-\copy events FROM :'f' WITH (FORMAT csv, HEADER true, NULL '')
-\set f :datadir '/courses.csv'
-\copy courses FROM :'f' WITH (FORMAT csv, HEADER true, NULL '')
-\set f :datadir '/campaigns.csv'
-\copy campaigns FROM :'f' WITH (FORMAT csv, HEADER true, NULL '')
-\set f :datadir '/membership_history.csv'
-\copy membership_history FROM :'f' WITH (FORMAT csv, HEADER true, NULL '')
+\copy members FROM 'C:/Users/Student/End-to-End-LLM-Powered-Customer-Intelligence-Pipeline/data/synthetic/members.csv' WITH (FORMAT csv, HEADER true, NULL '')
+\copy events FROM 'C:/Users/Student/End-to-End-LLM-Powered-Customer-Intelligence-Pipeline/data/synthetic/events.csv' WITH (FORMAT csv, HEADER true, NULL '')
+\copy courses FROM 'C:/Users/Student/End-to-End-LLM-Powered-Customer-Intelligence-Pipeline/data/synthetic/courses.csv' WITH (FORMAT csv, HEADER true, NULL '')
+\copy segments FROM 'C:/Users/Student/End-to-End-LLM-Powered-Customer-Intelligence-Pipeline/data/synthetic/segments.csv' WITH (FORMAT csv, HEADER true, NULL '')
+\copy campaigns FROM 'C:/Users/Student/End-to-End-LLM-Powered-Customer-Intelligence-Pipeline/data/synthetic/campaigns.csv' WITH (FORMAT csv, HEADER true, NULL '')
+\copy membership_history FROM 'C:/Users/Student/End-to-End-LLM-Powered-Customer-Intelligence-Pipeline/data/synthetic/membership_history.csv' WITH (FORMAT csv, HEADER true, NULL '')
 
 \echo 'Loading facts ...'
-\set f :datadir '/website_activity.csv'
-\copy website_activity FROM :'f' WITH (FORMAT csv, HEADER true, NULL '')
-\set f :datadir '/login_history.csv'
-\copy login_history FROM :'f' WITH (FORMAT csv, HEADER true, NULL '')
-\set f :datadir '/event_attendance.csv'
-\copy event_attendance FROM :'f' WITH (FORMAT csv, HEADER true, NULL '')
-\set f :datadir '/learning_activity.csv'
-\copy learning_activity FROM :'f' WITH (FORMAT csv, HEADER true, NULL '')
-\set f :datadir '/marketing_engagement.csv'
-\copy marketing_engagement FROM :'f' WITH (FORMAT csv, HEADER true, NULL '')
-\set f :datadir '/member_feedback.csv'
-\copy member_feedback FROM :'f' WITH (FORMAT csv, HEADER true, NULL '')
+\copy website_activity FROM 'C:/Users/Student/End-to-End-LLM-Powered-Customer-Intelligence-Pipeline/data/synthetic/website_activity.csv' WITH (FORMAT csv, HEADER true, NULL '')
+\copy login_history FROM 'C:/Users/Student/End-to-End-LLM-Powered-Customer-Intelligence-Pipeline/data/synthetic/login_history.csv' WITH (FORMAT csv, HEADER true, NULL '')
+\copy event_attendance FROM 'C:/Users/Student/End-to-End-LLM-Powered-Customer-Intelligence-Pipeline/data/synthetic/event_attendance.csv' WITH (FORMAT csv, HEADER true, NULL '')
+\copy learning_activity FROM 'C:/Users/Student/End-to-End-LLM-Powered-Customer-Intelligence-Pipeline/data/synthetic/learning_activity.csv' WITH (FORMAT csv, HEADER true, NULL '')
+\copy marketing_engagement FROM 'C:/Users/Student/End-to-End-LLM-Powered-Customer-Intelligence-Pipeline/data/synthetic/marketing_engagement.csv' WITH (FORMAT csv, HEADER true, NULL '')
+\copy member_referrals FROM 'C:/Users/Student/End-to-End-LLM-Powered-Customer-Intelligence-Pipeline/data/synthetic/member_referrals.csv' WITH (FORMAT csv, HEADER true, NULL '')
+\copy member_feedback FROM 'C:/Users/Student/End-to-End-LLM-Powered-Customer-Intelligence-Pipeline/data/synthetic/member_feedback.csv' WITH (FORMAT csv, HEADER true, NULL '')
 
 \echo 'Loading model output ...'
-\set f :datadir '/model_predictions.csv'
-\copy model_predictions FROM :'f' WITH (FORMAT csv, HEADER true, NULL '')
-\set f :datadir '/ai_insights.csv'
-\copy ai_insights FROM :'f' WITH (FORMAT csv, HEADER true, NULL '')
-\set f :datadir '/data_quality_results.csv'
-\copy data_quality_results FROM :'f' WITH (FORMAT csv, HEADER true, NULL '')
-\set f :datadir '/member_training_features.csv'
-\copy member_training_features FROM :'f' WITH (FORMAT csv, HEADER true, NULL '')
+\copy model_predictions FROM 'C:/Users/Student/End-to-End-LLM-Powered-Customer-Intelligence-Pipeline/data/synthetic/model_predictions.csv' WITH (FORMAT csv, HEADER true, NULL '')
+\copy ai_insights FROM 'C:/Users/Student/End-to-End-LLM-Powered-Customer-Intelligence-Pipeline/data/synthetic/ai_insights.csv' WITH (FORMAT csv, HEADER true, NULL '')
+\copy data_quality_results FROM 'C:/Users/Student/End-to-End-LLM-Powered-Customer-Intelligence-Pipeline/data/synthetic/data_quality_results.csv' WITH (FORMAT csv, HEADER true, NULL '')
+\copy member_training_features FROM 'C:/Users/Student/End-to-End-LLM-Powered-Customer-Intelligence-Pipeline/data/synthetic/member_training_features.csv' WITH (FORMAT csv, HEADER true, NULL '')
 
-\echo 'Collecting statistics ...'
-ANALYZE;
+\echo 'Load complete.'
 
 SELECT relname AS table_name, n_live_tup AS approx_rows
 FROM   pg_stat_user_tables

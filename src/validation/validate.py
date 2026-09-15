@@ -1,14 +1,18 @@
 """Validate a generated dataset.
 
-Three kinds of check are run:
+Four kinds of check are run:
 
 * **Structural** - primary keys unique, foreign keys resolve, values inside their
   declared domains, no activity recorded after a member lapsed.
 * **Volume** - row counts against the ranges recommended in ``Data Recomendations.md``.
-* **Signal** - the part that matters most.  A logistic regression is fitted to
-  ``member_training_features`` from scratch (scipy only) to confirm that the churn label
-  is genuinely learnable, that the fitted coefficients recover the ones used to generate
-  it, and that the ceiling AUC is high enough to be interesting but well short of 1.0.
+* **Signal** - a logistic regression is fitted to ``member_training_features`` from
+  scratch (scipy only) to confirm that the churn label is genuinely learnable, that the
+  fitted coefficients recover the ones used to generate it, and that the ceiling AUC is
+  high enough to be interesting but well short of 1.0.
+* **IBM seed fidelity** - the parts of the dataset taken from the seed are compared back
+  against ``data/seed/ibm_calibration.json``: referral behaviour, the age distribution,
+  the survey rating distribution, and whether the IBM-estimated coefficients have drifted
+  away from the calibration that produced them.
 
 Usage::
 
@@ -41,6 +45,7 @@ VOLUME_TARGETS_PER_MEMBER = {
     "learning_activity": (4.0, 10.0),
     "marketing_engagement": (40, 130),
     "member_feedback": (0.8, 2.2),
+    "member_referrals": (1.2, 3.0),
     "model_predictions": (4.0, 8.0),
     "ai_insights": (0.20, 1.00),
 }
@@ -48,9 +53,15 @@ VOLUME_TARGETS_PER_MEMBER = {
 DOMAINS = {
     ("event_attendance", "attendance_status"): set(config.ATTENDANCE_STATUSES),
     ("member_feedback", "sentiment_label"): {"Positive", "Neutral", "Negative"},
+    ("member_feedback", "feedback_channel"): {c for c, _ in config.FEEDBACK_CHANNELS},
+    ("member_referrals", "referral_channel"): {"Word of mouth", "Referral link", "Event introduction", "Employer scheme"},
+    ("members", "membership_type"): {t for t, _, _ in config.MEMBERSHIP_TYPES},
+    ("members", "career_stage"): {c for c, _ in config.CAREER_STAGES},
     ("model_predictions", "risk_category"): {"Low", "Medium", "High"},
     ("learning_activity", "completion_status"): {"Completed", "In progress", "Abandoned", "Not started"},
     ("membership_history", "membership_status"): {"Active", "Lapsed", "Cancelled"},
+    ("membership_history", "churn_category"): set(config.CHURN_CATEGORIES),
+    ("member_referrals", "referral_status"): {"Invited", "Joined", "Declined", "Expired"},
     ("members", "membership_status"): {"Active", "Lapsed", "Cancelled", "Suspended"},
 }
 
@@ -146,10 +157,12 @@ def validate(data_dir: Path) -> Report:
         ("events", "event_id"),
         ("campaigns", "campaign_id"),
         ("courses", "course_id"),
+        ("segments", "segment_id"),
         ("membership_history", "membership_history_id"),
         ("event_attendance", "attendance_id"),
         ("learning_activity", "learning_activity_id"),
         ("member_feedback", "feedback_id"),
+        ("member_referrals", "referral_id"),
         ("model_predictions", "prediction_id"),
         ("ai_insights", "insight_id"),
         ("data_quality_results", "check_id"),
@@ -179,6 +192,16 @@ def validate(data_dir: Path) -> Report:
 
     rep.check(g, "event_attendance.event_id resolves", not (set(read("event_attendance", usecols=["event_id"])["event_id"]) - event_ids))
     rep.check(g, "learning_activity.course_id resolves", not (set(read("learning_activity", usecols=["course_id"])["course_id"]) - course_ids))
+    refs = read("member_referrals", usecols=["referring_member_id", "referred_member_id"])
+    rep.check(g, "member_referrals.referring_member_id resolves",
+              not (set(refs["referring_member_id"]) - member_ids))
+    joined = refs["referred_member_id"].dropna()
+    rep.check(g, "member_referrals.referred_member_id resolves", not (set(joined) - member_ids),
+              f"{len(joined):,} converted referrals")
+    segment_ids = set(read("segments", usecols=["segment_id"])["segment_id"])
+    rep.check(g, "model_predictions.segment_id resolves",
+              not (set(preds_segment_ids := set(read("model_predictions", usecols=["segment_id"])["segment_id"])) - segment_ids),
+              f"{len(preds_segment_ids)} distinct segments in use")
     rep.check(g, "marketing_engagement.campaign_id resolves", not (set(read("marketing_engagement", usecols=["campaign_id"])["campaign_id"]) - campaign_ids))
 
     # --- Domains ----------------------------------------------------------------------
@@ -238,6 +261,11 @@ def validate(data_dir: Path) -> Report:
         after = int((pd.to_datetime(df[date_col]) >= cut).sum())
         rep.check(g, f"no {table} rows after churn", after == 0, f"{after} rows after churn date")
 
+    rf = read("member_referrals", usecols=["referring_member_id", "referral_date"])
+    rf = rf[rf["referring_member_id"].isin(churn_map)]
+    after = int((pd.to_datetime(rf["referral_date"]) >= rf["referring_member_id"].map(churn_map)).sum())
+    rep.check(g, "no member_referrals rows after churn", after == 0, f"{after} rows")
+
     fb = read("member_feedback", usecols=["member_id", "submitted_date", "feedback_channel"])
     fb = fb[fb["member_id"].isin(churn_map) & (fb["feedback_channel"] != "Cancellation survey")]
     after = int((pd.to_datetime(fb["submitted_date"]) >= fb["member_id"].map(churn_map)).sum())
@@ -260,6 +288,8 @@ def validate(data_dir: Path) -> Report:
         n = sum(1 for _ in open(data_dir / f"{table}.csv", encoding="utf-8")) - 1
         per = n / n_members
         rep.check(g, f"{table}", lo <= per <= hi, f"{n:,} rows = {per:.2f}/member (target {lo}-{hi})", advisory=advisory)
+
+    fb_all = read("member_feedback")
 
     # --- Signal -----------------------------------------------------------------------
     g = "Churn signal"
@@ -307,7 +337,6 @@ def validate(data_dir: Path) -> Report:
     attended = (ea["attendance_status"] == "Attended").mean()
     rep.check(g, "event attendance rate is realistic", 0.45 <= attended <= 0.80, f"{attended:.1%} of registrations")
 
-    fb_all = read("member_feedback")
     neg = (fb_all["sentiment_label"] == "Negative").mean()
     rep.check(g, "negative feedback share is realistic", 0.08 <= neg <= 0.40, f"{neg:.1%}")
 
@@ -319,6 +348,77 @@ def validate(data_dir: Path) -> Report:
         lapsed.get(1, 0) < lapsed.get(0, 1),
         f"{lapsed.get(1, float('nan')):.1f} vs {lapsed.get(0, float('nan')):.1f} logins in the prior 90 days",
     )
+
+    # --- Fidelity to the IBM seed -----------------------------------------------------
+    # The point of a hybrid dataset is that the parts taken from the seed still look like
+    # the seed. These checks close that loop.
+    cal_path = config.SEED_DIR / "ibm_calibration.json"
+    if cal_path.exists():
+        cal = json.loads(cal_path.read_text(encoding="utf-8"))
+        g = f"IBM seed fidelity (source: {cal.get('source', 'unknown')})"
+
+        refs_all = read("member_referrals", usecols=["referring_member_id"])
+        per_referrer = refs_all.groupby("referring_member_id").size()
+        share = len(per_referrer) / n_members
+        target = cal["referrer_share"]
+        rep.check(g, "share of members who refer someone", abs(share - target) <= 0.05,
+                  f"{share:.1%} vs IBM {target:.1%}")
+
+        mean_refs = float(per_referrer.mean())
+        target = cal["referrals_mean_among_referrers"]
+        rep.check(g, "mean referrals among referrers", abs(mean_refs - target) <= 0.8,
+                  f"{mean_refs:.2f} vs IBM {target:.2f}")
+
+        used = cal.get("age_shares_adjusted") or {}
+        if used:
+            observed = members["age_band"].value_counts(normalize=True)
+            worst = max(abs(observed.get(b, 0.0) - v) for b, v in used.items())
+            rep.check(g, "age band distribution matches the calibration", worst <= 0.02,
+                      f"largest deviation {worst:.1%}")
+
+        survey = fb_all[fb_all["feedback_channel"] == "Annual member survey"]
+        observed = survey["rating"].value_counts(normalize=True)
+        sat = {int(k): v for k, v in cal["satisfaction_shares"].items()}
+        # Total variation distance, rather than the single worst band: one band being a
+        # few points out says much less than the whole distribution being the wrong shape,
+        # and a worst-band threshold sits on a knife edge between runs.
+        tvd = sum(abs(float(observed.get(k, 0.0)) - v) for k, v in sat.items()) / 2
+        rep.check(g, "survey rating distribution matches IBM satisfaction", tvd <= 0.06,
+                  f"total variation distance {tvd:.3f}")
+
+        obs_mean = float(survey["rating"].mean())
+        ibm_mean = sum(k * v for k, v in sat.items())
+        rep.check(g, "mean survey rating matches IBM", abs(obs_mean - ibm_mean) <= 0.20,
+                  f"{obs_mean:.2f} vs IBM {ibm_mean:.2f}")
+
+        # Advisory: the seed's advocacy effect is stronger than the generated one.
+        life = members[["member_id", "churn_flag"]].merge(
+            per_referrer.rename("n"), left_on="member_id", right_index=True, how="left"
+        ).fillna({"n": 0})
+        by_churn = life.groupby("churn_flag")["n"].mean()
+        ratio = float(by_churn.get(1, 0.0) / max(by_churn.get(0, 1.0), 1e-9))
+        rep.check(g, "lapsed members refer less than retained members", ratio < 0.85,
+                  f"ratio {ratio:.2f} vs IBM {cal['referrals_churn_ratio']:.2f} "
+                  "(IBM counts lifetime referrals at one cross-section; not directly comparable)",
+                  advisory=True)
+
+        # The extension coefficients should still be the ones the seed produced.
+        analogue = cal.get("analogue_coefficients", {})
+        pairs = [("fee_increase", "high_charge"), ("multi_service_user", "multi_service"),
+                 ("no_recent_advocacy", "referred")]
+        drift = []
+        for feature, source_name in pairs:
+            if source_name not in analogue:
+                continue
+            expected = abs(analogue[source_name])
+            actual = abs(config.CHURN_COEFFICIENTS[feature])
+            if abs(actual - expected) > 0.05:
+                drift.append(f"{feature} {actual:+.2f} vs IBM {analogue[source_name]:+.3f}")
+        rep.check(g, "IBM-estimated coefficients still match the calibration", not drift,
+                  "; ".join(drift) if drift else "fee_increase, multi_service_user, no_recent_advocacy")
+    else:
+        rep.check("IBM seed fidelity", "calibration file present", False,
+                  "run python -m src.generators.calibrate", advisory=True)
 
     return rep
 

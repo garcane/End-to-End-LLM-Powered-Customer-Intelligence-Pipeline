@@ -1,0 +1,84 @@
+{
+  "model_name": "membership_churn_logreg",
+  "model_version": "2.0.0",
+  "model_type": "Logistic Regression",
+  "feature_columns": [
+    "inactive_90_days",
+    "negative_feedback",
+    "failed_payment",
+    "no_event_attendance",
+    "declining_logins",
+    "completed_learning",
+    "attended_first_90_days",
+    "auto_renewal",
+    "long_tenure",
+    "low_campaign_engagement",
+    "fee_increase",
+    "student_to_full_transition",
+    "multi_service_user",
+    "no_recent_advocacy",
+    "tenure_years",
+    "logins_90d",
+    "logins_prior_90d",
+    "days_since_last_login",
+    "web_sessions_90d",
+    "web_sessions_prior_90d",
+    "events_attended_365d",
+    "learning_completions_365d",
+    "campaigns_sent_180d",
+    "campaign_open_rate_180d",
+    "services_used",
+    "referrals_365d",
+    "has_recent_feedback",
+    "min_rating_365d_filled"
+  ],
+  "decision_threshold": 0.25,
+  "trained_on_rows": 57078,
+  "training_date_range": [
+    "2021-09-01",
+    "2026-08-31"
+  ],
+  "out_of_time_metrics": {
+    "roc_auc": 0.7618,
+    "pr_auc": 0.2906,
+    "brier_score": 0.077,
+    "precision@0.25": 0.3558,
+    "recall@0.25": 0.2831,
+    "f1@0.25": 0.3153
+  },
+  "ceiling_auc": 0.7617128388984181,
+  "all_models_compared": {
+    "Logistic Regression": {
+      "roc_auc": 0.7618,
+      "pr_auc": 0.2906,
+      "brier_score": 0.077,
+      "precision@0.25": 0.3558,
+      "recall@0.25": 0.2831,
+      "f1@0.25": 0.3153
+    },
+    "Random Forest": {
+      "roc_auc": 0.7526,
+      "pr_auc": 0.2721,
+      "brier_score": 0.0782,
+      "precision@0.25": 0.334,
+      "recall@0.25": 0.2404,
+      "f1@0.25": 0.2796
+    },
+    "Gradient Boosting": {
+      "roc_auc": 0.7572,
+      "pr_auc": 0.276,
+      "brier_score": 0.0777,
+      "precision@0.25": 0.337,
+      "recall@0.25": 0.2684,
+      "f1@0.25": 0.2988
+    },
+    "Ceiling (true propensity)": {
+      "roc_auc": 0.7617128388984181,
+      "pr_auc": NaN,
+      "brier_score": NaN,
+      "precision@0.25": NaN,
+      "recall@0.25": NaN,
+      "f1@0.25": NaN
+    }
+  }
+}

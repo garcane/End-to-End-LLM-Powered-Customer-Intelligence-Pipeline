@@ -17,6 +17,7 @@ stays in the tens of megabytes even at full scale.
 
 from __future__ import annotations
 
+import math
 from dataclasses import dataclass
 
 import numpy as np
@@ -49,6 +50,7 @@ SCHEMAS = {
         "membership_status",
         "annual_fee",
         "renewal_outcome",
+        "churn_category",
         "cancellation_reason",
     ],
     "website_activity": [
@@ -101,6 +103,14 @@ SCHEMAS = {
         "converted",
         "unsubscribed",
     ],
+    "member_referrals": [
+        "referral_id",
+        "referring_member_id",
+        "referral_date",
+        "referral_channel",
+        "referral_status",
+        "referred_member_id",
+    ],
     "member_feedback": [
         "feedback_id",
         "member_id",
@@ -120,6 +130,7 @@ SCHEMAS = {
         "risk_category",
         "predicted_churn",
         "engagement_score",
+        "predicted_lifetime_value",
         "segment_id",
         "model_name",
         "model_version",
@@ -155,6 +166,7 @@ SCHEMAS = {
         "campaigns_sent_180d",
         "campaign_open_rate_180d",
         "services_used",
+        "referrals_365d",
         "min_rating_365d",
         "inactive_90_days",
         "negative_feedback",
@@ -169,6 +181,7 @@ SCHEMAS = {
         "fee_increase",
         "student_to_full_transition",
         "multi_service_user",
+        "no_recent_advocacy",
         "true_churn_probability",
         "churn_flag",
     ],
@@ -183,6 +196,11 @@ BROWSE_RATE = 0.30  # additional non-login web sessions per week
 EVENT_RATE_YEAR = 7.5  # expected event registrations per year at affinity 1.0
 LEARNING_RATE_YEAR = 3.5  # expected learning activities per year at affinity 1.0
 SUPPORT_TICKET_RATE_YEAR = 0.15
+#: Referral invitations per year at advocacy 1.0. Tuned so that the share of members
+#: making at least one referral matches the IBM seed (45.8%).
+REFERRAL_INVITE_RATE_YEAR = 1.92
+
+REFERRAL_CHANNELS = [("Word of mouth", 0.42), ("Referral link", 0.31), ("Event introduction", 0.16), ("Employer scheme", 0.11)]
 
 #: Membership progression probabilities applied at a renewal.
 UPGRADE_PATHS = {
@@ -193,6 +211,35 @@ UPGRADE_PATHS = {
 }
 
 WEEKDAY_WEIGHTS = np.array([0.19, 0.19, 0.19, 0.17, 0.15, 0.06, 0.05])
+
+
+def build_referral_graph(members: pd.DataFrame, rng: np.random.Generator) -> dict:
+    """Link members acquired by referral back to an earlier, more advocacy-prone member.
+
+    IBM does not record who referred whom, only how many referrals each customer made.
+    Building the edge here turns that into a real member-to-member graph, which is what
+    makes advocacy analysable rather than just another column.
+
+    The referrer is chosen by a small tournament among earlier joiners, so members with
+    higher advocacy win more often without needing a full weighted draw per referral.
+    """
+    order = np.argsort(members["join_ord"].to_numpy(), kind="stable")
+    ids = members["member_id"].to_numpy()[order]
+    joins = members["join_ord"].to_numpy()[order]
+    advocacy = members["advocacy"].to_numpy()[order]
+    is_referred = (members["acquisition_channel"].to_numpy() == "Referral")[order]
+
+    graph: dict = {}
+    candidates = np.flatnonzero(is_referred)
+    candidates = candidates[candidates >= 10]  # need an earlier cohort to refer from
+    if candidates.size == 0:
+        return graph
+
+    picks = rng.integers(0, candidates[:, None], size=(candidates.size, 5))
+    best = picks[np.arange(candidates.size), np.argmax(advocacy[picks], axis=1)]
+    for referred_idx, referrer_idx in zip(candidates, best):
+        graph.setdefault(ids[referrer_idx], []).append((ids[referred_idx], int(joins[referred_idx])))
+    return graph
 
 
 @dataclass
@@ -207,6 +254,12 @@ class RunContext:
     insight_run: int
     as_of: int
     window_start: int
+    referral_graph: dict
+    calibration: object
+    #: Mean and sd of the latent rating score, measured from the member frame so the
+    #: quantile map onto the IBM satisfaction distribution is correctly centred.
+    rating_base_mean: float
+    rating_base_sd: float
 
     def __post_init__(self):
         base = to_ordinal(config.EARLIEST_JOIN)
@@ -230,6 +283,15 @@ class RunContext:
         self.campaign_id = self.campaigns["campaign_id"].to_numpy()
         self.campaign_type = self.campaigns["campaign_type"].to_numpy()
         self.campaign_segment = self.campaigns["target_segment"].to_numpy()
+
+        # Inverse CDF of the IBM satisfaction distribution, as a 1000-entry lookup.
+        shares = self.calibration.satisfaction_shares or {1: 0.2, 2: 0.2, 3: 0.2, 4: 0.2, 5: 0.2}
+        scores = sorted(int(k) for k in shares)
+        probs = np.array([shares[k] for k in scores], dtype=float)
+        probs = probs / probs.sum()
+        self.satisfaction_scale = np.array(scores, dtype=int)[
+            np.searchsorted(np.cumsum(probs), np.linspace(0, 1, 1000, endpoint=False), side="right").clip(0, len(scores) - 1)
+        ]
 
         order = np.argsort(self.courses["launch_ord"].to_numpy())
         self.course_launch = self.courses["launch_ord"].to_numpy()[order]
@@ -319,8 +381,13 @@ def simulate_member(m, ctx: RunContext, ids: dict[str, int], writers) -> dict:
     # --- Marketing --------------------------------------------------------------------
     mk_rows, sent_ords, opened_flags, survey_ords = _draw_marketing(rng, ctx, m, sim_start, sim_end)
 
+    # --- Referrals --------------------------------------------------------------------
+    rf_rows = _draw_referrals(rng, ctx, m, sim_start, sim_end)
+    referral_ords = np.array([r[0] for r in rf_rows], dtype=int) if rf_rows else np.empty(0, dtype=int)
+    referral_ords.sort()
+
     # --- Feedback ---------------------------------------------------------------------
-    fb_rows = _draw_feedback(rng, m, attended_ords, survey_ords, sim_start, sim_end, level, weeks)
+    fb_rows = _draw_feedback(rng, ctx, m, attended_ords, survey_ords, sim_start, sim_end, level, weeks)
     fb_ords = np.array([r[0] for r in fb_rows], dtype=int) if fb_rows else np.empty(0, dtype=int)
     fb_ratings = np.array([r[3] for r in fb_rows], dtype=float) if fb_rows else np.empty(0, dtype=float)
     order = np.argsort(fb_ords)
@@ -339,6 +406,7 @@ def simulate_member(m, ctx: RunContext, ids: dict[str, int], writers) -> dict:
         campaign_opened=opened_flags,
         feedback_ords=fb_ords,
         feedback_ratings=fb_ratings,
+        referral_ords=referral_ords,
     )
 
     # --- Renewals and churn -----------------------------------------------------------
@@ -353,12 +421,13 @@ def simulate_member(m, ctx: RunContext, ids: dict[str, int], writers) -> dict:
         ev_rows = [r for r in ev_rows if r[0] < churn_ord]
         lr_rows = [r for r in lr_rows if r[0] < churn_ord]
         mk_rows = [r for r in mk_rows if r[0] < churn_ord]
+        rf_rows = [r for r in rf_rows if r[0] < churn_ord]
         fb_rows = [r for r in fb_rows if r[0] < churn_ord]
         # Exit survey: the most informative free text in the dataset.
         if rng.random() < 0.55:
             fb_rows.append(_exit_feedback(rng, m, outcome, churn_ord))
 
-    _emit(m, ids, writers, login_ords, web_week_ords, web_sessions, ev_rows, lr_rows, mk_rows, fb_rows, rng)
+    _emit(m, ids, writers, login_ords, web_week_ords, web_sessions, ev_rows, lr_rows, mk_rows, rf_rows, fb_rows, rng)
 
     # --- Scoring runs -----------------------------------------------------------------
     _emit_predictions(rng, ctx, m, timeline, outcome, ids, writers)
@@ -530,12 +599,55 @@ def _draw_marketing(rng, ctx: RunContext, m, sim_start, sim_end):
     return rows, np.sort(sent), opened[np.argsort(sent)], survey_ords
 
 
-def _rating_from(rng, m, at_level: float) -> int:
-    base = m.satisfaction * 0.75 + 0.25 * float(np.clip(at_level, 0, 1.2)) / 1.2
-    return int(np.clip(round(1 + 4 * float(np.clip(base + rng.normal(0, 0.14), 0, 1))), 1, 5))
+def _draw_referrals(rng, ctx: RunContext, m, sim_start, sim_end):
+    """Referral invitations made *by* this member.
+
+    Two sources are combined: invitations that actually converted, which come from the
+    pre-built referral graph and carry the referred member's id, and invitations that
+    did not convert, drawn at a rate proportional to the member's advocacy.
+    """
+    rows = []
+    channels = [c for c, _ in REFERRAL_CHANNELS]
+    channel_p = [p for _, p in REFERRAL_CHANNELS]
+
+    # Converted referrals: dated shortly before the referred member joined.
+    for referred_id, referred_join in ctx.referral_graph.get(m.member_id, ()):
+        day = referred_join - int(rng.integers(3, 60))
+        if day < sim_start or day > sim_end:
+            continue
+        rows.append((day, str(rng.choice(channels, p=channel_p)), "Joined", referred_id))
+
+    # Unconverted invitations.
+    years = max((sim_end - sim_start) / 365.25, 0.0)
+    n = int(rng.poisson(REFERRAL_INVITE_RATE_YEAR * float(m.advocacy) * years))
+    for _ in range(n):
+        day = int(rng.integers(sim_start, sim_end + 1))
+        status = str(rng.choice(["Invited", "Declined", "Expired"], p=[0.46, 0.28, 0.26]))
+        rows.append((day, str(rng.choice(channels, p=channel_p)), status, ""))
+
+    rows.sort(key=lambda r: r[0])
+    return rows
 
 
-def _draw_feedback(rng, m, attended_ords, survey_ords, sim_start, sim_end, level, weeks):
+def _rating_from(rng, ctx: RunContext, m, at_level: float) -> int:
+    """Map a member's latent satisfaction onto a 1-5 rating.
+
+    The latent score is pushed through the inverse CDF of the IBM satisfaction
+    distribution, so the marginal distribution of ratings on the representative feedback
+    channels reproduces the seed rather than whatever a naive linear rescale happens to
+    produce. Contextual channels (support tickets, exit surveys) shift off this baseline.
+    """
+    base = m.satisfaction * 0.75 + 0.25 * float(np.clip(at_level, 0, 1.2)) / 1.2 + rng.normal(0, 0.14)
+    # The latent score is not uniform, so it has to be pushed through its own CDF before
+    # the IBM inverse CDF can be applied. Feeding a non-uniform score straight into a
+    # quantile map is what silently produces a distribution nothing like the target.
+    z = (base - ctx.rating_base_mean) / max(ctx.rating_base_sd, 1e-6)
+    u = 0.5 * (1.0 + math.erf(z / math.sqrt(2.0)))
+    idx = min(int(u * len(ctx.satisfaction_scale)), len(ctx.satisfaction_scale) - 1)
+    return int(ctx.satisfaction_scale[idx])
+
+
+def _draw_feedback(rng, ctx, m, attended_ords, survey_ords, sim_start, sim_end, level, weeks):
     rows = []
 
     def level_at(day: int) -> float:
@@ -548,7 +660,7 @@ def _draw_feedback(rng, m, attended_ords, survey_ords, sim_start, sim_end, level
             day = int(ev_ord + rng.integers(0, 5))
             if day > sim_end:
                 continue
-            rating = _rating_from(rng, m, level_at(day))
+            rating = _rating_from(rng, ctx, m, level_at(day))
             text, sentiment = feedback_text(rng, "Events and content", rating)
             rows.append((day, "Event feedback form", "Events and content", rating, text, sentiment))
 
@@ -559,7 +671,7 @@ def _draw_feedback(rng, m, attended_ords, survey_ords, sim_start, sim_end, level
             if day > sim_end:
                 continue
             category = str(rng.choice(config.FEEDBACK_CATEGORIES))
-            rating = _rating_from(rng, m, level_at(day))
+            rating = _rating_from(rng, ctx, m, level_at(day))
             text, sentiment = feedback_text(rng, category, rating)
             rows.append((day, "Annual member survey", category, rating, text, sentiment))
 
@@ -570,7 +682,7 @@ def _draw_feedback(rng, m, attended_ords, survey_ords, sim_start, sim_end, level
         day = int(rng.integers(sim_start, sim_end + 1))
         channel = str(rng.choice(["Support ticket", "Website feedback widget"], p=[0.62, 0.38]))
         category = str(rng.choice(["Customer service", "Website and digital services", "Fees and billing", "Communications"], p=[0.31, 0.29, 0.22, 0.18]))
-        rating = int(np.clip(_rating_from(rng, m, level_at(day)) - 1, 1, 5))
+        rating = int(np.clip(_rating_from(rng, ctx, m, level_at(day)) - 1, 1, 5))
         text, sentiment = feedback_text(rng, category, rating)
         rows.append((day, channel, category, rating, text, sentiment))
 
@@ -578,16 +690,15 @@ def _draw_feedback(rng, m, attended_ords, survey_ords, sim_start, sim_end, level
 
 
 def _exit_feedback(rng, m, outcome, churn_ord):
-    reason = outcome["cancellation_reason"] or "Membership value"
+    """The cancellation survey: the richest free text in the dataset, because the member
+    is explaining a decision they have already made."""
     category = {
-        "Cost or affordability": "Fees and billing",
-        "Lack of relevance to my role": "Events and content",
-        "Not enough time to use benefits": "Membership value",
-        "Employer no longer funding": "Fees and billing",
-        "Joined an alternative body": "Membership value",
-        "Career change or retirement": "Membership value",
-        "Service dissatisfaction": "Customer service",
-    }.get(reason, "Membership value")
+        "Price": "Fees and billing",
+        "Dissatisfaction": "Events and content",
+        "Attitude": "Customer service",
+        "Competitor": "Membership value",
+        "Other": "Membership value",
+    }.get(outcome["churn_category"], "Membership value")
     rating = int(np.clip(round(1 + 4 * float(np.clip(m.satisfaction - 0.30 + rng.normal(0, 0.12), 0, 1))), 1, 5))
     text, sentiment = feedback_text(rng, category, rating)
     return (int(churn_ord), "Cancellation survey", category, rating, text, sentiment)
@@ -607,6 +718,7 @@ def _run_renewals(rng, ctx: RunContext, m, tl: MemberTimeline, ids, writers) -> 
     term_start = join_ord
     history: list[tuple] = []
     churn_ord = None
+    churn_category = ""
     cancellation_reason = ""
     last_failed_payment = False
     last_renewal = join_ord
@@ -659,6 +771,7 @@ def _run_renewals(rng, ctx: RunContext, m, tl: MemberTimeline, ids, writers) -> 
                         feats["campaigns_sent_180d"],
                         feats["campaign_open_rate_180d"],
                         feats["services_used"],
+                        feats["referrals_365d"],
                         "" if feats["min_rating_365d"] is None else feats["min_rating_365d"],
                         feats["inactive_90_days"],
                         feats["negative_feedback"],
@@ -673,6 +786,7 @@ def _run_renewals(rng, ctx: RunContext, m, tl: MemberTimeline, ids, writers) -> 
                         feats["fee_increase"],
                         feats["student_to_full_transition"],
                         feats["multi_service_user"],
+                        feats["no_recent_advocacy"],
                         round(float(p), 4),
                         int(churned),
                     ]
@@ -682,8 +796,8 @@ def _run_renewals(rng, ctx: RunContext, m, tl: MemberTimeline, ids, writers) -> 
             if churned:
                 voluntary = rng.random() < 0.55
                 outcome_label = "Cancelled" if voluntary else "Lapsed"
-                cancellation_reason = _pick_reason(rng, m, feats)
-                history.append((term_start, r, mtype, outcome_label, fee, outcome_label, cancellation_reason))
+                churn_category, cancellation_reason = _pick_churn_reason(rng, m, feats)
+                history.append((term_start, r, mtype, outcome_label, fee, outcome_label, churn_category, cancellation_reason))
                 churn_ord = r
                 break
             outcome_label = "Renewed"
@@ -700,7 +814,7 @@ def _run_renewals(rng, ctx: RunContext, m, tl: MemberTimeline, ids, writers) -> 
             new_type = "Retired"
             outcome_label = "Downgraded"
 
-        history.append((term_start, r, mtype, "Active", fee, outcome_label, ""))
+        history.append((term_start, r, mtype, "Active", fee, outcome_label, "", ""))
         if new_type != mtype:
             mtype = new_type
             fee = float({t: f for t, f, _ in config.MEMBERSHIP_TYPES}[mtype]) * (fee / max(float(m.base_fee), 1.0))
@@ -713,7 +827,7 @@ def _run_renewals(rng, ctx: RunContext, m, tl: MemberTimeline, ids, writers) -> 
 
     # Current open term.
     if churn_ord is None:
-        history.append((term_start, None, mtype, "Active", fee, "", ""))
+        history.append((term_start, None, mtype, "Active", fee, "", "", ""))
         renewal_date = add_years(join_ord, k)
         status = "Suspended" if (last_failed_payment and ctx.as_of - last_renewal < 45) else "Active"
     else:
@@ -736,6 +850,7 @@ def _run_renewals(rng, ctx: RunContext, m, tl: MemberTimeline, ids, writers) -> 
                     round(term[4], 2),
                     term[5],
                     term[6],
+                    term[7],
                 ]
             ]
         )
@@ -748,27 +863,37 @@ def _run_renewals(rng, ctx: RunContext, m, tl: MemberTimeline, ids, writers) -> 
         "membership_type": mtype,
         "annual_fee": round(fee, 2),
         "renewal_ord": renewal_date,
+        "churn_category": churn_category,
         "cancellation_reason": cancellation_reason,
     }
 
 
-def _pick_reason(rng, m, feats) -> str:
-    weights = {name: w for name, w in config.CANCELLATION_REASONS}
+def _pick_churn_reason(rng, m, feats):
+    """Return ``(category, reason)`` using the two-level taxonomy from the IBM seed.
+
+    IBM shows that mean tenure at churn varies by only ~2 months across its five
+    categories, so reason is only weakly conditional on behaviour here. The tilts below
+    are modest on purpose: making the reason a strong function of the features would
+    manufacture a relationship the seed does not support.
+    """
+    weights = {name: w for name, (w, _) in config.CHURN_CATEGORIES.items()}
     if feats["fee_increase"] or m.price_sensitivity > 0.7:
-        weights["Cost or affordability"] *= 2.4
+        weights["Price"] *= 1.5
     if feats["no_event_attendance"]:
-        weights["Lack of relevance to my role"] *= 1.9
-    if feats["inactive_90_days"]:
-        weights["Not enough time to use benefits"] *= 1.8
+        weights["Dissatisfaction"] *= 1.3
     if feats["negative_feedback"]:
-        weights["Service dissatisfaction"] *= 3.0
+        weights["Attitude"] *= 1.8
     if m.age_band == "65+":
-        weights["Career change or retirement"] *= 3.5
-    if m.organisation_type in ("Private sector - large", "Public sector"):
-        weights["Employer no longer funding"] *= 1.6
+        weights["Other"] *= 1.6
+
     names = list(weights)
     p = np.array([weights[n] for n in names], dtype=float)
-    return str(rng.choice(names, p=p / p.sum()))
+    category = str(rng.choice(names, p=p / p.sum()))
+
+    reasons = config.CHURN_CATEGORIES[category][1]
+    rp = np.array([w for _, w in reasons], dtype=float)
+    reason = str(rng.choice([r for r, _ in reasons], p=rp / rp.sum()))
+    return category, reason
 
 
 # --------------------------------------------------------------------------------------
@@ -776,7 +901,7 @@ def _pick_reason(rng, m, feats) -> str:
 # --------------------------------------------------------------------------------------
 
 
-def _emit(m, ids, writers, login_ords, web_weeks, web_sessions, ev_rows, lr_rows, mk_rows, fb_rows, rng):
+def _emit(m, ids, writers, login_ords, web_weeks, web_sessions, ev_rows, lr_rows, mk_rows, rf_rows, fb_rows, rng):
     mid = m.member_id
 
     # Logins
@@ -849,6 +974,13 @@ def _emit(m, ids, writers, login_ords, web_weeks, web_sessions, ev_rows, lr_rows
         )
         ids["marketing_engagement"] += len(mk_rows)
 
+    if rf_rows:
+        start = ids["member_referrals"]
+        writers["member_referrals"].write_rows(
+            [[f"RF{start + i + 1:08d}", mid, iso(r[0]), r[1], r[2], r[3]] for i, r in enumerate(rf_rows)]
+        )
+        ids["member_referrals"] += len(rf_rows)
+
     if fb_rows:
         start = ids["member_feedback"]
         writers["member_feedback"].write_rows(
@@ -880,6 +1012,7 @@ def _segment_id(feats: dict, prob: float, score: float) -> int:
 
 def _emit_predictions(rng, ctx: RunContext, m, tl: MemberTimeline, outcome, ids, writers):
     churn_ord = outcome["churn_ord"]
+    current_fee = float(outcome["annual_fee"])
     for run_ord in ctx.prediction_runs:
         if m.join_ord > run_ord - 30:
             continue
@@ -895,6 +1028,10 @@ def _emit_predictions(rng, ctx: RunContext, m, tl: MemberTimeline, outcome, ids,
         prob = round(float(sigmoid(true_lo + rng.normal(0, config.PREDICTION_NOISE_SD))), 4)
         cat = risk_category(prob)
         score = engagement_score(feats)
+        # Expected remaining years is the reciprocal of the annual lapse probability,
+        # capped at 12 so that a very low-risk member does not imply an absurd horizon.
+        expected_years = min(1.0 / max(prob, 0.06), 12.0)
+        ltv = round(current_fee * expected_years * config.CONTRIBUTION_MARGIN, 2)
         factors = top_risk_factors(feats, 3)
         factors += [""] * (3 - len(factors))
 
@@ -910,6 +1047,7 @@ def _emit_predictions(rng, ctx: RunContext, m, tl: MemberTimeline, outcome, ids,
                     cat,
                     int(prob >= config.PREDICTION_THRESHOLD),
                     score,
+                    ltv,
                     _segment_id(feats, prob, score),
                     config.MODEL_NAME,
                     config.MODEL_VERSION,

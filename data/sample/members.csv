@@ -1,251 +1,251 @@
 member_id,join_date,membership_status,membership_type,region,age_band,organisation_type,career_stage,acquisition_channel,renewal_date,annual_fee,auto_renewal,communication_consent,churn_date,churn_flag
-M0000001,2024-08-26,Lapsed,Professional,North of England,45-54,Private sector - SME,Senior,Organic search,,245.0,False,True,2025-08-26,1
-M0000002,2020-08-31,Active,Professional,North of England,25-34,Private sector - large,Early career,Paid social,2027-08-31,317.17,True,False,,0
-M0000003,2024-05-18,Active,Professional,Europe (non-UK),25-34,Public sector,Mid career,Organic search,2027-05-18,215.21,True,True,,0
-M0000004,2023-07-30,Active,Chartered,Midlands,25-34,Higher education,Mid career,Email campaign,2027-07-30,437.94,False,True,,0
-M0000005,2026-06-13,Active,Professional,Republic of Ireland,45-54,Charity or not-for-profit,Mid career,University partnership,2027-06-13,245.0,True,True,,0
-M0000006,2023-09-13,Active,Professional,Europe (non-UK),55-64,Charity or not-for-profit,Mid career,Event,2026-09-13,238.69,True,True,,0
-M0000007,2023-04-10,Active,Chartered,South West and Wales,55-64,Private sector - SME,Senior,University partnership,2027-04-10,461.21,False,False,,0
-M0000008,2016-12-28,Active,Chartered,Europe (non-UK),35-44,Private sector - SME,Senior,Event,2026-12-28,489.61,True,True,,0
-M0000009,2023-03-24,Active,Professional,London and South East,45-54,Private sector - large,Mid career,Employer scheme,2027-03-24,271.63,False,True,,0
-M0000010,2024-07-11,Active,Professional,North of England,45-54,Private sector - large,Mid career,Event,2027-07-11,262.44,True,True,,0
-M0000011,2022-10-05,Active,Chartered,Scotland and Northern Ireland,45-54,Private sector - SME,Senior,Event,2026-10-05,437.94,False,False,,0
-M0000012,2025-01-05,Cancelled,Associate,London and South East,35-44,Private sector - large,Mid career,Organic search,,120.0,False,True,2026-01-05,1
-M0000013,2022-08-21,Suspended,Chartered,South West and Wales,45-54,Higher education,Senior,Employer scheme,2027-08-21,477.35,True,True,,0
-M0000014,2021-12-04,Active,Corporate Affiliate,Midlands,55-64,Public sector,Executive,Event,2026-12-04,394.55,True,False,,0
-M0000015,2019-03-25,Cancelled,Chartered,London and South East,35-44,Private sector - large,Executive,Email campaign,,567.14,True,True,2026-03-25,1
-M0000016,2023-12-05,Active,Professional,London and South East,45-54,Public sector,Mid career,Employer scheme,2026-12-05,276.4,False,True,,0
-M0000017,2024-05-20,Cancelled,Professional,North of England,35-44,Private sector - SME,Mid career,Referral,,245.0,True,False,2025-05-20,1
-M0000018,2022-03-27,Active,Chartered,Europe (non-UK),35-44,Private sector - large,Mid career,Organic search,2027-03-27,461.21,False,True,,0
-M0000019,2025-12-09,Active,Chartered,Midlands,35-44,Private sector - large,Senior,Employer scheme,2026-12-09,395.0,False,False,,0
-M0000020,2021-09-11,Active,Corporate Affiliate,South West and Wales,45-54,Self-employed or consultant,Senior,Employer scheme,2026-09-11,374.64,True,True,,0
-M0000021,2020-06-25,Cancelled,Professional,South West and Wales,45-54,Public sector,Senior,Event,,311.81,True,True,2025-06-25,1
-M0000022,2022-11-05,Active,Professional,London and South East,55-64,Public sector,Mid career,Organic search,2026-11-05,286.06,True,True,,0
-M0000023,2014-01-01,Active,Chartered,North of England,25-34,Private sector - SME,Early career,Event,2027-01-01,697.16,True,True,,0
-M0000024,2021-04-19,Active,Professional,London and South East,25-34,Self-employed or consultant,Mid career,Employer scheme,2027-04-19,290.98,False,False,,0
-M0000025,2022-12-27,Active,Professional,South West and Wales,25-34,Public sector,Early career,Organic search,2026-12-27,286.07,True,True,,0
-M0000026,2025-04-15,Active,Retired,Scotland and Northern Ireland,65+,Private sector - large,Retired,Organic search,2027-04-15,75.0,False,True,,0
-M0000027,2023-07-03,Active,Retired,Europe (non-UK),65+,Private sector - large,Senior,Employer scheme,2027-07-03,80.34,True,True,,0
-M0000028,2025-06-13,Active,Professional,London and South East,35-44,Private sector - SME,Mid career,Event,2027-06-13,245.0,True,True,,0
-M0000029,2020-04-15,Active,Chartered,Rest of World,35-44,Higher education,Mid career,University partnership,2027-04-15,494.07,False,False,,0
-M0000030,2025-10-11,Active,Corporate Affiliate,Europe (non-UK),25-34,Charity or not-for-profit,Early career,University partnership,2026-10-11,254.2,False,False,,0
-M0000031,2026-07-26,Active,Professional,London and South East,25-34,Public sector,Early career,Employer scheme,2027-07-26,245.0,True,True,,0
-M0000032,2023-05-02,Active,Professional,Scotland and Northern Ireland,55-64,Self-employed or consultant,Senior,Event,2027-05-02,271.63,True,False,,0
-M0000033,2026-05-02,Active,Student,North of England,18-24,Not currently employed,Student,Paid social,2027-05-02,35.0,True,True,,0
-M0000034,2015-08-03,Active,Fellow,London and South East,55-64,Self-employed or consultant,Retired,Organic search,2027-08-03,933.88,False,True,,0
-M0000035,2026-07-05,Active,Professional,London and South East,55-64,Private sector - SME,Executive,Organic search,2027-07-05,245.0,False,False,,0
-M0000036,2026-01-18,Active,Associate,London and South East,35-44,Public sector,Mid career,Paid social,2027-01-18,120.0,True,True,,0
-M0000037,2014-01-01,Active,Chartered,London and South East,35-44,Public sector,Mid career,Organic search,2027-01-01,697.17,False,True,,0
-M0000038,2019-09-09,Cancelled,Chartered,Midlands,45-54,Higher education,Mid career,Organic search,,485.73,False,True,2023-09-09,1
-M0000039,2019-08-29,Cancelled,Professional,Republic of Ireland,25-34,Private sector - SME,Mid career,Referral,,276.4,False,True,2022-08-29,1
-M0000040,2024-10-07,Active,Professional,Rest of World,35-44,Public sector,Mid career,Referral,2026-10-07,207.93,True,True,,0
-M0000041,2019-09-08,Lapsed,Chartered,South West and Wales,45-54,Private sector - SME,Senior,Employer scheme,,423.13,True,True,2023-09-08,1
-M0000042,2025-11-29,Active,Associate,Scotland and Northern Ireland,45-54,Private sector - large,Mid career,Referral,2026-11-29,120.0,False,False,,0
-M0000043,2022-11-28,Lapsed,Associate,Europe (non-UK),25-34,Public sector,Early career,Organic search,,98.4,False,False,2023-11-28,1
-M0000044,2021-01-24,Active,Chartered,Midlands,55-64,Charity or not-for-profit,Senior,Referral,2027-01-24,494.06,False,True,,0
-M0000045,2025-11-19,Active,Associate,North of England,25-34,Self-employed or consultant,Early career,Email campaign,2026-11-19,120.0,False,False,,0
-M0000046,2022-10-01,Active,Associate,Midlands,25-34,Higher education,Student,Paid social,2026-10-01,128.55,True,True,,0
-M0000047,2022-06-10,Cancelled,Associate,Europe (non-UK),25-34,Public sector,Early career,Event,,101.84,False,True,2024-06-10,1
-M0000048,2019-12-28,Active,Retired,Scotland and Northern Ireland,45-54,Private sector - SME,Senior,Referral,2026-12-28,97.08,False,True,,0
-M0000049,2023-05-18,Active,Professional,London and South East,35-44,Private sector - large,Mid career,Email campaign,2027-05-18,262.44,True,True,,0
-M0000050,2022-03-19,Active,Corporate Affiliate,Midlands,45-54,Private sector - large,Senior,Organic search,2027-03-19,415.52,False,False,,0
-M0000051,2026-01-08,Active,Professional,Europe (non-UK),25-34,Private sector - large,Senior,Event,2027-01-08,200.9,False,True,,0
-M0000052,2024-04-29,Active,Professional,London and South East,25-34,Charity or not-for-profit,Mid career,Employer scheme,2027-04-29,262.44,False,True,,0
-M0000053,2019-07-19,Active,Retired,South West and Wales,65+,Private sector - large,Retired,University partnership,2027-07-19,95.42,True,True,,0
-M0000054,2022-01-04,Active,Professional,Scotland and Northern Ireland,55-64,Public sector,Senior,Email campaign,2027-01-04,296.07,False,True,,0
-M0000055,2025-08-08,Active,Chartered,Rest of World,45-54,Private sector - SME,Executive,Paid social,2027-08-08,335.24,True,True,,0
-M0000056,2023-03-10,Active,Professional,London and South East,35-44,Private sector - SME,Mid career,Employer scheme,2027-03-10,286.07,False,True,,0
-M0000057,2023-08-10,Active,Associate,South West and Wales,18-24,Private sector - large,Student,Organic search,2027-08-10,135.38,False,False,,0
-M0000058,2025-09-03,Active,Student,Midlands,25-34,Public sector,Mid career,University partnership,2026-09-03,35.0,False,True,,0
-M0000059,2024-07-03,Active,Professional,Midlands,35-44,Private sector - large,Mid career,Email campaign,2027-07-03,262.44,False,True,,0
-M0000060,2026-01-09,Active,Student,Midlands,18-24,Private sector - SME,Student,Referral,2027-01-09,35.0,True,True,,0
-M0000061,2024-01-10,Active,Professional,Republic of Ireland,18-24,Higher education,Student,University partnership,2027-01-10,840.0,False,False,,0
-M0000062,2022-02-01,Lapsed,Chartered,Rest of World,18-24,Private sector - SME,Early career,Organic search,,445.61,False,True,2026-02-01,1
-M0000063,2025-10-03,Active,Associate,Republic of Ireland,18-24,Private sector - SME,Early career,Event,2026-10-03,120.0,True,True,,0
-M0000064,2025-02-26,Lapsed,Professional,Europe (non-UK),55-64,Private sector - SME,Senior,Organic search,,200.9,False,True,2026-02-26,1
-M0000065,2026-01-22,Active,Professional,London and South East,35-44,Self-employed or consultant,Executive,Event,2027-01-22,245.0,False,True,,0
-M0000066,2023-03-12,Active,Associate,South West and Wales,25-34,Charity or not-for-profit,Early career,Direct,2027-03-12,128.55,True,True,,0
-M0000067,2021-09-01,Lapsed,Professional,London and South East,25-34,Private sector - large,Early career,Organic search,,253.57,False,True,2023-09-01,1
-M0000068,2014-01-01,Active,Chartered,Republic of Ireland,25-34,Private sector - SME,Early career,Paid social,2027-01-01,639.59,False,True,,0
-M0000069,2018-04-14,Lapsed,Chartered,South West and Wales,45-54,Private sector - large,Senior,Referral,,461.22,False,True,2023-04-14,1
-M0000070,2021-11-29,Active,Professional,North of England,45-54,Public sector,Mid career,Employer scheme,2026-11-29,281.14,False,True,,0
-M0000071,2025-03-13,Active,Chartered,North of England,35-44,Private sector - large,Mid career,Organic search,2027-03-13,395.0,False,True,,0
-M0000072,2024-11-11,Active,Associate,Midlands,18-24,Private sector - SME,Student,Referral,2026-11-11,124.2,True,False,,0
-M0000073,2023-06-17,Active,Chartered,London and South East,35-44,Private sector - SME,Mid career,Employer scheme,2027-06-17,423.12,False,True,,0
-M0000074,2024-11-21,Active,Associate,South West and Wales,45-54,Private sector - large,Senior,University partnership,2026-11-21,124.2,True,True,,0
-M0000075,2018-05-25,Lapsed,Retired,Rest of World,65+,Self-employed or consultant,Retired,Organic search,,74.32,True,False,2023-05-25,1
-M0000076,2025-01-27,Active,Professional,London and South East,35-44,Private sector - SME,Early career,Direct,2027-01-27,253.57,True,True,,0
-M0000077,2025-03-18,Active,Associate,North of England,25-34,Private sector - large,Early career,Referral,2027-03-18,120.0,False,True,,0
-M0000078,2026-07-28,Active,Associate,North of England,18-24,Self-employed or consultant,Early career,Email campaign,2027-07-28,120.0,False,True,,0
-M0000079,2026-01-21,Active,Professional,Europe (non-UK),35-44,Private sector - large,Senior,Paid social,2027-01-21,200.9,False,True,,0
-M0000080,2014-01-01,Active,Chartered,London and South East,45-54,Private sector - SME,Senior,Referral,2027-01-01,607.32,False,True,,0
-M0000081,2022-10-31,Cancelled,Professional,London and South East,45-54,Private sector - SME,Mid career,Organic search,,276.4,False,True,2025-10-31,1
-M0000082,2021-03-01,Active,Chartered,London and South East,35-44,Private sector - large,Senior,Event,2027-03-01,494.06,True,True,,0
-M0000083,2025-02-06,Active,Associate,Midlands,45-54,Public sector,Early career,Direct,2027-02-06,124.2,True,True,,0
-M0000084,2024-06-27,Active,Professional,Republic of Ireland,35-44,Private sector - SME,Mid career,Event,2027-06-27,276.39,False,True,,0
-M0000085,2024-11-28,Active,Associate,London and South East,45-54,Private sector - SME,Student,Referral,2026-11-28,120.0,False,True,,0
-M0000086,2024-10-05,Active,Professional,South West and Wales,25-34,Private sector - SME,Mid career,Direct,2026-10-05,253.57,False,False,,0
-M0000087,2023-12-25,Active,Chartered,London and South East,25-34,Higher education,Mid career,Email campaign,2026-12-25,423.13,True,False,,0
-M0000088,2024-12-16,Active,Associate,South West and Wales,25-34,Public sector,Student,Employer scheme,2026-12-16,120.0,False,True,,0
-M0000089,2022-09-17,Lapsed,Professional,North of England,45-54,Higher education,Mid career,Paid social,,253.57,True,True,2024-09-17,1
-M0000090,2022-05-25,Active,Chartered,Republic of Ireland,25-34,Public sector,Mid career,Email campaign,2027-05-25,437.94,False,True,,0
-M0000091,2024-04-03,Cancelled,Associate,North of England,35-44,Charity or not-for-profit,Early career,Paid social,,120.0,False,True,2025-04-03,1
-M0000092,2024-07-01,Cancelled,Associate,Scotland and Northern Ireland,55-64,Private sector - large,Mid career,University partnership,,120.0,True,True,2025-07-01,1
-M0000093,2021-05-29,Active,Chartered,Republic of Ireland,45-54,Private sector - SME,Mid career,Event,2027-05-29,477.35,False,False,,0
-M0000094,2023-01-12,Active,Chartered,Scotland and Northern Ireland,45-54,Private sector - large,Mid career,Employer scheme,2027-01-12,445.62,True,True,,0
-M0000095,2019-10-29,Active,Fellow,North of England,45-54,Public sector,Executive,Email campaign,2026-10-29,617.59,False,False,,0
-M0000096,2019-06-16,Active,Chartered,Rest of World,35-44,Private sector - large,Senior,University partnership,2027-06-16,538.51,True,True,,0
-M0000097,2019-09-07,Lapsed,Chartered,London and South East,35-44,Higher education,Senior,Email campaign,,408.82,True,False,2021-09-07,1
-M0000098,2015-01-29,Active,Chartered,Midlands,45-54,Private sector - SME,Senior,Employer scheme,2027-01-29,673.59,False,False,,0
-M0000099,2022-12-16,Active,Chartered,Rest of World,55-64,Private sector - large,Senior,Organic search,2026-12-16,359.11,False,False,,0
-M0000100,2014-01-01,Cancelled,Chartered,South West and Wales,25-34,Private sector - SME,Mid career,University partnership,,673.58,False,True,2026-01-01,1
-M0000101,2014-01-01,Active,Chartered,Scotland and Northern Ireland,45-54,Public sector,Mid career,Paid social,2027-01-01,734.23,False,False,,0
-M0000102,2020-01-28,Lapsed,Chartered,London and South East,35-44,Private sector - SME,Senior,Organic search,,445.61,False,True,2023-01-28,1
-M0000103,2019-02-10,Active,Chartered,North of England,18-24,Charity or not-for-profit,Early career,Direct,2027-02-10,1062.29,False,True,,0
-M0000104,2014-01-01,Active,Chartered,London and South East,45-54,Not currently employed,Senior,Organic search,2027-01-01,662.01,False,False,,0
-M0000105,2025-04-11,Active,Professional,London and South East,55-64,Self-employed or consultant,Senior,Event,2027-04-11,253.57,False,True,,0
-M0000106,2025-08-21,Active,Retired,North of England,65+,Charity or not-for-profit,Retired,Organic search,2027-08-21,77.62,False,True,,0
-M0000107,2025-09-24,Active,Associate,Scotland and Northern Ireland,18-24,Private sector - large,Student,Employer scheme,2026-09-24,120.0,True,True,,0
-M0000108,2025-11-09,Active,Student,Europe (non-UK),25-34,Not currently employed,Student,Email campaign,2026-11-09,28.7,True,False,,0
-M0000109,2020-07-15,Active,Professional,Midlands,25-34,Self-employed or consultant,Early career,Direct,2027-07-15,334.02,False,True,,0
-M0000110,2025-07-03,Active,Professional,London and South East,25-34,Private sector - SME,Early career,Organic search,2027-07-03,253.57,True,True,,0
-M0000111,2022-08-18,Cancelled,Chartered,Rest of World,65+,Private sector - SME,Senior,Organic search,,323.9,True,False,2023-08-18,1
-M0000112,2024-05-16,Active,Professional,London and South East,25-34,Private sector - large,Mid career,Paid social,2027-05-16,262.44,False,True,,0
-M0000113,2025-10-22,Active,Corporate Affiliate,London and South East,35-44,Private sector - large,Senior,Organic search,2026-10-22,310.0,True,True,,0
-M0000114,2025-03-17,Active,Associate,London and South East,25-34,Higher education,Early career,Event,2027-03-17,130.8,True,True,,0
-M0000115,2023-11-27,Active,Associate,Europe (non-UK),25-34,Self-employed or consultant,Student,Event,2026-11-27,105.4,False,False,,0
-M0000116,2023-10-18,Active,Professional,Midlands,35-44,Private sector - SME,Early career,Employer scheme,2026-10-18,267.05,True,True,,0
-M0000117,2024-08-18,Active,Associate,London and South East,25-34,Public sector,Early career,Email campaign,2027-08-18,128.55,False,True,,0
-M0000118,2023-12-01,Active,Fellow,London and South East,35-44,Private sector - large,Senior,University partnership,2026-12-01,557.04,True,True,,0
-M0000119,2023-12-30,Active,Chartered,Europe (non-UK),35-44,Private sector - large,Early career,Paid social,2026-12-30,408.82,True,True,,0
-M0000120,2025-06-13,Active,Associate,Europe (non-UK),55-64,Not currently employed,Student,Paid social,2027-06-13,120.0,True,True,,0
-M0000121,2018-03-09,Lapsed,Professional,Rest of World,45-54,Higher education,Mid career,Email campaign,,260.09,True,True,2025-03-09,1
-M0000122,2023-11-16,Active,Associate,London and South East,35-44,Private sector - large,Early career,Organic search,2026-11-16,128.55,False,True,,0
-M0000123,2025-07-13,Active,Associate,London and South East,45-54,Private sector - SME,Mid career,Employer scheme,2027-07-13,130.8,True,True,,0
-M0000124,2019-09-12,Active,Professional,London and South East,35-44,Not currently employed,Mid career,Email campaign,2026-09-12,317.17,False,False,,0
-M0000125,2025-06-16,Active,Associate,London and South East,18-24,Private sector - large,Student,Organic search,2027-06-16,120.0,True,False,,0
-M0000126,2024-09-14,Active,Professional,Republic of Ireland,45-54,Public sector,Mid career,Email campaign,2026-09-14,253.57,False,True,,0
-M0000127,2017-07-18,Lapsed,Professional,North of England,45-54,Private sector - SME,Senior,Referral,,311.82,True,True,2022-07-18,1
-M0000128,2023-04-03,Active,Chartered,Rest of World,35-44,Private sector - large,Senior,Referral,2027-04-03,359.11,False,True,,0
-M0000129,2026-03-19,Active,Professional,South West and Wales,55-64,Higher education,Mid career,Employer scheme,2027-03-19,245.0,False,True,,0
-M0000130,2019-10-25,Active,Fellow,Scotland and Northern Ireland,45-54,Public sector,Senior,Direct,2026-10-25,684.96,True,True,,0
-M0000131,2021-03-26,Active,Associate,London and South East,18-24,Public sector,Student,Paid social,2027-03-26,145.02,True,True,,0
-M0000132,2024-11-24,Active,Professional,South West and Wales,25-34,Private sector - SME,Mid career,Organic search,2026-11-24,253.57,True,False,,0
-M0000133,2014-01-01,Lapsed,Chartered,South West and Wales,35-44,Public sector,Senior,Paid social,,607.53,True,True,2023-01-01,1
-M0000134,2022-12-05,Active,Professional,North of England,35-44,Private sector - large,Mid career,Event,2026-12-05,262.46,True,True,,0
-M0000135,2021-04-06,Active,Professional,London and South East,25-34,Private sector - SME,Early career,Referral,2027-04-06,281.16,True,True,,0
-M0000136,2024-11-24,Active,Associate,Europe (non-UK),18-24,Not currently employed,Student,Employer scheme,2026-11-24,120.0,True,True,,0
-M0000137,2020-03-20,Active,Professional,London and South East,35-44,Private sector - large,Mid career,Referral,2027-03-20,317.17,False,True,,0
-M0000138,2014-01-01,Active,Chartered,London and South East,45-54,Private sector - SME,Senior,Paid social,2027-01-01,662.0,False,True,,0
-M0000139,2024-08-09,Active,Fellow,Republic of Ireland,45-54,Private sector - SME,Senior,Employer scheme,2027-08-09,557.04,False,True,,0
-M0000140,2017-08-20,Suspended,Fellow,London and South East,45-54,Charity or not-for-profit,Senior,Paid social,2027-08-20,799.81,False,True,,0
-M0000141,2021-06-29,Active,Professional,London and South East,45-54,Public sector,Mid career,Referral,2027-06-29,290.98,True,False,,0
-M0000142,2022-12-19,Active,Associate,Midlands,25-34,Private sector - SME,Early career,University partnership,2026-12-19,140.12,True,True,,0
-M0000143,2014-12-29,Active,Chartered,North of England,35-44,Public sector,Mid career,Referral,2026-12-29,617.97,False,True,,0
-M0000144,2020-04-25,Cancelled,Chartered,London and South East,65+,Private sector - large,Retired,Referral,,461.2,False,True,2025-04-25,1
-M0000145,2016-07-13,Active,Chartered,Scotland and Northern Ireland,45-54,Private sector - large,Mid career,Event,2027-07-13,586.78,True,True,,0
-M0000146,2023-08-18,Active,Professional,Midlands,35-44,Public sector,Early career,Organic search,2027-08-18,869.4,True,False,,0
-M0000147,2024-08-30,Active,Professional,Rest of World,25-34,Private sector - large,Mid career,Organic search,2027-08-30,267.05,False,True,,0
-M0000148,2014-01-01,Lapsed,Chartered,Rest of World,45-54,Private sector - SME,Executive,Email campaign,,547.77,False,True,2024-01-01,1
-M0000149,2021-02-25,Active,Chartered,Rest of World,25-34,Public sector,Student,Referral,2027-02-25,453.28,True,True,,0
-M0000150,2024-04-16,Active,Retired,South West and Wales,55-64,Charity or not-for-profit,Retired,Event,2027-04-16,84.61,False,True,,0
-M0000151,2024-04-10,Active,Professional,South West and Wales,35-44,Private sector - SME,Senior,Email campaign,2027-04-10,262.44,True,True,,0
-M0000152,2025-12-24,Active,Corporate Affiliate,North of England,25-34,Private sector - large,Early career,Referral,2026-12-24,310.0,False,True,,0
-M0000153,2025-05-25,Active,Associate,London and South East,18-24,Public sector,Student,Email campaign,2027-05-25,120.0,True,True,,0
-M0000154,2023-01-31,Active,Corporate Affiliate,Republic of Ireland,25-34,Private sector - SME,Mid career,Referral,2027-01-31,343.7,False,True,,0
-M0000155,2014-01-01,Lapsed,Chartered,South West and Wales,25-34,Private sector - SME,Mid career,Paid social,,547.77,False,False,2023-01-01,1
-M0000156,2026-08-01,Active,Associate,Midlands,18-24,Public sector,Early career,Employer scheme,2027-08-01,120.0,False,True,,0
-M0000157,2017-07-05,Active,Fellow,Scotland and Northern Ireland,45-54,Higher education,Mid career,University partnership,2027-07-05,1182.99,False,True,,0
-M0000158,2022-04-07,Cancelled,Professional,London and South East,35-44,Charity or not-for-profit,Senior,Email campaign,,245.0,True,True,2023-04-07,1
-M0000159,2023-01-01,Active,Professional,North of England,35-44,Private sector - large,Mid career,Referral,2027-01-01,286.07,True,True,,0
-M0000160,2025-01-10,Active,Professional,Europe (non-UK),35-44,Private sector - large,Mid career,Organic search,2027-01-10,207.93,False,True,,0
-M0000161,2020-12-05,Lapsed,Professional,London and South East,25-34,Public sector,Early career,Organic search,,245.0,False,True,2021-12-05,1
-M0000162,2022-05-04,Active,Professional,Republic of Ireland,45-54,Not currently employed,Mid career,Paid social,2027-05-04,311.82,True,True,,0
-M0000163,2025-03-12,Active,Professional,London and South East,45-54,Private sector - large,Early career,Organic search,2027-03-12,253.57,False,False,,0
-M0000164,2019-07-03,Cancelled,Professional,Scotland and Northern Ireland,45-54,Private sector - SME,Executive,Organic search,,262.44,False,True,2022-07-03,1
-M0000165,2025-01-04,Active,Associate,Scotland and Northern Ireland,25-34,Private sector - large,Early career,Referral,2027-01-04,124.2,False,False,,0
-M0000166,2021-09-17,Active,Fellow,Midlands,55-64,Private sector - large,Executive,Referral,2026-09-17,596.72,True,True,,0
-M0000167,2025-11-04,Active,Professional,Rest of World,35-44,Charity or not-for-profit,Mid career,Paid social,2026-11-04,200.9,True,True,,0
-M0000168,2016-02-04,Lapsed,Chartered,Europe (non-UK),45-54,Higher education,Mid career,Referral,,498.19,False,True,2025-02-04,1
-M0000169,2024-11-09,Active,Associate,Rest of World,25-34,Private sector - SME,Early career,Organic search,2026-11-09,101.84,True,True,,0
-M0000170,2017-01-12,Active,Chartered,London and South East,55-64,Private sector - large,Senior,Employer scheme,2027-01-12,607.51,True,True,,0
-M0000171,2017-08-13,Cancelled,Chartered,South West and Wales,45-54,Private sector - large,Senior,University partnership,,576.89,False,True,2026-08-13,1
-M0000172,2025-08-15,Active,Associate,North of England,25-34,Charity or not-for-profit,Early career,University partnership,2027-08-15,124.2,True,False,,0
-M0000173,2017-10-07,Active,Fellow,London and South East,35-44,Private sector - SME,Senior,Organic search,2026-10-07,721.15,False,True,,0
-M0000174,2024-02-03,Cancelled,Chartered,North of England,45-54,Charity or not-for-profit,Senior,Referral,,408.82,False,False,2026-02-03,1
-M0000175,2021-11-12,Cancelled,Fellow,London and South East,45-54,Private sector - SME,Executive,Employer scheme,,538.2,False,False,2023-11-12,1
-M0000176,2024-01-21,Active,Associate,North of England,25-34,Public sector,Early career,Event,2027-01-21,124.2,True,True,,0
-M0000177,2025-01-10,Lapsed,Associate,South West and Wales,25-34,Private sector - large,Mid career,Employer scheme,,120.0,False,False,2026-01-10,1
-M0000178,2020-05-18,Lapsed,Professional,London and South East,35-44,Private sector - large,Senior,Employer scheme,,306.44,True,True,2026-05-18,1
-M0000179,2026-02-06,Active,Associate,Europe (non-UK),35-44,Private sector - large,Early career,Organic search,2027-02-06,98.4,False,True,,0
-M0000180,2017-03-25,Cancelled,Professional,London and South East,25-34,Charity or not-for-profit,Mid career,Referral,,311.82,False,False,2022-03-25,1
-M0000181,2024-04-08,Active,Chartered,London and South East,45-54,Charity or not-for-profit,Mid career,Direct,2027-04-08,423.13,False,True,,0
-M0000182,2019-08-09,Active,Fellow,London and South East,45-54,Higher education,Senior,Organic search,2027-08-09,696.74,True,True,,0
-M0000183,2021-09-11,Cancelled,Chartered,Scotland and Northern Ireland,35-44,Public sector,Early career,Event,,395.0,True,True,2022-09-11,1
-M0000184,2026-05-03,Active,Associate,North of England,25-34,Private sector - large,Early career,Paid social,2027-05-03,120.0,True,False,,0
-M0000185,2022-02-01,Active,Chartered,Rest of World,45-54,Private sector - SME,Senior,Paid social,2027-02-01,412.24,False,False,,0
-M0000186,2025-12-09,Active,Fellow,North of England,35-44,Private sector - SME,Senior,Referral,2026-12-09,520.0,False,False,,0
-M0000187,2020-06-18,Active,Professional,Europe (non-UK),25-34,Private sector - large,Mid career,Employer scheme,2027-06-18,273.9,False,False,,0
-M0000188,2020-04-09,Lapsed,Professional,London and South East,35-44,Charity or not-for-profit,Mid career,Referral,,262.44,False,True,2023-04-09,1
-M0000189,2023-05-22,Active,Associate,Europe (non-UK),35-44,Charity or not-for-profit,Early career,Event,2027-05-22,109.09,True,True,,0
-M0000190,2024-04-29,Active,Associate,North of England,55-64,Higher education,Mid career,Referral,2027-04-29,128.55,False,True,,0
-M0000191,2023-05-09,Active,Associate,North of England,25-34,Private sector - large,Student,University partnership,2027-05-09,135.38,True,False,,0
-M0000192,2023-09-02,Active,Associate,Europe (non-UK),65+,Higher education,Senior,Referral,2026-09-02,105.4,False,True,,0
-M0000193,2023-12-20,Active,Corporate Affiliate,London and South East,35-44,Public sector,Mid career,University partnership,2026-12-20,349.73,True,True,,0
-M0000194,2022-02-22,Cancelled,Professional,North of England,35-44,Private sector - large,Mid career,Referral,,245.0,True,False,2023-02-22,1
-M0000195,2025-07-05,Active,Professional,London and South East,35-44,Public sector,Mid career,Event,2027-07-05,253.57,False,True,,0
-M0000196,2018-07-08,Active,Professional,London and South East,55-64,Private sector - large,Mid career,Direct,2027-07-08,339.76,True,True,,0
-M0000197,2023-02-09,Active,Professional,London and South East,35-44,Higher education,Mid career,Organic search,2027-02-09,286.06,True,True,,0
-M0000198,2024-11-21,Active,Professional,Republic of Ireland,45-54,Self-employed or consultant,Mid career,Organic search,2026-11-21,253.57,False,True,,0
-M0000199,2020-03-09,Active,Professional,Scotland and Northern Ireland,45-54,Private sector - large,Mid career,Email campaign,2027-03-09,351.78,True,True,,0
-M0000200,2025-11-30,Active,Professional,Europe (non-UK),25-34,Not currently employed,Early career,Organic search,2026-11-30,200.9,False,True,,0
-M0000201,2024-12-07,Active,Associate,Republic of Ireland,45-54,Private sector - large,Early career,University partnership,2026-12-07,124.2,False,True,,0
-M0000202,2022-01-11,Active,Professional,Midlands,35-44,Higher education,Early career,Organic search,2027-01-11,286.08,False,True,,0
-M0000203,2022-07-23,Active,Chartered,South West and Wales,55-64,Self-employed or consultant,Executive,Organic search,2027-07-23,453.27,True,True,,0
-M0000204,2023-09-14,Lapsed,Associate,London and South East,45-54,Private sector - large,Student,Employer scheme,,120.0,True,True,2025-09-14,1
-M0000205,2022-05-17,Active,Chartered,North of England,45-54,Not currently employed,Senior,Event,2027-05-17,909.79,False,True,,0
-M0000206,2022-09-29,Active,Professional,South West and Wales,55-64,Higher education,Mid career,University partnership,2026-09-29,286.07,False,False,,0
-M0000207,2017-10-02,Active,Retired,London and South East,65+,Private sector - large,Senior,Referral,2026-10-02,95.42,False,True,,0
-M0000208,2021-11-21,Lapsed,Professional,London and South East,25-34,Private sector - SME,Early career,Referral,,915.6,False,False,2025-11-21,1
-M0000209,2023-08-16,Active,Professional,North of England,25-34,Not currently employed,Mid career,Referral,2027-08-16,286.06,True,True,,0
-M0000210,2021-08-25,Cancelled,Professional,South West and Wales,45-54,Self-employed or consultant,Mid career,Referral,,271.63,True,True,2025-08-25,1
-M0000211,2023-01-14,Active,Retired,Scotland and Northern Ireland,65+,Self-employed or consultant,Retired,Organic search,2027-01-14,87.57,True,True,,0
-M0000212,2023-02-24,Active,Associate,London and South East,25-34,Private sector - SME,Early career,Referral,2027-02-24,133.05,True,True,,0
-M0000213,2026-06-10,Active,Professional,Midlands,25-34,Private sector - large,Mid career,Paid social,2027-06-10,245.0,True,False,,0
-M0000214,2024-03-05,Active,Professional,Scotland and Northern Ireland,45-54,Higher education,Mid career,Employer scheme,2027-03-05,262.44,False,True,,0
-M0000215,2024-10-27,Active,Associate,Scotland and Northern Ireland,25-34,Public sector,Mid career,Event,2026-10-27,124.2,False,True,,0
-M0000216,2025-05-12,Active,Associate,London and South East,25-34,Higher education,Early career,Referral,2027-05-12,120.0,True,True,,0
-M0000217,2016-07-24,Lapsed,Professional,Scotland and Northern Ireland,55-64,Public sector,Senior,Employer scheme,,322.61,False,True,2025-07-24,1
-M0000218,2024-12-27,Active,Professional,London and South East,25-34,Private sector - SME,Early career,University partnership,2026-12-27,253.57,False,True,,0
-M0000219,2023-01-12,Active,Professional,North of England,35-44,Private sector - large,Mid career,Event,2027-01-12,286.07,True,True,,0
-M0000220,2017-11-07,Cancelled,Professional,Europe (non-UK),45-54,Private sector - SME,Mid career,Organic search,,247.04,False,True,2021-11-07,1
-M0000221,2024-04-23,Active,Associate,South West and Wales,25-34,Private sector - SME,Early career,Referral,2027-04-23,124.2,False,True,,0
-M0000222,2025-01-05,Active,Professional,North of England,45-54,Private sector - large,Senior,University partnership,2027-01-05,253.57,False,True,,0
-M0000223,2020-01-28,Active,Professional,Europe (non-UK),25-34,Charity or not-for-profit,Early career,Email campaign,2027-01-28,273.89,False,False,,0
-M0000224,2015-07-11,Cancelled,Associate,Republic of Ireland,18-24,Private sector - SME,Early career,Employer scheme,,172.31,False,True,2022-07-11,1
-M0000225,2022-06-12,Active,Professional,Rest of World,45-54,Public sector,Mid career,Paid social,2027-06-12,271.63,True,True,,0
-M0000226,2014-02-04,Active,Fellow,London and South East,25-34,Private sector - SME,Mid career,Organic search,2027-02-04,799.51,True,True,,0
-M0000227,2021-06-15,Lapsed,Professional,South West and Wales,35-44,Private sector - large,Mid career,Organic search,,276.39,True,True,2024-06-15,1
-M0000228,2022-06-19,Active,Chartered,Midlands,25-34,Private sector - SME,Mid career,Email campaign,2027-06-19,437.93,False,True,,0
-M0000229,2024-11-08,Active,Associate,London and South East,25-34,Public sector,Early career,Direct,2026-11-08,124.2,False,False,,0
-M0000230,2024-10-16,Active,Professional,Rest of World,35-44,Private sector - SME,Senior,Employer scheme,2026-10-16,207.93,True,True,,0
-M0000231,2022-11-06,Active,Professional,North of England,18-24,Private sector - large,Early career,Event,2026-11-06,271.63,True,True,,0
-M0000232,2024-09-24,Active,Professional,South West and Wales,25-34,Not currently employed,Early career,University partnership,2026-09-24,245.0,True,False,,0
-M0000233,2026-01-23,Active,Student,Scotland and Northern Ireland,18-24,Self-employed or consultant,Student,Referral,2027-01-23,35.0,False,True,,0
-M0000234,2021-08-02,Active,Professional,Scotland and Northern Ireland,25-34,Private sector - large,Senior,Event,2027-08-02,322.72,True,True,,0
-M0000235,2017-12-04,Cancelled,Chartered,London and South East,55-64,Public sector,Mid career,Event,,511.35,True,False,2024-12-04,1
-M0000236,2018-03-01,Active,Chartered,London and South East,35-44,Private sector - large,Senior,Event,2027-03-01,576.89,False,False,,0
-M0000237,2025-07-08,Active,Associate,London and South East,18-24,Private sector - SME,Student,Referral,2027-07-08,120.0,True,True,,0
-M0000238,2019-07-14,Lapsed,Associate,North of England,18-24,Higher education,Early career,University partnership,,145.02,False,False,2024-07-14,1
-M0000239,2024-03-22,Active,Associate,Scotland and Northern Ireland,25-34,Private sector - SME,Mid career,Employer scheme,2027-03-22,142.57,False,False,,0
-M0000240,2025-08-01,Lapsed,Student,Midlands,18-24,Private sector - SME,Student,University partnership,,35.0,False,True,2026-08-01,1
-M0000241,2026-05-21,Active,Professional,North of England,35-44,Self-employed or consultant,Mid career,Employer scheme,2027-05-21,245.0,True,False,,0
-M0000242,2025-01-08,Active,Associate,Europe (non-UK),45-54,Private sector - large,Executive,Event,2027-01-08,101.84,False,True,,0
-M0000243,2023-11-21,Active,Associate,North of England,18-24,Private sector - SME,Early career,Event,2026-11-21,142.57,True,False,,0
-M0000244,2015-06-28,Active,Fellow,North of England,45-54,Private sector - SME,Senior,Employer scheme,2027-06-28,733.51,False,True,,0
-M0000245,2025-12-30,Active,Professional,North of England,55-64,Private sector - large,Mid career,Employer scheme,2026-12-30,245.0,True,False,,0
-M0000246,2025-11-19,Active,Student,Scotland and Northern Ireland,35-44,Self-employed or consultant,Early career,Organic search,2026-11-19,35.0,False,False,,0
-M0000247,2022-11-17,Active,Retired,Scotland and Northern Ireland,65+,Charity or not-for-profit,Retired,Organic search,2026-11-17,87.57,False,True,,0
-M0000248,2017-04-15,Cancelled,Retired,London and South East,65+,Charity or not-for-profit,Retired,Email campaign,,86.06,True,True,2023-04-15,1
-M0000249,2025-08-20,Active,Professional,London and South East,35-44,Private sector - large,Senior,Organic search,2027-08-20,253.57,True,False,,0
-M0000250,2018-09-28,Lapsed,Associate,London and South East,35-44,Private sector - large,Mid career,Paid social,,128.55,False,True,2021-09-28,1
+M0000001,2021-02-04,Active,Associate,North of England,45-54,Private sector - SME,Mid career,Organic search,2027-02-04,158.07,True,True,,0
+M0000002,2024-06-05,Active,Associate,North of England,25-34,Private sector - large,Early career,Paid social,2027-06-05,128.55,False,True,,0
+M0000003,2026-07-14,Active,Associate,Europe (non-UK),25-34,Public sector,Early career,Organic search,2027-07-14,98.4,False,True,,0
+M0000004,2026-04-09,Active,Professional,Midlands,25-34,Higher education,Mid career,Email campaign,2027-04-09,245.0,True,True,,0
+M0000005,2023-03-20,Active,Chartered,Republic of Ireland,45-54,Charity or not-for-profit,Senior,University partnership,2027-03-20,437.94,True,True,,0
+M0000006,2026-06-04,Active,Chartered,Europe (non-UK),55-64,Charity or not-for-profit,Executive,Event,2027-06-04,323.9,True,False,,0
+M0000007,2025-07-26,Lapsed,Associate,South West and Wales,55-64,Private sector - SME,Mid career,University partnership,,120.0,False,True,2026-07-26,1
+M0000008,2024-08-26,Active,Professional,Europe (non-UK),35-44,Private sector - SME,Executive,Event,2027-08-26,215.21,False,True,,0
+M0000009,2022-09-09,Active,Associate,London and South East,45-54,Private sector - large,Early career,Employer scheme,2026-09-09,140.12,True,False,,0
+M0000010,2020-03-29,Active,Chartered,North of England,45-54,Private sector - large,Senior,Event,2027-03-29,538.53,True,True,,0
+M0000011,2019-02-24,Active,Chartered,Scotland and Northern Ireland,45-54,Private sector - SME,Executive,Event,2027-02-24,538.54,True,False,,0
+M0000012,2020-01-10,Active,Professional,London and South East,45-54,Private sector - large,Mid career,Organic search,2027-01-10,351.76,True,True,,0
+M0000013,2024-07-25,Lapsed,Professional,South West and Wales,45-54,Higher education,Mid career,Employer scheme,,245.0,False,True,2025-07-25,1
+M0000014,2022-11-04,Active,Professional,Midlands,55-64,Public sector,Senior,Event,2026-11-04,301.27,True,True,,0
+M0000015,2025-11-17,Active,Associate,London and South East,35-44,Private sector - large,Mid career,Email campaign,2026-11-17,120.0,True,True,,0
+M0000016,2024-11-16,Active,Associate,London and South East,45-54,Public sector,Early career,Employer scheme,2026-11-16,120.0,False,True,,0
+M0000017,2026-04-06,Active,Professional,North of England,35-44,Private sector - SME,Mid career,Referral,2027-04-06,245.0,True,True,,0
+M0000018,2025-08-04,Active,Chartered,Europe (non-UK),45-54,Private sector - large,Senior,Organic search,2027-08-04,335.24,False,False,,0
+M0000019,2022-03-10,Active,Professional,Midlands,45-54,Private sector - large,Mid career,Employer scheme,2027-03-10,271.63,True,False,,0
+M0000020,2025-11-22,Active,Chartered,South West and Wales,45-54,Self-employed or consultant,Mid career,Employer scheme,2026-11-22,395.0,False,False,,0
+M0000021,2017-06-18,Cancelled,Chartered,South West and Wales,45-54,Public sector,Executive,Event,,567.16,False,True,2025-06-18,1
+M0000022,2019-05-13,Active,Professional,London and South East,55-64,Public sector,Executive,Organic search,2027-05-13,328.27,False,True,,0
+M0000023,2020-11-15,Active,Professional,North of England,25-34,Private sector - SME,Mid career,Event,2026-11-15,306.43,True,False,,0
+M0000024,2025-10-10,Active,Student,London and South East,25-34,Self-employed or consultant,Early career,Employer scheme,2026-10-10,35.0,False,True,,0
+M0000025,2022-05-10,Active,Professional,South West and Wales,25-34,Public sector,Early career,Organic search,2027-05-10,281.14,False,False,,0
+M0000026,2025-01-25,Cancelled,Professional,Scotland and Northern Ireland,65+,Private sector - large,Senior,Organic search,,245.0,True,False,2026-01-25,1
+M0000027,2022-01-11,Lapsed,Associate,Europe (non-UK),55-64,Private sector - large,Senior,Employer scheme,,98.4,False,True,2023-01-11,1
+M0000028,2020-01-17,Lapsed,Professional,London and South East,35-44,Private sector - SME,Mid career,Event,,245.0,False,False,2022-01-17,1
+M0000029,2023-03-22,Lapsed,Professional,Rest of World,35-44,Higher education,Mid career,University partnership,,267.05,False,True,2026-03-22,1
+M0000030,2014-01-01,Active,Chartered,Europe (non-UK),25-34,Charity or not-for-profit,Mid career,University partnership,2027-01-01,515.45,False,False,,0
+M0000031,2026-07-30,Active,Associate,London and South East,25-34,Public sector,Mid career,Employer scheme,2027-07-30,120.0,False,True,,0
+M0000032,2025-01-15,Active,Professional,Scotland and Northern Ireland,55-64,Self-employed or consultant,Mid career,Event,2027-01-15,253.57,False,True,,0
+M0000033,2022-06-19,Cancelled,Associate,North of England,18-24,Not currently employed,Student,Paid social,,124.2,False,True,2025-06-19,1
+M0000034,2025-10-04,Active,Associate,London and South East,55-64,Self-employed or consultant,Mid career,Organic search,2026-10-04,120.0,False,False,,0
+M0000035,2018-07-27,Active,Professional,London and South East,55-64,Private sector - SME,Mid career,Organic search,2027-07-27,322.61,False,False,,0
+M0000036,2026-05-12,Active,Fellow,London and South East,35-44,Public sector,Senior,Paid social,2027-05-12,520.0,True,False,,0
+M0000037,2026-01-08,Active,Professional,London and South East,35-44,Public sector,Early career,Organic search,2027-01-08,245.0,False,False,,0
+M0000038,2023-12-25,Active,Associate,Midlands,45-54,Higher education,Early career,Organic search,2026-12-25,128.55,False,False,,0
+M0000039,2023-10-27,Active,Professional,Republic of Ireland,25-34,Private sector - SME,Mid career,Referral,2026-10-27,267.05,False,False,,0
+M0000040,2026-05-30,Active,Professional,Rest of World,45-54,Public sector,Senior,Referral,2027-05-30,200.9,False,True,,0
+M0000041,2025-03-14,Active,Associate,South West and Wales,45-54,Private sector - SME,Early career,Employer scheme,2027-03-14,124.2,True,True,,0
+M0000042,2024-02-21,Active,Chartered,Scotland and Northern Ireland,45-54,Private sector - large,Senior,Referral,2027-02-21,423.13,True,True,,0
+M0000043,2023-01-26,Lapsed,Professional,Europe (non-UK),25-34,Public sector,Mid career,Organic search,,200.9,True,True,2024-01-26,1
+M0000044,2021-03-11,Cancelled,Chartered,Midlands,55-64,Charity or not-for-profit,Senior,Referral,,430.55,False,False,2023-03-11,1
+M0000045,2026-03-25,Active,Professional,North of England,25-34,Self-employed or consultant,Early career,Email campaign,2027-03-25,245.0,False,True,,0
+M0000046,2023-03-25,Active,Associate,Midlands,25-34,Higher education,Early career,Paid social,2027-03-25,140.12,True,True,,0
+M0000047,2022-10-29,Active,Professional,Europe (non-UK),25-34,Public sector,Early career,Event,2026-10-29,276.39,False,True,,0
+M0000048,2025-10-29,Active,Corporate Affiliate,Scotland and Northern Ireland,45-54,Private sector - SME,Senior,Referral,2026-10-29,310.0,False,True,,0
+M0000049,2019-05-23,Cancelled,Fellow,London and South East,35-44,Private sector - large,Senior,Email campaign,,708.95,True,True,2026-05-23,1
+M0000050,2025-12-07,Active,Retired,Midlands,45-54,Private sector - large,Senior,Organic search,2026-12-07,75.0,True,False,,0
+M0000051,2020-11-22,Cancelled,Corporate Affiliate,Europe (non-UK),25-34,Private sector - large,Early career,Event,,254.2,False,False,2021-11-22,1
+M0000052,2026-08-01,Active,Associate,London and South East,25-34,Charity or not-for-profit,Early career,Employer scheme,2027-08-01,120.0,True,False,,0
+M0000053,2021-03-08,Lapsed,Professional,South West and Wales,55-64,Private sector - large,Mid career,University partnership,,262.44,True,True,2024-03-08,1
+M0000054,2025-03-27,Active,Professional,Scotland and Northern Ireland,55-64,Public sector,Mid career,Email campaign,2027-03-27,253.57,True,False,,0
+M0000055,2020-11-30,Lapsed,Chartered,Rest of World,45-54,Private sector - SME,Mid career,Paid social,,395.0,False,True,2022-11-30,1
+M0000056,2026-03-25,Active,Associate,London and South East,35-44,Private sector - SME,Early career,Employer scheme,2027-03-25,120.0,True,True,,0
+M0000057,2023-02-06,Cancelled,Associate,South West and Wales,18-24,Private sector - large,Student,Organic search,,124.2,True,True,2026-02-06,1
+M0000058,2023-02-15,Active,Professional,Midlands,25-34,Public sector,Early career,University partnership,2027-02-15,286.07,False,True,,0
+M0000059,2023-03-15,Active,Professional,Midlands,35-44,Private sector - large,Mid career,Email campaign,2027-03-15,301.27,False,False,,0
+M0000060,2026-07-18,Active,Student,Midlands,18-24,Private sector - SME,Student,Referral,2027-07-18,35.0,True,True,,0
+M0000061,2021-10-13,Cancelled,Associate,Republic of Ireland,18-24,Higher education,Student,University partnership,,135.38,False,True,2025-10-13,1
+M0000062,2023-02-02,Active,Associate,Rest of World,18-24,Private sector - SME,Early career,Organic search,2027-02-02,114.89,False,False,,0
+M0000063,2026-01-15,Active,Student,Republic of Ireland,18-24,Private sector - SME,Early career,Event,2027-01-15,35.0,False,True,,0
+M0000064,2025-05-21,Active,Professional,Europe (non-UK),55-64,Private sector - SME,Mid career,Organic search,2027-05-21,207.93,False,False,,0
+M0000065,2024-03-10,Active,Professional,London and South East,35-44,Self-employed or consultant,Mid career,Event,2027-03-10,276.39,True,True,,0
+M0000066,2023-03-07,Active,Associate,South West and Wales,25-34,Charity or not-for-profit,Early career,Direct,2027-03-07,147.56,False,True,,0
+M0000067,2025-12-22,Active,Chartered,London and South East,25-34,Private sector - large,Mid career,Organic search,2026-12-22,395.0,True,True,,0
+M0000068,2026-05-29,Active,Professional,Republic of Ireland,25-34,Private sector - SME,Early career,Paid social,2027-05-29,245.0,True,True,,0
+M0000069,2022-12-27,Active,Professional,South West and Wales,45-54,Private sector - large,Senior,Referral,2026-12-27,286.06,True,True,,0
+M0000070,2022-09-18,Active,Fellow,North of England,45-54,Public sector,Senior,Employer scheme,2026-09-18,576.54,True,True,,0
+M0000071,2018-05-21,Cancelled,Associate,North of England,35-44,Private sector - large,Mid career,Organic search,,145.02,True,True,2023-05-21,1
+M0000072,2025-07-26,Active,Associate,Midlands,18-24,Private sector - SME,Student,Referral,2027-07-26,120.0,False,False,,0
+M0000073,2026-04-11,Active,Chartered,London and South East,35-44,Private sector - SME,Mid career,Employer scheme,2027-04-11,395.0,True,False,,0
+M0000074,2014-05-17,Cancelled,Fellow,South West and Wales,45-54,Private sector - large,Senior,University partnership,,856.76,True,True,2025-05-17,1
+M0000075,2021-11-04,Cancelled,Associate,Rest of World,55-64,Self-employed or consultant,Mid career,Organic search,,98.4,True,True,2022-11-04,1
+M0000076,2026-05-18,Active,Chartered,London and South East,35-44,Private sector - SME,Senior,Direct,2027-05-18,395.0,False,True,,0
+M0000077,2019-02-22,Active,Chartered,North of England,35-44,Private sector - large,Senior,Referral,2027-02-22,511.36,True,False,,0
+M0000078,2026-04-14,Active,Student,North of England,18-24,Self-employed or consultant,Early career,Email campaign,2027-04-14,35.0,False,True,,0
+M0000079,2024-09-10,Active,Professional,Europe (non-UK),35-44,Private sector - large,Senior,Paid social,2026-09-10,207.93,True,True,,0
+M0000080,2025-08-08,Active,Chartered,London and South East,45-54,Private sector - SME,Senior,Referral,2027-08-08,430.55,True,False,,0
+M0000081,2026-06-08,Active,Professional,London and South East,45-54,Private sector - SME,Senior,Organic search,2027-06-08,245.0,True,True,,0
+M0000082,2026-05-09,Active,Chartered,London and South East,35-44,Private sector - large,Mid career,Event,2027-05-09,395.0,False,True,,0
+M0000083,2020-02-24,Cancelled,Chartered,Midlands,45-54,Public sector,Senior,Direct,,445.62,False,True,2023-02-24,1
+M0000084,2026-06-07,Active,Retired,Republic of Ireland,35-44,Private sector - SME,Senior,Event,2027-06-07,75.0,False,True,,0
+M0000085,2019-11-02,Active,Chartered,London and South East,45-54,Private sector - SME,Senior,Referral,2026-11-02,520.31,False,True,,0
+M0000086,2026-03-23,Active,Professional,South West and Wales,35-44,Private sector - SME,Senior,Direct,2027-03-23,245.0,False,True,,0
+M0000087,2024-10-11,Active,Associate,London and South East,25-34,Higher education,Early career,Email campaign,2026-10-11,130.8,False,False,,0
+M0000088,2026-06-13,Active,Professional,South West and Wales,25-34,Public sector,Senior,Employer scheme,2027-06-13,245.0,False,False,,0
+M0000089,2014-01-01,Cancelled,Chartered,North of England,45-54,Higher education,Senior,Paid social,,586.78,False,True,2025-01-01,1
+M0000090,2022-03-05,Active,Professional,Republic of Ireland,25-34,Public sector,Early career,Email campaign,2027-03-05,296.07,True,True,,0
+M0000091,2014-01-01,Lapsed,Chartered,North of England,35-44,Charity or not-for-profit,Senior,Paid social,,587.01,False,False,2022-01-01,1
+M0000092,2016-04-16,Active,Fellow,Scotland and Northern Ireland,55-64,Private sector - large,Executive,University partnership,2027-04-16,813.55,False,True,,0
+M0000093,2023-09-17,Active,Associate,Republic of Ireland,45-54,Private sector - SME,Mid career,Event,2026-09-17,124.2,True,True,,0
+M0000094,2022-11-27,Active,Chartered,Scotland and Northern Ireland,45-54,Private sector - large,Executive,Employer scheme,2026-11-27,437.94,False,True,,0
+M0000095,2026-06-08,Active,Corporate Affiliate,North of England,45-54,Public sector,Senior,Email campaign,2027-06-08,310.0,True,True,,0
+M0000096,2014-01-01,Lapsed,Fellow,Rest of World,35-44,Private sector - large,Mid career,University partnership,,721.14,False,True,2024-01-01,1
+M0000097,2019-12-15,Lapsed,Corporate Affiliate,London and South East,45-54,Higher education,Senior,Email campaign,,355.73,True,True,2024-12-15,1
+M0000098,2025-10-31,Active,Chartered,Midlands,45-54,Private sector - SME,Senior,Employer scheme,2026-10-31,395.0,False,True,,0
+M0000099,2023-08-13,Active,Fellow,Rest of World,55-64,Private sector - large,Senior,Organic search,2027-08-13,472.76,False,True,,0
+M0000100,2021-08-02,Suspended,Professional,South West and Wales,25-34,Private sector - SME,Early career,University partnership,2027-08-02,281.16,True,True,,0
+M0000101,2022-06-21,Active,Professional,Scotland and Northern Ireland,45-54,Public sector,Student,Paid social,2027-06-21,271.64,True,True,,0
+M0000102,2026-05-01,Active,Associate,London and South East,35-44,Private sector - SME,Early career,Organic search,2027-05-01,120.0,False,True,,0
+M0000103,2020-01-01,Active,Professional,North of England,18-24,Charity or not-for-profit,Early career,Direct,2027-01-01,334.03,True,True,,0
+M0000104,2018-01-12,Active,Chartered,London and South East,45-54,Not currently employed,Mid career,Organic search,2027-01-12,586.99,True,True,,0
+M0000105,2025-06-27,Cancelled,Chartered,London and South East,55-64,Self-employed or consultant,Senior,Event,,395.0,False,False,2026-06-27,1
+M0000106,2014-01-01,Active,Chartered,North of England,55-64,Charity or not-for-profit,Executive,Organic search,2027-01-01,628.58,True,True,,0
+M0000107,2024-09-26,Active,Associate,Scotland and Northern Ireland,18-24,Private sector - large,Student,Employer scheme,2026-09-26,120.0,True,False,,0
+M0000108,2020-07-29,Active,Professional,Europe (non-UK),25-34,Not currently employed,Student,Email campaign,2027-07-29,1237.98,True,False,,0
+M0000109,2026-07-17,Active,Associate,Midlands,25-34,Self-employed or consultant,Mid career,Direct,2027-07-17,120.0,False,False,,0
+M0000110,2016-04-19,Active,Professional,London and South East,25-34,Private sector - SME,Mid career,Organic search,2027-04-19,333.9,True,True,,0
+M0000111,2023-07-28,Lapsed,Retired,Rest of World,65+,Private sector - SME,Retired,Organic search,,65.88,True,True,2026-07-28,1
+M0000112,2025-04-21,Active,Associate,London and South East,25-34,Private sector - large,Early career,Paid social,2027-04-21,130.8,False,False,,0
+M0000113,2026-06-08,Active,Professional,London and South East,35-44,Private sector - large,Senior,Organic search,2027-06-08,245.0,True,True,,0
+M0000114,2022-09-09,Active,Associate,London and South East,25-34,Higher education,Senior,Event,2026-09-09,147.56,True,False,,0
+M0000115,2014-01-01,Active,Chartered,Europe (non-UK),25-34,Self-employed or consultant,Mid career,Event,2027-01-01,515.44,False,True,,0
+M0000116,2026-02-05,Active,Professional,Midlands,35-44,Private sector - SME,Senior,Employer scheme,2027-02-05,245.0,False,True,,0
+M0000117,2018-03-21,Active,Professional,London and South East,25-34,Public sector,Mid career,Email campaign,2027-03-21,339.76,True,False,,0
+M0000118,2014-01-01,Cancelled,Chartered,London and South East,45-54,Private sector - large,Senior,University partnership,,607.54,False,True,2023-01-01,1
+M0000119,2017-12-21,Active,Professional,Europe (non-UK),35-44,Private sector - large,Senior,Paid social,2026-12-21,309.0,True,True,,0
+M0000120,2023-04-27,Active,Chartered,Europe (non-UK),55-64,Not currently employed,Senior,Paid social,2027-04-27,378.2,True,True,,0
+M0000121,2018-12-15,Cancelled,Professional,Rest of World,45-54,Higher education,Mid career,Email campaign,,230.54,False,True,2023-12-15,1
+M0000122,2019-05-07,Active,Corporate Affiliate,London and South East,35-44,Private sector - large,Senior,Organic search,2027-05-07,485.18,True,True,,0
+M0000123,2017-10-29,Active,Chartered,London and South East,45-54,Private sector - SME,Senior,Employer scheme,2026-10-29,547.77,True,False,,0
+M0000124,2023-08-10,Active,Professional,London and South East,35-44,Not currently employed,Early career,Email campaign,2027-08-10,262.44,True,True,,0
+M0000125,2023-12-02,Active,Associate,London and South East,18-24,Private sector - large,Student,Organic search,2026-12-02,128.55,False,True,,0
+M0000126,2015-03-11,Cancelled,Chartered,Republic of Ireland,45-54,Public sector,Mid career,Email campaign,,597.07,False,False,2025-03-11,1
+M0000127,2025-10-20,Active,Chartered,North of England,45-54,Private sector - SME,Senior,Referral,2026-10-20,395.0,False,True,,0
+M0000128,2019-06-04,Active,Professional,Rest of World,35-44,Private sector - large,Mid career,Referral,2027-06-04,255.6,True,True,,0
+M0000129,2023-02-26,Cancelled,Associate,South West and Wales,55-64,Higher education,Mid career,Employer scheme,,120.0,True,True,2024-02-26,1
+M0000130,2026-07-08,Active,Professional,Scotland and Northern Ireland,45-54,Public sector,Senior,Direct,2027-07-08,245.0,True,False,,0
+M0000131,2023-12-22,Active,Associate,London and South East,18-24,Public sector,Student,Paid social,2026-12-22,124.2,True,False,,0
+M0000132,2025-03-01,Active,Associate,South West and Wales,25-34,Private sector - SME,Early career,Organic search,2027-03-01,130.8,True,True,,0
+M0000133,2019-12-19,Active,Chartered,South West and Wales,35-44,Public sector,Senior,Paid social,2026-12-19,538.54,False,True,,0
+M0000134,2024-07-24,Active,Associate,North of England,35-44,Private sector - large,Early career,Event,2027-07-24,128.55,True,True,,0
+M0000135,2021-08-02,Active,Professional,London and South East,25-34,Private sector - SME,Student,Referral,2027-08-02,281.16,True,False,,0
+M0000136,2026-05-20,Active,Student,Europe (non-UK),18-24,Not currently employed,Student,Employer scheme,2027-05-20,28.7,False,True,,0
+M0000137,2017-06-01,Active,Professional,London and South East,45-54,Private sector - large,Mid career,Referral,2027-06-01,351.64,True,False,,0
+M0000138,2019-11-24,Cancelled,Chartered,London and South East,45-54,Private sector - SME,Senior,Paid social,,437.94,False,True,2023-11-24,1
+M0000139,2024-09-05,Active,Chartered,Republic of Ireland,45-54,Private sector - SME,Mid career,Employer scheme,2026-09-05,408.82,True,True,,0
+M0000140,2019-03-06,Active,Professional,London and South East,55-64,Charity or not-for-profit,Mid career,Paid social,2027-03-06,311.7,True,True,,0
+M0000141,2022-02-18,Active,Professional,London and South East,45-54,Public sector,Mid career,Referral,2027-02-18,296.07,False,True,,0
+M0000142,2022-06-23,Cancelled,Chartered,Midlands,25-34,Private sector - SME,Senior,University partnership,,395.0,False,False,2023-06-23,1
+M0000143,2026-01-02,Active,Professional,North of England,35-44,Public sector,Mid career,Referral,2027-01-02,245.0,True,True,,0
+M0000144,2015-12-08,Active,Fellow,London and South East,65+,Private sector - large,Executive,Referral,2026-12-08,813.53,True,True,,0
+M0000145,2026-04-04,Active,Chartered,Scotland and Northern Ireland,45-54,Private sector - large,Mid career,Event,2027-04-04,395.0,True,True,,0
+M0000146,2026-07-11,Active,Corporate Affiliate,Midlands,35-44,Public sector,Mid career,Organic search,2027-07-11,310.0,False,True,,0
+M0000147,2025-04-25,Active,Associate,Rest of World,35-44,Private sector - large,Mid career,Organic search,2027-04-25,101.84,True,False,,0
+M0000148,2025-02-19,Active,Chartered,Rest of World,45-54,Private sector - SME,Mid career,Email campaign,2027-02-19,335.24,True,True,,0
+M0000149,2026-07-10,Active,Professional,Rest of World,25-34,Public sector,Early career,Referral,2027-07-10,200.9,False,True,,0
+M0000150,2022-10-31,Active,Corporate Affiliate,South West and Wales,55-64,Charity or not-for-profit,Senior,Event,2026-10-31,343.7,True,True,,0
+M0000151,2024-05-30,Active,Chartered,South West and Wales,35-44,Private sector - SME,Senior,Email campaign,2027-05-30,423.13,False,False,,0
+M0000152,2023-05-21,Active,Professional,North of England,25-34,Private sector - large,Early career,Referral,2027-05-21,262.44,False,True,,0
+M0000153,2024-09-24,Lapsed,Student,London and South East,18-24,Public sector,Student,Email campaign,,35.0,False,True,2025-09-24,1
+M0000154,2025-06-09,Active,Associate,Republic of Ireland,25-34,Private sector - SME,Early career,Referral,2027-06-09,124.2,True,True,,0
+M0000155,2022-09-13,Active,Chartered,South West and Wales,25-34,Private sector - SME,Senior,Paid social,2026-09-13,485.73,False,True,,0
+M0000156,2014-01-01,Lapsed,Professional,Midlands,25-34,Public sector,Early career,Employer scheme,,383.29,True,True,2025-01-01,1
+M0000157,2020-06-08,Active,Professional,Scotland and Northern Ireland,45-54,Higher education,Mid career,University partnership,2027-06-08,334.02,True,True,,0
+M0000158,2025-09-20,Active,Professional,London and South East,35-44,Charity or not-for-profit,Senior,Email campaign,2026-09-20,245.0,False,True,,0
+M0000159,2020-10-21,Active,Chartered,North of England,35-44,Private sector - large,Senior,Referral,2026-10-21,477.36,False,True,,0
+M0000160,2021-11-28,Active,Professional,Europe (non-UK),35-44,Private sector - large,Senior,Organic search,2026-11-28,242.79,True,True,,0
+M0000161,2023-12-02,Active,Associate,London and South East,25-34,Public sector,Early career,Organic search,2026-12-02,124.2,False,True,,0
+M0000162,2022-02-23,Active,Professional,Republic of Ireland,45-54,Not currently employed,Mid career,Paid social,2027-02-23,296.08,True,True,,0
+M0000163,2023-07-15,Active,Chartered,London and South East,45-54,Private sector - large,Executive,Organic search,2027-07-15,461.22,False,True,,0
+M0000164,2014-01-01,Active,Chartered,Scotland and Northern Ireland,45-54,Private sector - SME,Senior,Organic search,2027-01-01,596.85,True,False,,0
+M0000165,2021-03-25,Active,Associate,Scotland and Northern Ireland,25-34,Private sector - large,Early career,Referral,2027-03-25,142.53,True,True,,0
+M0000166,2024-03-19,Active,Professional,Midlands,55-64,Private sector - large,Senior,Referral,2027-03-19,262.44,False,True,,0
+M0000167,2019-03-15,Lapsed,Professional,Rest of World,45-54,Charity or not-for-profit,Mid career,Paid social,,246.96,False,True,2026-03-15,1
+M0000168,2026-07-13,Active,Associate,Europe (non-UK),45-54,Higher education,Early career,Referral,2027-07-13,98.4,True,False,,0
+M0000169,2022-07-22,Active,Associate,Rest of World,25-34,Private sector - SME,Early career,Organic search,2027-07-22,118.92,True,True,,0
+M0000170,2014-01-01,Active,Chartered,London and South East,55-64,Private sector - large,Senior,Employer scheme,2027-01-01,628.58,True,True,,0
+M0000171,2026-02-07,Active,Professional,South West and Wales,45-54,Private sector - large,Mid career,University partnership,2027-02-07,245.0,False,False,,0
+M0000172,2026-03-22,Active,Chartered,North of England,35-44,Charity or not-for-profit,Senior,University partnership,2027-03-22,395.0,True,True,,0
+M0000173,2017-05-20,Active,Chartered,London and South East,35-44,Private sector - SME,Senior,Organic search,2027-05-20,547.77,False,True,,0
+M0000174,2022-07-24,Active,Associate,North of England,45-54,Charity or not-for-profit,Mid career,Referral,2027-07-24,137.71,True,True,,0
+M0000175,2014-01-01,Active,Chartered,London and South East,45-54,Private sector - SME,Senior,Employer scheme,2027-01-01,773.26,True,True,,0
+M0000176,2025-08-19,Active,Associate,North of England,25-34,Public sector,Mid career,Event,2027-08-19,124.2,True,True,,0
+M0000177,2015-05-11,Active,Chartered,South West and Wales,35-44,Private sector - large,Mid career,Employer scheme,2027-05-11,639.61,True,True,,0
+M0000178,2025-09-06,Active,Professional,London and South East,35-44,Private sector - large,Executive,Employer scheme,2026-09-06,245.0,True,True,,0
+M0000179,2026-06-23,Active,Professional,Europe (non-UK),35-44,Private sector - large,Senior,Organic search,2027-06-23,200.9,True,True,,0
+M0000180,2023-07-26,Active,Associate,London and South East,25-34,Charity or not-for-profit,Early career,Referral,2027-07-26,140.12,True,True,,0
+M0000181,2017-09-05,Lapsed,Chartered,London and South East,45-54,Charity or not-for-profit,Senior,Direct,,461.22,False,True,2022-09-05,1
+M0000182,2021-07-12,Lapsed,Associate,London and South East,45-54,Higher education,Mid career,Organic search,,124.2,False,True,2023-07-12,1
+M0000183,2019-07-11,Active,Fellow,Scotland and Northern Ireland,35-44,Public sector,Senior,Event,2027-07-11,696.73,True,True,,0
+M0000184,2026-03-03,Active,Associate,North of England,25-34,Private sector - large,Early career,Paid social,2027-03-03,120.0,True,True,,0
+M0000185,2026-02-22,Active,Professional,Rest of World,45-54,Private sector - SME,Mid career,Paid social,2027-02-22,200.9,True,True,,0
+M0000186,2017-12-04,Lapsed,Professional,North of England,45-54,Private sector - SME,Senior,Referral,,286.07,False,True,2021-12-04,1
+M0000187,2026-07-29,Active,Associate,Europe (non-UK),25-34,Private sector - large,Early career,Employer scheme,2027-07-29,98.4,True,True,,0
+M0000188,2025-07-27,Active,Professional,London and South East,35-44,Charity or not-for-profit,Executive,Referral,2027-07-27,253.57,True,True,,0
+M0000189,2025-03-30,Active,Associate,Europe (non-UK),35-44,Charity or not-for-profit,Mid career,Event,2027-03-30,101.84,True,True,,0
+M0000190,2026-02-22,Active,Corporate Affiliate,North of England,55-64,Higher education,Mid career,Referral,2027-02-22,310.0,True,False,,0
+M0000191,2026-06-01,Active,Professional,North of England,25-34,Private sector - large,Mid career,University partnership,2027-06-01,245.0,True,True,,0
+M0000192,2014-12-31,Active,Chartered,Europe (non-UK),65+,Higher education,Executive,Referral,2026-12-31,498.02,True,True,,0
+M0000193,2026-05-28,Active,Chartered,London and South East,35-44,Public sector,Senior,University partnership,2027-05-28,395.0,True,True,,0
+M0000194,2026-07-02,Active,Corporate Affiliate,North of England,35-44,Private sector - large,Mid career,Referral,2027-07-02,310.0,True,False,,0
+M0000195,2026-05-28,Active,Associate,London and South East,35-44,Public sector,Early career,Event,2027-05-28,120.0,False,False,,0
+M0000196,2021-02-08,Active,Fellow,London and South East,55-64,Private sector - large,Senior,Direct,2027-02-08,617.61,True,True,,0
+M0000197,2023-06-29,Active,Fellow,London and South East,45-54,Higher education,Executive,Organic search,2027-06-29,607.17,True,True,,0
+M0000198,2016-01-21,Active,Chartered,Republic of Ireland,45-54,Self-employed or consultant,Mid career,Organic search,2027-01-21,617.97,True,True,,0
+M0000199,2024-02-27,Active,Professional,Scotland and Northern Ireland,45-54,Private sector - large,Senior,Email campaign,2027-02-27,262.44,False,False,,0
+M0000200,2018-01-13,Cancelled,Chartered,Europe (non-UK),25-34,Not currently employed,Early career,Organic search,,520.32,True,True,2025-01-13,1
+M0000201,2018-02-15,Active,Chartered,Republic of Ireland,45-54,Private sector - large,Mid career,University partnership,2027-02-15,502.53,True,True,,0
+M0000202,2026-04-02,Active,Professional,Midlands,35-44,Higher education,Mid career,Organic search,2027-04-02,245.0,True,True,,0
+M0000203,2020-03-07,Lapsed,Professional,South West and Wales,55-64,Self-employed or consultant,Mid career,Organic search,,253.57,False,True,2022-03-07,1
+M0000204,2025-01-29,Active,Fellow,London and South East,45-54,Private sector - large,Senior,Employer scheme,2027-01-29,566.8,False,True,,0
+M0000205,2020-05-21,Active,Associate,North of England,45-54,Not currently employed,Early career,Event,2027-05-21,147.52,False,True,,0
+M0000206,2026-02-19,Active,Chartered,South West and Wales,55-64,Higher education,Senior,University partnership,2027-02-19,395.0,True,True,,0
+M0000207,2018-05-14,Lapsed,Retired,London and South East,65+,Private sector - large,Retired,Referral,,100.49,False,True,2026-05-14,1
+M0000208,2026-03-13,Active,Student,London and South East,25-34,Private sector - SME,Early career,Referral,2027-03-13,35.0,False,False,,0
+M0000209,2022-08-07,Active,Associate,North of England,25-34,Not currently employed,Early career,Referral,2027-08-07,137.71,False,True,,0
+M0000210,2021-11-28,Active,Chartered,South West and Wales,45-54,Self-employed or consultant,Senior,Referral,2026-11-28,502.73,True,False,,0
+M0000211,2025-08-04,Active,Corporate Affiliate,Scotland and Northern Ireland,55-64,Self-employed or consultant,Senior,Organic search,2027-08-04,320.85,True,True,,0
+M0000212,2026-02-02,Active,Associate,London and South East,35-44,Private sector - SME,Mid career,Referral,2027-02-02,120.0,True,True,,0
+M0000213,2017-12-01,Lapsed,Associate,Midlands,25-34,Private sector - large,Student,Paid social,,150.1,True,False,2024-12-01,1
+M0000214,2019-07-01,Cancelled,Professional,Scotland and Northern Ireland,45-54,Higher education,Mid career,Employer scheme,,276.4,False,False,2022-07-01,1
+M0000215,2018-02-04,Active,Chartered,Scotland and Northern Ireland,25-34,Public sector,Early career,Event,2027-02-04,502.54,True,False,,0
+M0000216,2025-11-02,Active,Chartered,London and South East,35-44,Higher education,Senior,Referral,2026-11-02,395.0,False,True,,0
+M0000217,2015-04-01,Active,Chartered,Scotland and Northern Ireland,55-64,Public sector,Executive,Employer scheme,2027-04-01,639.59,False,True,,0
+M0000218,2024-02-23,Active,Professional,London and South East,25-34,Private sector - SME,Mid career,University partnership,2027-02-23,262.44,False,False,,0
+M0000219,2018-08-19,Active,Chartered,North of England,35-44,Private sector - large,Mid career,Event,2027-08-19,520.13,False,False,,0
+M0000220,2023-05-29,Active,Associate,Europe (non-UK),45-54,Private sector - SME,Mid career,Organic search,2027-05-29,114.9,False,True,,0
+M0000221,2020-04-28,Active,Corporate Affiliate,South West and Wales,35-44,Private sector - SME,Mid career,Referral,2027-04-28,422.65,True,True,,0
+M0000222,2026-04-04,Active,Chartered,North of England,45-54,Private sector - large,Senior,University partnership,2027-04-04,395.0,False,True,,0
+M0000223,2023-08-30,Lapsed,Associate,Europe (non-UK),25-34,Charity or not-for-profit,Early career,Email campaign,,120.0,False,True,2025-08-30,1
+M0000224,2023-05-05,Active,Professional,Republic of Ireland,18-24,Private sector - SME,Early career,Employer scheme,2027-05-05,276.4,True,True,,0
+M0000225,2014-01-01,Cancelled,Chartered,Rest of World,45-54,Public sector,Mid career,Paid social,,457.05,True,True,2022-01-01,1
+M0000226,2018-03-27,Active,Professional,London and South East,25-34,Private sector - SME,Early career,Organic search,2027-03-27,357.8,True,True,,0
+M0000227,2017-06-19,Active,Corporate Affiliate,South West and Wales,35-44,Private sector - large,Mid career,Organic search,2027-06-19,493.5,False,True,,0
+M0000228,2024-03-17,Active,Professional,Midlands,25-34,Private sector - SME,Mid career,Email campaign,2027-03-17,262.44,False,False,,0
+M0000229,2026-01-10,Active,Professional,London and South East,25-34,Public sector,Mid career,Direct,2027-01-10,245.0,False,False,,0
+M0000230,2025-12-28,Active,Chartered,Rest of World,35-44,Private sector - SME,Executive,Employer scheme,2026-12-28,323.9,False,True,,0
+M0000231,2026-07-17,Active,Associate,North of England,18-24,Private sector - large,Early career,Event,2027-07-17,120.0,False,True,,0
+M0000232,2015-06-10,Active,Professional,South West and Wales,25-34,Not currently employed,Early career,University partnership,2027-06-10,439.99,True,True,,0
+M0000233,2018-06-01,Cancelled,Professional,Scotland and Northern Ireland,18-24,Self-employed or consultant,Early career,Referral,,271.63,False,True,2022-06-01,1
+M0000234,2022-08-07,Cancelled,Associate,Scotland and Northern Ireland,35-44,Private sector - large,Early career,Event,,124.2,False,True,2024-08-07,1
+M0000235,2026-02-23,Active,Associate,London and South East,55-64,Public sector,Mid career,Event,2027-02-23,120.0,True,True,,0
+M0000236,2021-02-01,Active,Chartered,London and South East,35-44,Private sector - large,Mid career,Event,2027-02-01,477.36,True,True,,0
+M0000237,2021-07-30,Lapsed,Student,London and South East,18-24,Private sector - SME,Student,Referral,,35.0,False,True,2022-07-30,1
+M0000238,2014-08-12,Lapsed,Professional,North of England,25-34,Higher education,Mid career,University partnership,,370.34,False,True,2024-08-12,1
+M0000239,2025-06-06,Active,Professional,Scotland and Northern Ireland,25-34,Private sector - SME,Early career,Employer scheme,2027-06-06,253.57,True,False,,0
+M0000240,2018-09-17,Cancelled,Professional,Midlands,18-24,Private sector - SME,Student,University partnership,,286.06,True,True,2022-09-17,1
+M0000241,2023-07-18,Active,Chartered,North of England,35-44,Self-employed or consultant,Mid career,Employer scheme,2027-07-18,437.94,False,True,,0
+M0000242,2018-06-27,Active,Chartered,Europe (non-UK),45-54,Private sector - large,Senior,Event,2027-06-27,587.0,False,True,,0
+M0000243,2026-07-29,Active,Associate,North of England,18-24,Private sector - SME,Early career,Event,2027-07-29,120.0,False,False,,0
+M0000244,2020-07-04,Active,Retired,North of England,45-54,Private sector - SME,Senior,Employer scheme,2027-07-04,92.19,True,True,,0
+M0000245,2020-06-10,Lapsed,Fellow,North of England,55-64,Private sector - large,Mid career,Employer scheme,,867.71,True,True,2024-06-10,1
+M0000246,2026-07-04,Active,Associate,Scotland and Northern Ireland,45-54,Self-employed or consultant,Senior,Organic search,2027-07-04,120.0,False,True,,0
+M0000247,2026-03-19,Active,Chartered,Scotland and Northern Ireland,65+,Charity or not-for-profit,Mid career,Organic search,2027-03-19,395.0,True,False,,0
+M0000248,2014-01-01,Active,Chartered,London and South East,55-64,Charity or not-for-profit,Senior,Email campaign,2027-01-01,628.58,False,True,,0
+M0000249,2026-07-01,Active,Professional,London and South East,35-44,Private sector - large,Senior,Organic search,2027-07-01,245.0,True,False,,0
+M0000250,2015-03-14,Lapsed,Fellow,London and South East,35-44,Private sector - large,Senior,Paid social,,786.02,True,False,2025-03-14,1

@@ -11,7 +11,7 @@ import numpy as np
 import pandas as pd
 
 from . import config
-from .seed import SeedCalibration
+from .ibm_seed import TENURE_SCALE, IbmCalibration
 from .utils import clip01, from_ordinal, pick, to_ordinal
 
 MEMBER_COLUMNS = [
@@ -32,9 +32,14 @@ MEMBER_COLUMNS = [
     "churn_flag",
 ]
 
-#: Annual membership terms run for a year, whereas the telco seed measures month-to-month
-#: contracts.  Tenure drawn from the seed is stretched by this factor before use.
-TENURE_SCALE = 1.6
+#: Share of members whose tenure is drawn from beyond the seed's censoring point.
+#: IBM observes tenure only up to 72 months, so the long tail has to be extrapolated.
+CENSORED_TAIL_SHARE = 0.05
+CENSORED_TAIL_MEAN_MONTHS = 30.0
+
+#: Base rate for being an advocate at all.  Tuned so that the share of members making at
+#: least one referral matches the IBM seed (45.8%).
+ADVOCATE_BASE = 0.25
 
 #: P(career stage | age band).  Columns follow config.CAREER_STAGES.
 _CAREER_BY_AGE = {
@@ -70,7 +75,7 @@ def _sample_conditional(rng: np.random.Generator, parent: np.ndarray, table: dic
     return out
 
 
-def generate_members(rng: np.random.Generator, n: int, cal: SeedCalibration) -> pd.DataFrame:
+def generate_members(rng: np.random.Generator, n: int, cal: IbmCalibration) -> pd.DataFrame:
     """Return one row per member with exported fields plus latent behavioural traits."""
     as_of = to_ordinal(config.AS_OF_DATE)
     earliest = to_ordinal(config.EARLIEST_JOIN)
@@ -82,10 +87,15 @@ def generate_members(rng: np.random.Generator, n: int, cal: SeedCalibration) -> 
     df["organisation_type"] = pick(rng, config.ORGANISATION_TYPES, n)
     df["acquisition_channel"] = pick(rng, config.ACQUISITION_CHANNELS, n)
 
-    age_bands = [b for b, _ in config.AGE_BANDS]
-    age_probs = np.array([p for _, p in config.AGE_BANDS], dtype=float)
-    # Nudge the oldest band towards the seed's "senior citizen" share.
-    age_probs[-1] = max(age_probs[-1], cal.senior_share * 0.45)
+    # IBM records exact age, so the band shares are measured rather than assumed. The
+    # calibration applies a documented professional-body re-weighting on top; see
+    # docs/ibm-telco-calibration.md section 3.
+    if cal.age_shares_adjusted:
+        age_bands = list(cal.age_shares_adjusted)
+        age_probs = np.array(list(cal.age_shares_adjusted.values()), dtype=float)
+    else:
+        age_bands = [b for b, _ in config.AGE_BANDS]
+        age_probs = np.array([p for _, p in config.AGE_BANDS], dtype=float)
     df["age_band"] = rng.choice(age_bands, size=n, p=age_probs / age_probs.sum())
 
     df["career_stage"] = _sample_conditional(rng, df["age_band"].to_numpy(), _CAREER_BY_AGE, [c for c, _ in config.CAREER_STAGES])
@@ -94,13 +104,16 @@ def generate_members(rng: np.random.Generator, n: int, cal: SeedCalibration) -> 
     )
 
     # --- Tenure and join date ---------------------------------------------------------
-    # Gamma matched to the seed's tenure mean/sd, stretched from monthly contracts to
-    # annual membership terms.
-    mean_m = cal.tenure_mean_months * TENURE_SCALE
-    sd_m = max(cal.tenure_sd_months * TENURE_SCALE, 1.0)
-    shape = (mean_m / sd_m) ** 2
-    scale = sd_m**2 / mean_m
-    tenure_days = rng.gamma(shape, scale, size=n) * 30.44
+    # Bootstrapped from the seed's empirical tenure distribution rather than a fitted
+    # parametric curve, then stretched because annual membership terms are not
+    # month-to-month telco contracts. IBM censors tenure at 72 months, so the top of the
+    # distribution is extrapolated with an exponential tail for long-standing members.
+    deciles = np.asarray(cal.tenure_deciles, dtype=float)
+    u = rng.random(n)
+    tenure_months = np.interp(u, np.linspace(0.0, 1.0, len(deciles)), deciles)
+    censored = u > (1.0 - CENSORED_TAIL_SHARE)
+    tenure_months[censored] = deciles[-1] + rng.exponential(CENSORED_TAIL_MEAN_MONTHS, int(censored.sum()))
+    tenure_days = tenure_months * TENURE_SCALE * 30.44
     # Students and early-career members skew newer; fellows skew much older.
     tenure_days *= np.select(
         [
@@ -132,6 +145,23 @@ def generate_members(rng: np.random.Generator, n: int, cal: SeedCalibration) -> 
     df["email_affinity"] = clip01(engagement + rng.normal(0, 0.22, n))
     df["web_affinity"] = clip01(engagement + rng.normal(0, 0.15, n))
     df["satisfaction"] = clip01(0.45 + 0.45 * engagement + rng.normal(0, 0.16, n))
+    # Advocacy drives the member_referrals stream. IBM shows this is one of the
+    # strongest retention signals in the seed: retained customers referred 4.8x as many
+    # people as churned ones.
+    #
+    # It is modelled as zero-inflated, because the seed is: 54.2% of customers referred
+    # nobody at all, while those who did referred 4.27 on average. A single rate
+    # parameter cannot reproduce both facts, so members are first split into advocates
+    # and non-advocates, and only advocates generate referrals.
+    sat = df["satisfaction"].to_numpy()
+    advocate_p = clip01(ADVOCATE_BASE + 0.55 * engagement + 0.30 * (sat - 0.5))
+    is_advocate = rng.random(n) < advocate_p
+    df["is_advocate"] = is_advocate
+    df["advocacy"] = np.where(
+        is_advocate,
+        clip01(0.70 * engagement + 0.40 * sat - 0.10 + rng.normal(0, 0.14, n)),
+        0.0,
+    )
 
     # Year-on-year multiplicative drift in activity.  Slightly negative on average:
     # a minority of members quietly disengage before they ever cancel.
@@ -151,7 +181,10 @@ def generate_members(rng: np.random.Generator, n: int, cal: SeedCalibration) -> 
         + np.where(df["organisation_type"] == "Private sector - large", 0.10, 0.0)
     )
     df["auto_renewal"] = rng.random(n) < auto_p
-    df["communication_consent"] = rng.random(n) < clip01(0.62 + 0.30 * engagement)
+    # Paperless billing is the seed's closest analogue to opting in to digital
+    # communications, measured at 59.2% of customers.
+    consent_base = cal.paperless_billing_share if cal.paperless_billing_share else 0.62
+    df["communication_consent"] = rng.random(n) < clip01(consent_base + 0.30 * engagement)
 
     fee_lookup = {t: f for t, f, _ in config.MEMBERSHIP_TYPES}
     df["base_fee"] = df["membership_type"].map(fee_lookup).astype(float)

@@ -1,0 +1,97 @@
+{
+  "dataset": "Synthetic Professional Membership Engagement and Retention Dataset",
+  "generated_at": "2026-09-13T14:55:43+00:00",
+  "scale_profile": "full",
+  "seed": 20260913,
+  "n_members": 25000,
+  "window_start": "2021-09-01",
+  "as_of_date": "2026-08-31",
+  "seed_calibration": {
+    "source": "IBM Source Files",
+    "n_source_rows": 7043,
+    "tenure_mean_months": 32.387,
+    "tenure_censored_at_months": 72,
+    "month_to_month_share": 0.5126,
+    "paperless_billing_share": 0.5922,
+    "churn_rate": 0.2654,
+    "referrer_share": 0.4575,
+    "age_shares_used": {
+      "18-24": 0.0926,
+      "25-34": 0.2357,
+      "35-44": 0.2487,
+      "45-54": 0.2159,
+      "55-64": 0.1511,
+      "65+": 0.0559
+    },
+    "analogue_coefficients": {
+      "intercept": -1.7178,
+      "auto_payment": -0.5325,
+      "long_tenure": -0.6376,
+      "multi_service": -0.2495,
+      "high_charge": 0.7655,
+      "referred": -0.2064,
+      "month_to_month": 1.9478
+    },
+    "analogue_auc": 0.789,
+    "leaked_columns_excluded": [
+      "Churn Score",
+      "Satisfaction Score"
+    ],
+    "notes": [
+      "Calibrated from the extended IBM Cognos sample (7,043 customers) in 'IBM Source Files'.",
+      "Satisfaction Score and Churn Score are post-hoc annotations and are excluded from the analogue model; only their marginal distributions are used.",
+      "Tenure is censored at 72 months in the source, so the membership tenure tail is extended beyond what the seed can evidence.",
+      "Payment method is taken from the original workbook: the extended workbook relabels the four original categories into three and folds manual 'Electronic check' customers into 'Bank Withdrawal', which would overstate the automatic-payment share as 95.6% instead of 43.5%.",
+      "Location, population, gender, marital status and dependants are deliberately not carried over: US geography, and sensitive attributes of no analytical value to a membership model."
+    ]
+  },
+  "churn_coefficients": {
+    "intercept": -2.2,
+    "inactive_90_days": 0.9,
+    "negative_feedback": 0.7,
+    "failed_payment": 0.8,
+    "no_event_attendance": 0.6,
+    "declining_logins": 0.5,
+    "completed_learning": -0.7,
+    "attended_first_90_days": -0.6,
+    "auto_renewal": -0.5,
+    "long_tenure": -0.4,
+    "fee_increase": 0.77,
+    "multi_service_user": -0.25,
+    "no_recent_advocacy": 0.21,
+    "low_campaign_engagement": 0.25,
+    "student_to_full_transition": 0.45
+  },
+  "prediction_runs": [
+    "2026-03-31",
+    "2026-04-30",
+    "2026-05-31",
+    "2026-06-30",
+    "2026-07-31",
+    "2026-08-31"
+  ],
+  "observed_cumulative_churn_rate": 0.2366,
+  "row_counts": {
+    "ai_insights": 7705,
+    "campaigns": 295,
+    "courses": 90,
+    "data_quality_results": 2820,
+    "event_attendance": 286480,
+    "events": 1600,
+    "learning_activity": 145264,
+    "login_history": 2219908,
+    "marketing_engagement": 1062524,
+    "member_feedback": 45559,
+    "member_referrals": 47739,
+    "member_training_features": 57078,
+    "members": 25000,
+    "membership_history": 76164,
+    "model_predictions": 102615,
+    "segments": 7,
+    "website_activity": 1522439
+  },
+  "python": "3.13.5",
+  "numpy": "2.3.3",
+  "pandas": "2.3.1",
+  "runtime_seconds": 241.2
+}

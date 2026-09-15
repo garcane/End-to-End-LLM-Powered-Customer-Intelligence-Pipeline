@@ -155,6 +155,7 @@ _ACTIONS = {
     "Rarely opens member communications": "Reduce send frequency and switch to a sector-targeted content stream.",
     "Fee increase for a price-sensitive member": "Offer the monthly instalment plan and set out the year's benefits explicitly.",
     "Moving off the student rate to a full subscription": "Apply the graduate transition discount and offer a career-stage induction call.",
+    "Has not referred anyone in the last year": "Invite into the member-referral scheme: advocacy is one of the strongest retention signals in the model.",
 }
 
 _DEFAULT_ACTION = "Add to the standard retention nurture programme and review at the next scoring run."
@@ -196,6 +197,8 @@ def insight_text(
         parts.append(f"{features['events_attended_365d']} events were attended in the last twelve months")
     if features["learning_completions_365d"]:
         parts.append(f"{features['learning_completions_365d']} learning courses were completed")
+    if features["referrals_365d"]:
+        parts.append(f"{features['referrals_365d']} member referrals were made in the last year")
     if features["campaigns_sent_180d"] >= 4:
         parts.append(f"the campaign open rate over six months is {features['campaign_open_rate_180d']:.0%}")
 

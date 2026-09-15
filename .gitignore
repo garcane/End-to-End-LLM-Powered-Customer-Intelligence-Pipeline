@@ -3,8 +3,12 @@
 # A 250-row extract of every table is committed under data/sample/ instead.
 data/synthetic/
 
-# Seed data downloaded from third parties, not redistributed here.
+# Third-party seed data, not redistributed here. The derived calibration
+# (data/seed/ibm_calibration.json) IS committed: it is the reproducible artefact.
+IBM Source Files/
+data/seed/ibm/
 data/seed/*.csv
+data/seed/*.xlsx
 
 # Python
 __pycache__/

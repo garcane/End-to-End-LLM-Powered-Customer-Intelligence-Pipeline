@@ -20,7 +20,7 @@ import numpy as np
 import pandas as pd
 
 from . import config
-from .activity import SCHEMAS, RunContext, prediction_run_dates, simulate_member
+from .activity import SCHEMAS, RunContext, build_referral_graph, prediction_run_dates, simulate_member
 from .catalogues import (
     CAMPAIGN_COLUMNS,
     COURSE_COLUMNS,
@@ -31,7 +31,7 @@ from .catalogues import (
 )
 from .data_quality import DQ_COLUMNS, generate_data_quality
 from .members import MEMBER_COLUMNS, generate_members
-from .seed import load_calibration
+from .ibm_seed import load_calibration
 from .utils import TableWriter, WriterSet, from_ordinal, iso, make_rng, to_ordinal
 
 
@@ -74,8 +74,15 @@ def main(argv=None) -> int:
     events[EVENT_COLUMNS].to_csv(out_dir / "events.csv", index=False)
     campaigns[CAMPAIGN_COLUMNS].to_csv(out_dir / "campaigns.csv", index=False)
     courses[COURSE_COLUMNS].to_csv(out_dir / "courses.csv", index=False)
+    pd.DataFrame(
+        [{"segment_id": k, "segment_name": v[0], "segment_strategy": v[1]} for k, v in sorted(config.SEGMENTS.items())]
+    ).to_csv(out_dir / "segments.csv", index=False)
 
     # --- Behavioural simulation -------------------------------------------------------
+    referral_graph = build_referral_graph(members, make_rng(args.seed, "referrals"))
+    print(f"  referral graph: {sum(len(v) for v in referral_graph.values()):,} converted referrals "
+          f"from {len(referral_graph):,} referrers")
+
     runs = prediction_run_dates(profile.n_prediction_runs, as_of)
     ctx = RunContext(
         rng=make_rng(args.seed, "activity"),
@@ -86,6 +93,9 @@ def main(argv=None) -> int:
         insight_run=runs[-1],
         as_of=as_of,
         window_start=window_start,
+        referral_graph=referral_graph,
+        calibration=calibration,
+        **_rating_base_moments(members),
     )
     print(f"  scoring runs: {', '.join(iso(r) for r in runs)}")
 
@@ -114,6 +124,7 @@ def main(argv=None) -> int:
     row_counts["events"] = len(events)
     row_counts["campaigns"] = len(campaigns)
     row_counts["courses"] = len(courses)
+    row_counts["segments"] = len(config.SEGMENTS)
 
     # --- Data quality -----------------------------------------------------------------
     print("  generating data-quality results ...")
@@ -133,10 +144,17 @@ def main(argv=None) -> int:
         "as_of_date": config.AS_OF_DATE.isoformat(),
         "seed_calibration": {
             "source": calibration.source,
+            "n_source_rows": calibration.n_source_rows,
             "tenure_mean_months": calibration.tenure_mean_months,
+            "tenure_censored_at_months": calibration.tenure_max_months,
             "month_to_month_share": calibration.month_to_month_share,
-            "automatic_payment_share": calibration.automatic_payment_share,
+            "paperless_billing_share": calibration.paperless_billing_share,
             "churn_rate": calibration.churn_rate,
+            "referrer_share": calibration.referrer_share,
+            "age_shares_used": calibration.age_shares_adjusted,
+            "analogue_coefficients": calibration.analogue_coefficients,
+            "analogue_auc": calibration.analogue_auc,
+            "leaked_columns_excluded": sorted(calibration.leakage),
             "notes": calibration.notes,
         },
         "churn_coefficients": config.CHURN_COEFFICIENTS,
@@ -159,6 +177,32 @@ def main(argv=None) -> int:
     print(f"\n  cumulative churn rate: {churn_rate:.1%}")
     print(f"  completed in {time.time() - started:.1f}s -> {out_dir}")
     return 0
+
+
+def _rating_base_moments(members: pd.DataFrame) -> dict:
+    """Centre the rating quantile map on the members who actually answer surveys.
+
+    Feedback is not a census: a member has to open a survey campaign to respond, and
+    open probability rises with email affinity, which correlates with satisfaction. If
+    the map is centred on the whole membership, the ratings that come out sit visibly
+    above the IBM distribution they are supposed to reproduce.
+
+    Weighting by response propensity fixes that, so the marginal distribution of the
+    ratings actually present in member_feedback matches the seed, while response bias
+    itself is still modelled.
+    """
+    # Responding requires consent, an opened campaign (email affinity) and an active
+    # member at that moment (engagement, via the activity-level term in the score).
+    weights = np.clip(0.10 + 0.55 * members["email_affinity"].to_numpy(), 0.01, 0.95)
+    weights = weights * (0.45 + 0.55 * members["engagement"].to_numpy())
+    weights = weights * np.where(members["communication_consent"].to_numpy(), 1.0, 0.0) + 1e-6
+    base = 0.75 * members["satisfaction"].to_numpy() + 0.25 * 0.80
+    mean = float(np.average(base, weights=weights))
+    var = float(np.average((base - mean) ** 2, weights=weights))
+    return {
+        "rating_base_mean": mean,
+        "rating_base_sd": float(np.sqrt(var + (0.25 * 0.20) ** 2 + 0.14**2)),
+    }
 
 
 def _write_samples(out_dir: Path, sample_dir: Path, n_rows: int) -> None:

@@ -23,6 +23,7 @@ members ─┬─< membership_history
          ├─< event_attendance >── events
          ├─< learning_activity >── courses
          ├─< marketing_engagement >── campaigns
+         ├─< member_referrals >── members   (member-to-member advocacy graph)
          ├─< member_feedback
          ├─< model_predictions
          ├─< ai_insights
@@ -73,7 +74,13 @@ window. Use this rather than `members` for any point-in-time question.
 | `membership_status` | text | `Active` for completed and open terms; `Lapsed` or `Cancelled` on the final term of a churned member. |
 | `annual_fee` | decimal | Fee charged for this term. |
 | `renewal_outcome` | text | What happened at the end of the term: `Renewed`, `Upgraded`, `Downgraded`, `Lapsed`, `Cancelled`. Empty for the open term. |
-| `cancellation_reason` | text | Populated only when the outcome was `Lapsed` or `Cancelled`. |
+| `churn_category` | text | Top level of the churn taxonomy: `Price`, `Dissatisfaction`, `Attitude`, `Competitor`, `Other`. Empty unless the term ended in a lapse. |
+| `cancellation_reason` | text | Specific reason within the category. Always present when `churn_category` is, and never present otherwise. |
+
+The two-level `churn_category` -> `cancellation_reason` structure mirrors the IBM seed,
+which uses exactly this shape. The category **weights** are a membership-specific
+judgement rather than IBM's: a professional body loses far fewer members to a direct
+competitor than a telco does. See `docs/ibm-telco-calibration.md` section 7.
 
 `Cancelled` means the member actively told the organisation they were leaving;
 `Lapsed` means the subscription simply was not paid.
@@ -199,7 +206,30 @@ never appears. Once a member unsubscribes, no further sends are recorded for the
 | `converted` | boolean | Implies `clicked`. |
 | `unsubscribed` | boolean | True on at most one row per member; it is their last send. |
 
-## 11. `member_feedback`
+## 11. `member_referrals`
+
+Member-to-member advocacy. One row per referral invitation made **by** a member.
+
+| Column | Type | Notes |
+| --- | --- | --- |
+| `referral_id` | text | Primary key. |
+| `referring_member_id` | text | FK -> `members`. The member who made the referral. |
+| `referral_date` | date | |
+| `referral_channel` | text | `Word of mouth`, `Referral link`, `Event introduction`, `Employer scheme`. |
+| `referral_status` | text | `Joined`, `Invited`, `Declined`, `Expired`. |
+| `referred_member_id` | text | FK -> `members`. Present **only** when the status is `Joined`; that member has `acquisition_channel = 'Referral'`. |
+
+This table exists because of the seed. IBM records `Referred a Friend` and
+`Number of Referrals`, and referral behaviour turns out to be one of the strongest
+leak-free retention signals in it: retained customers referred **4.8x** as many people as
+churned ones. IBM records only the count, never who referred whom; joining the edge here
+turns that into a real graph, so advocacy can be analysed as a network rather than a
+column.
+
+Calibrated so that the share of members making at least one referral, and the mean number
+among those who do, both track the seed.
+
+## 12. `member_feedback`
 
 Free-text feedback. The table designed for the LLM layer.
 
@@ -214,14 +244,32 @@ Free-text feedback. The table designed for the LLM layer.
 | `feedback_text` | text | Free text consistent with the rating and category. |
 | `sentiment_label` | text | `Positive` (rating ≥ 4), `Neutral` (3), `Negative` (≤ 2). |
 
+The marginal distribution of `rating` on the `Annual member survey` channel is calibrated
+to the IBM satisfaction distribution. Event feedback skews higher, because a member has to
+have attended to give it, and support tickets skew lower.
+
 `sentiment_label` is the **ground truth**, which makes this table usable to evaluate an
 LLM classifier rather than only to feed one. Cancellation-survey rows are the only
 feedback dated on or after a member's `churn_date`.
 
-## 12. `model_predictions`
+## 13. `model_predictions`
 
 Output of the churn scoring pipeline. One row per member per monthly scoring run, for
 members who were still active on the run date.
+
+> **This table's data source depends on where you're looking.** The generated CSVs
+> (`data/synthetic/model_predictions.csv`, `data/sample/model_predictions.csv`) hold the
+> data generator's **simulated** output — the true log-odds plus noise, as described in
+> `docs/data-generation-methodology.md` §6 — produced when the dataset was generated.
+> The **live PostgreSQL database**, once `main.ipynb` has been run, holds **real, trained
+> model output** instead: three classifiers (Logistic Regression, Random Forest,
+> Gradient Boosting) trained on `member_training_features` and compared out-of-time,
+> with the winner's predictions computed from features independently reconstructed from
+> the raw activity tables. See the README's "Churn model" section and `main.ipynb` for
+> the full methodology, metrics and validation. The two sources are not automatically
+> kept in sync — reloading the CSVs into Postgres (`02_load_csv.sql`) would overwrite the
+> real predictions with the simulated baseline again, so rerun `main.ipynb` afterward if
+> that happens.
 
 | Column | Type | Notes |
 | --- | --- | --- |
@@ -232,12 +280,13 @@ members who were still active on the run date.
 | `churn_probability` | decimal | 0-1, rounded to 4 dp. |
 | `risk_category` | text | `Low` (< 0.10), `Medium` (< 0.25), `High` (≥ 0.25). Bands are set relative to the ~9% base rate, not to 0.5. |
 | `predicted_churn` | integer | 1 when `churn_probability` ≥ 0.25 (a recall-weighted operating point). |
-| `engagement_score` | decimal | 0-100 composite of logins, web sessions, events, learning and email engagement. |
-| `segment_id` | integer | 1 Champions, 2 Steady professionals, 3 Learning-led, 4 Event-led, 5 Passive renewers, 6 Disengaging, 7 New and forming. |
-| `model_name` / `model_version` | text | Provenance. |
-| `top_risk_factor_1..3` | text | The three largest risk-increasing contributions to the log-odds, most important first. Empty when fewer than three apply. |
+| `engagement_score` | decimal | 0-100 composite of logins, web sessions, events, learning, email engagement and referrals. |
+| `predicted_lifetime_value` | decimal | Annual fee x expected remaining years x contribution margin, in currency. Expected remaining years is capped at 12. Note this is a revenue figure, unlike IBM's `CLTV`, which is a bounded index. |
+| `segment_id` | integer | FK -> `segments`. |
+| `model_name` / `model_version` | text | Simulated rows: `membership_churn_gbm` v1.4.0. Real rows (Postgres, post-`main.ipynb`): the winning model's identifier, e.g. `membership_churn_logreg` v2.0.0. |
+| `top_risk_factor_1..3` | text | Simulated rows: the three largest contributions to the DGP's true log-odds. Real rows: the three active risk-raising flags ranked by the trained model's own permutation importance — a genuine model-derived explanation, not the asserted DGP coefficients. Empty when fewer than three apply. |
 
-## 13. `ai_insights`
+## 14. `ai_insights`
 
 LLM-generated narrative, keyed to a specific scoring run. Generated for the latest run
 only: every member above low risk, plus a 6% sample of low-risk members for comparison.
@@ -258,8 +307,16 @@ only: every member above low risk, plus a 6% sample of low-risk members for comp
 > **Note.** The shipped text in this table is template-assembled, not model-generated.
 > It exists so the semantic model and report pages can be built before the LLM stage is
 > wired up. `validation_status = 'Template'` marks every such row.
+>
+> **Currently empty in the live database.** `ai_insights.prediction_run_id` carries a
+> composite foreign key onto `model_predictions (prediction_run_id, member_id)`, so
+> replacing the simulated predictions with real trained-model output (see the note on
+> `model_predictions` above) required truncating this table too — its rows pointed at
+> `prediction_run_id`/`member_id` pairs that no longer exist as a set. The generated CSVs
+> still contain the original template rows; the live database does not, until the LLM
+> layer is (re)built against the real predictions.
 
-## 14. `data_quality_results`
+## 15. `data_quality_results`
 
 One row per check per pipeline run. Feeds the Power BI data-quality page.
 
@@ -279,14 +336,25 @@ One row per check per pipeline run. Feeds the Power BI data-quality page.
 Roughly 8% of runs contain a deliberate incident, where one source table's failure rates
 spike by 8-40×. That is what makes the data-quality trend page worth looking at.
 
-## 15. `member_training_features` (supporting table)
+## 16. `segments` (supporting dimension)
+
+Behavioural segment reference data, so `model_predictions.segment_id` joins to something
+rather than sitting in the model as a bare integer.
+
+| Column | Type | Notes |
+| --- | --- | --- |
+| `segment_id` | integer | Primary key, 1-7. |
+| `segment_name` | text | `Champions`, `Steady professionals`, `Learning-led`, `Event-led`, `Passive renewers`, `Disengaging`, `New and forming`. |
+| `segment_strategy` | text | The recommended approach for the segment, for the Segmentation report page. |
+
+## 17. `member_training_features` (supporting table)
 
 Not part of the warehouse: this is the modelling table. One row per **renewal decision**
 inside the observation window, with the features as they stood 0-365 days before that
 renewal and the outcome that followed. It is the correct training set for a churn model
 because features strictly precede the label.
 
-Notable columns: `observation_date` (the renewal date), the thirteen binary model
+Notable columns: `observation_date` (the renewal date), the fourteen binary model
 inputs, a set of descriptive counts (`logins_90d`, `events_attended_365d`, …),
 `true_churn_probability` (the probability the generator actually sampled from — use it
 to establish the ceiling AUC, never as a model input) and `churn_flag`.

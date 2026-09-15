@@ -1,0 +1,19 @@
+[project]
+name = "end-to-end-llm-powered-customer-intelligence-pipeline"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "matplotlib>=3.11.2",
+    "nbconvert>=7.17.1",
+    "nbformat>=5.11.1",
+    "numpy>=2.5.3",
+    "pandas>=3.0.5",
+    "polars>=1.44.2",
+    "psycopg2-binary>=2.9.13",
+    "python-dotenv>=1.2.3",
+    "scikit-learn>=1.9.1",
+    "seaborn>=0.13.2",
+    "sqlalchemy>=2.0.53",
+]

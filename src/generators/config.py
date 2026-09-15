@@ -22,8 +22,6 @@ SYNTHETIC_DIR = DATA_DIR / "synthetic"
 SAMPLE_DIR = DATA_DIR / "sample"
 DICTIONARY_DIR = DATA_DIR / "data_dictionary"
 
-IBM_SEED_FILE = SEED_DIR / "ibm_telco_churn.csv"
-
 # --------------------------------------------------------------------------------------
 # Observation window
 # --------------------------------------------------------------------------------------
@@ -66,7 +64,7 @@ SCALE_PROFILES = {
     # Mid scale, useful for iterating on the Power BI model without a long wait.
     "demo": ScaleProfile("demo", 8_000, 700, 150, 60, 6, 40, 1_000),
     # Portfolio scale, as recommended in "Data Recomendations.md".
-    "full": ScaleProfile("full", 25_000, 1_600, 265, 90, 6, 60, 1_000),
+    "full": ScaleProfile("full", 25_000, 1_600, 295, 90, 6, 60, 1_000),
 }
 
 DEFAULT_SCALE = "full"
@@ -243,15 +241,6 @@ FEEDBACK_CATEGORIES = [
     "Fees and billing",
 ]
 
-CANCELLATION_REASONS = [
-    ("Cost or affordability", 0.26),
-    ("Lack of relevance to my role", 0.21),
-    ("Not enough time to use benefits", 0.17),
-    ("Employer no longer funding", 0.14),
-    ("Joined an alternative body", 0.09),
-    ("Career change or retirement", 0.08),
-    ("Service dissatisfaction", 0.05),
-]
 
 #: Risk bands are set relative to the realised annual lapse rate (~11%), not to 0.5.
 #: With an imbalanced outcome, fixed 0.35/0.65 bands would put almost every member in
@@ -262,24 +251,34 @@ RISK_THRESHOLDS = {"low_max": 0.10, "medium_max": 0.25}
 #: favour recall, which is the usual operating point for a retention campaign.
 PREDICTION_THRESHOLD = 0.25
 
+#: Behavioural segments. Exported as segments.csv so that model_predictions.segment_id
+#: has a dimension to join to, rather than being a bare integer in the semantic model.
 SEGMENTS = {
-    1: "Champions",
-    2: "Steady professionals",
-    3: "Learning-led",
-    4: "Event-led",
-    5: "Passive renewers",
-    6: "Disengaging",
-    7: "New and forming",
+    1: ("Champions", "High engagement across events, learning and digital. Recruit as advocates."),
+    2: ("Steady professionals", "Consistent, unspectacular use. Renew reliably; protect with light touch."),
+    3: ("Learning-led", "Engagement is concentrated in CPD. Promote learning pathways and assessments."),
+    4: ("Event-led", "Engagement is concentrated in events. Promote the regional and webinar programme."),
+    5: ("Passive renewers", "Pay by mandate but barely use anything. Highest silent-lapse risk."),
+    6: ("Disengaging", "Activity falling and risk elevated. Priority for retention intervention."),
+    7: ("New and forming", "Inside the first year. Onboarding determines whether they become 1-4 or 6."),
 }
 
 # --------------------------------------------------------------------------------------
 # Behavioural model parameters
 # --------------------------------------------------------------------------------------
 
-#: Coefficients for the churn log-odds model, as published in "Data Recomendations.md"
-#: and extended with a small number of additional, documented terms.
+#: Coefficients for the churn log-odds model.
+#:
+#: The first nine are published in "Data Recomendations.md" and are used exactly as
+#: specified. Two of them (auto_renewal, long_tenure) are independently corroborated by
+#: the IBM analogue fit.
+#:
+#: The extension terms below are no longer asserted: three of the four are estimated
+#: from the extended IBM Telco sample by fitting a leak-free logistic model on mapped
+#: analogue predictors. See docs/ibm-telco-calibration.md for the fit and the mapping.
 CHURN_COEFFICIENTS = {
     "intercept": -2.2,
+    # --- published in Data Recomendations.md ---------------------------------------
     "inactive_90_days": 0.9,
     "negative_feedback": 0.7,
     "failed_payment": 0.8,
@@ -287,14 +286,81 @@ CHURN_COEFFICIENTS = {
     "declining_logins": 0.5,
     "completed_learning": -0.7,
     "attended_first_90_days": -0.6,
-    "auto_renewal": -0.5,
-    "long_tenure": -0.4,
-    # Extensions beyond the published formula.
-    "low_campaign_engagement": 0.35,
-    "fee_increase": 0.30,
+    "auto_renewal": -0.5,          # IBM analogue (auto_payment): -0.53
+    "long_tenure": -0.4,           # IBM analogue (long_tenure):  -0.64
+    # --- extensions ------------------------------------------------------------------
+    # Estimated from IBM (high_charge, +0.766). A fee rise matters far more than the
+    # +0.30 originally assumed here.
+    "fee_increase": 0.77,
+    # Estimated from IBM (multi_service, -0.250), fitted on internet subscribers only.
+    "multi_service_user": -0.25,
+    # Estimated from IBM (referred, -0.206), sign inverted: the feature is the *absence*
+    # of advocacy. Churned customers referred 0.21x as many people as retained ones.
+    "no_recent_advocacy": 0.21,
+    # Retained on domain grounds but reduced from 0.35: IBM's closest analogue (offer
+    # take-up) returned +0.03, i.e. no effect. Kept because unopened member
+    # communications are a genuine warning sign in a membership body, weighted down
+    # because the seed does not support the original figure.
+    "low_campaign_engagement": 0.25,
+    # No IBM analogue exists. Domain judgement: the student-to-full transition is the
+    # single largest lapse point in professional membership.
     "student_to_full_transition": 0.45,
-    "multi_service_user": -0.45,
 }
+
+#: Membership churn taxonomy, mirroring the two-level structure IBM uses
+#: (Churn Category -> Churn Reason).
+#:
+#: The *structure* is taken from IBM; the *weights* are a domain judgement. A
+#: professional body loses far fewer members to a direct competitor than a telco does
+#: (IBM: 45% Competitor) and far more to cost and simple non-use. IBM's measured shares
+#: are reported alongside these in docs/ibm-telco-calibration.md.
+CHURN_CATEGORIES = {
+    "Price": (
+        0.30,
+        [
+            ("Cost or affordability", 0.45),
+            ("Employer no longer funding", 0.35),
+            ("Fee increase at renewal", 0.20),
+        ],
+    ),
+    "Dissatisfaction": (
+        0.26,
+        [
+            ("Lack of relevance to my role", 0.42),
+            ("Limited range of events", 0.24),
+            ("Content or standards out of date", 0.19),
+            ("Learning platform problems", 0.15),
+        ],
+    ),
+    "Other": (
+        0.24,
+        [
+            ("Career change or retirement", 0.40),
+            ("Not enough time to use benefits", 0.38),
+            ("Moved overseas", 0.12),
+            ("Reason not given", 0.10),
+        ],
+    ),
+    "Attitude": (
+        0.10,
+        [
+            ("Attitude of membership support", 0.55),
+            ("Poor complaint handling", 0.45),
+        ],
+    ),
+    "Competitor": (
+        0.10,
+        [
+            ("Joined an alternative professional body", 0.62),
+            ("Employer scheme with another body", 0.38),
+        ],
+    ),
+}
+
+#: Window for the no_recent_advocacy feature. Referral rates themselves are tuned in
+#: activity.REFERRAL_INVITE_RATE_YEAR, calibrated to IBM: 45.8% of customers referred at
+#: least one other, averaging 4.27 referrals among those who did.
+ADVOCACY_WINDOW_DAYS = 365
 
 #: Nominal churn model quality target.  The "model" in model_predictions is a noisy
 #: view of the true log-odds; larger noise means a weaker (more realistic) model.
@@ -305,6 +371,15 @@ ANNUAL_FEE_UPLIFT = 0.035
 
 #: Probability that a renewal payment fails, by payment mode.
 FAILED_PAYMENT_RATE = {"auto": 0.035, "manual": 0.11}
+
+#: Contribution margin on a membership subscription, used to turn expected remaining
+#: years into a lifetime value.
+#:
+#: Note that IBM's CLTV column is a bounded index (2003-6500) rather than a currency
+#: amount, so only the *concept* transfers, not the scale or the spread.
+#: predicted_lifetime_value here is a real revenue figure -- annual fee times expected
+#: remaining years times margin -- and is deliberately more dispersed than IBM's index.
+CONTRIBUTION_MARGIN = 0.72
 
 LLM_PROVIDER = "Ollama"
 LLM_MODEL = "qwen2.5:7b-instruct"
