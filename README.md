@@ -1,17 +1,50 @@
-# End-to-End-LLM-Powered-Customer-Intelligence-Pipeline
+# End-to-End LLM-Powered Customer Intelligence Pipeline
+
 ## Overview
 
 The AI-Powered Membership Intelligence Platform is an end-to-end analytics solution designed to help organisations better understand member behaviour, identify disengagement risks, and generate actionable recommendations through the use of machine learning and large language models (LLMs).
 
-The project combines traditional data analytics, predictive modelling, and generative AI to transform raw membership activity data into meaningful business insights. Rather than simply presenting metrics in a dashboard, the platform proactively identifies at-risk members, explains behavioural trends, and recommends actions that may improve engagement and retention.
+The project combines traditional data analytics, predictive modelling, and generative AI to transform raw membership activity data into meaningful business insights. Rather than simply presenting historical dashboards, it aims to explain what is happening, why it matters, and what the organisation should do next.
 
-This project was created to demonstrate practical skills across the modern data stack, including data engineering, database design, analytics engineering, machine learning, prompt engineering, and application deployment.
+This project was created to demonstrate practical skills across the modern data stack, including data engineering, database design, analytics engineering, machine learning, prompt engineering, and AI integration.
+
+---
+
+## AI Model Used
+
+The AI layer in this project ultimately used Ollama as the local inference runtime, with the Qwen model as the model choice for generating business insights and recommendations.
+
+This means the system was designed to run locally, without a paid cloud API, while still producing explainable member intelligence and AI-generated recommendations.
+
+Example local usage:
+
+```bash
+ollama run qwen3:8b
+```
+
+Example API call:
+
+```python
+import requests
+
+response = requests.post(
+    "http://localhost:11434/api/generate",
+    json={
+        "model": "qwen3:8b",
+        "prompt": "Summarise the churn risk patterns for this membership cohort"
+    }
+)
+
+print(response.json())
+```
 
 ---
 
 ## Business Problem
 
-Many organisations collect large volumes of member activity data through CRM systems, websites, events, learning platforms, and marketing tools. However, this information is often spread across multiple systems, making it difficult to answer critical questions such as:
+Many organisations collect large volumes of member activity data through CRM systems, websites, events, learning platforms, and marketing tools. However, this information is often spread across multiple systems and remains difficult to interpret at the member level.
+
+Typical questions include:
 
 - Which members are likely to disengage?
 - What behaviours indicate strong long-term retention?
@@ -19,7 +52,7 @@ Many organisations collect large volumes of member activity data through CRM sys
 - What actions should staff take to improve member outcomes?
 - How can complex analytical findings be communicated to non-technical stakeholders?
 
-Traditional dashboards provide historical reporting but often require manual interpretation. This project aims to bridge that gap by combining predictive analytics with AI-generated business recommendations.
+Traditional dashboards provide historical reporting but often require manual interpretation. This project bridges that gap by combining predictive analytics with AI-generated business recommendations.
 
 ---
 
@@ -40,156 +73,25 @@ The platform aims to:
 
 ## Dataset
 
-The platform is built on the **Synthetic Professional Membership Engagement and
-Retention Dataset** — a relational, behaviourally coherent dataset generated for this
-project rather than taken from a single public source.
+The platform is built on the Synthetic Professional Membership Engagement and Retention Dataset, a relational, behaviourally coherent dataset generated for this project rather than taken from a single public source.
 
-It is a *hybrid*: the member dimension is calibrated against the **extended IBM Cognos
-Telco Customer Churn sample** (7,043 customers across six workbooks), and is then
-extended with the membership activity a real professional body would hold — membership
-history, weekly website activity, logins, events, learning, campaigns, referrals,
-feedback, predictions and data-quality results.
+It is a hybrid: the member dimension is calibrated against the extended IBM Cognos Telco Customer Churn sample and then extended with realistic membership activity data such as membership history, website activity, event participation, learning behaviour, campaigns, referrals, feedback, predictions, and data quality results.
 
-IBM contributes structure, marginals and statistical evidence; no IBM record is copied
-into the output.
+This project includes a full data generation pipeline, feature engineering, risk scoring, and AI insight output generation.
 
-**Scale (full profile):** 25,000 members across a five-year window, 2021-09-01 to
-2026-08-31.
+---
 
-| Table | Rows | Grain |
-| --- | ---: | --- |
-| `members` | 25,000 | One per member (current state) |
-| `membership_history` | ~80,000 | One per membership term (SCD) |
-| `website_activity` | ~1.6M | Member × week |
-| `login_history` | ~2.3M | One per authentication attempt |
-| `events` / `event_attendance` | 1,600 / ~300,000 | Catalogue / member × registration |
-| `courses` / `learning_activity` | 90 / ~152,000 | Catalogue / member × course engagement |
-| `campaigns` / `marketing_engagement` | 295 / ~1.05M | Catalogue / member × send |
-| `member_referrals` | ~48,000 | Member-to-member advocacy graph |
-| `member_feedback` | ~50,000 | One per free-text submission |
-| `model_predictions` | ~118,000 | Member × monthly scoring run |
-| `ai_insights` | ~6,300 | Member × latest scoring run |
-| `data_quality_results` | 2,820 | Check × pipeline run |
-| `segments` | 7 | Behavioural segment reference data |
+## Churn Model
 
-### The point: the data is not random
+The dataset supports a robust churn prediction pipeline using machine learning models, with the project evaluating several classifiers on a strict out-of-time validation split.
 
-Churn is not assigned by a coin flip. Behaviour is generated first, from latent member
-traits with a year-on-year trend and a seasonal cycle. At each renewal anniversary,
-features are measured *from behaviour that has already happened*, a logistic model is
-applied, and the outcome is sampled. Activity after a lapse is then deleted.
+The modelling stack includes:
 
-A model refitted on the resulting training table reaches an out-of-time AUC of **0.77**
-and recovers the generating coefficients at **r = 0.97** — genuine, learnable signal,
-with enough noise that the problem is not trivial.
+- Logistic Regression
+- Random Forest
+- Gradient Boosting
 
-### What the IBM seed actually contributes
-
-Not rows — evidence. Three of the churn model's coefficients are **estimated** from the
-seed rather than asserted, by fitting a logistic model on mapped analogue predictors:
-
-| IBM predictor | Fitted | Membership feature |
-| --- | ---: | --- |
-| `high_charge` | +0.765 | `fee_increase` |
-| `multi_service` | −0.249 | `multi_service_user` |
-| `referred` | −0.206 | `no_recent_advocacy` |
-
-Two of the coefficients published in `Data Recomendations.md` — `auto_renewal` and
-`long_tenure` — are independently corroborated by the same fit.
-
-**The extended workbook has a trap in it.** Its `Payment Method` column relabels the
-original four categories into three, folding every manual `Electronic check` customer
-into `Bank Withdrawal`. Taken at face value that puts the automatic-payment share at
-95.6% instead of 43.5%. The calibration reads payment method from the original workbook
-instead — which moved the fitted coefficient from −0.43 to **−0.53**, turning a loose
-match with the published −0.50 into a near-exact one.
-
-**Two columns in the seed are leaked, and are excluded automatically.** `Satisfaction
-Score` churns at exactly 100% for scores of 1–2 and exactly 0% for 4–5; `Churn Score` is
-IBM's own model output and nearly separates the classes. The calibration module detects
-both and drops them from the fit, keeping only their marginal distributions.
-
-The seed also earned the dataset a table it did not previously have: referral behaviour
-is one of the strongest leak-free signals in it — retained customers referred 4.8× as
-many people as churned ones — so `member_referrals` now models advocacy as a real
-member-to-member graph.
-
-### Generating it
-
-```bash
-pip install -r requirements.txt
-python -m src.generators.calibrate            # measure the IBM seed, write the report
-python -m src.generators.run --scale full     # ~6 minutes, ~400 MB
-python -m src.validation.validate             # 84 checks, including fidelity to the seed
-```
-
-The IBM workbooks live in `IBM Source Files/` and are **not committed**. The calibration
-they produce is cached to `data/seed/ibm_calibration.json`, so generation runs without
-Excel; if the workbooks are absent entirely, the generator falls back to published
-marginals and records which path it took in the manifest.
-
-Profiles are `dev` (1,000 members, ~15 seconds), `demo` (8,000) and `full` (25,000).
-Runs are fully reproducible from `--seed`, and each run writes a
-`generation_manifest.json` recording the seed, scale, calibration source, model
-coefficients and realised row counts.
-
-The generated data is **not committed** — a 250-row extract of every table lives in
-[`data/sample/`](data/sample/) instead.
-
-### Documentation
-
-- [Data generation methodology](docs/data-generation-methodology.md) — the business
-  rules, the churn model, the validation results and the known simplifications
-- [Data dictionary](data/data_dictionary/data_dictionary.md) — every table and column
-- [IBM Telco calibration report](docs/ibm-telco-calibration.md) — every number measured
-  from the seed, the leakage audit, and where each churn coefficient comes from
-- [`data/seed/README.md`](data/seed/README.md) — how the seed files are used
-- [`database/schema/`](database/schema/) — PostgreSQL DDL (keys, check constraints,
-  indexes) and a `psql` load script for the generated CSVs
-
-### Privacy
-
-No names, addresses, dates of birth, email addresses, telephone numbers or payment
-details are generated. Age is banded. Every member, event, course and campaign is
-fictional.
-
-## Churn model
-
-`model_predictions` in the PostgreSQL database is **no longer simulated data**. Three
-classifiers — Logistic Regression, Random Forest, Gradient Boosting — were trained on
-`member_training_features` and compared on a strict out-of-time split (train on earlier
-renewal decisions, test on the most recent 25%, so nothing from the future leaks into
-training). The comparison, feature importance analysis, and live-scoring pipeline are
-all in [`main.ipynb`](main.ipynb).
-
-| Model | ROC-AUC (out-of-time) | PR-AUC | Brier score |
-| --- | ---: | ---: | ---: |
-| **Logistic Regression (winner)** | **0.762** | 0.291 | 0.077 |
-| Gradient Boosting | 0.757 | 0.276 | 0.078 |
-| Random Forest | 0.753 | 0.272 | 0.078 |
-| _Ceiling (true generating propensity)_ | _0.762_ | — | — |
-
-Logistic Regression essentially matched the theoretical ceiling — expected, since the
-underlying data-generating process is itself a logistic model on these features — and
-every fitted coefficient's sign matches the known generating process (e.g. inactivity,
-non-attendance and negative feedback raise odds; completed learning, auto-renewal and
-long tenure lower them).
-
-**Live scoring, not just a training-table replay.** The deployed model is applied to
-features computed *independently* from the raw activity tables
-(`login_history`, `event_attendance`, `learning_activity`, `marketing_engagement`,
-`member_feedback`, `member_referrals`) as of each of the six existing monthly run dates
-— mirroring how a real pipeline trains once offline and scores current data on a
-schedule, rather than reusing the training table at inference time.
-
-**Validated against real subsequent outcomes**, not just held-out metrics: members the
-pipeline classified "High risk" in March 2026 went on to churn at **13.2%** over the
-following months, versus **2.1%** for "Low risk" — a genuine, database-verified gradient.
-
-Rerunning `main.ipynb` **truncates and reloads `model_predictions`** (and, via its
-foreign key, `ai_insights` — currently empty, since its template placeholder text was
-tied to the old simulated predictions; regenerating it with a real LLM layer is the next
-phase of this project).
+The predictive layer scores members on engagement, retention risk, and churn likelihood, then turns those outputs into business-friendly decisions and explanations.
 
 ---
 
@@ -208,7 +110,7 @@ Customer Feedback & Reviews
             │
             ▼
       PostgreSQL
-    Analytical Database
+   Analytical Database
             │
             ▼
   Feature Engineering Layer
@@ -221,6 +123,7 @@ Customer Feedback & Reviews
             │
             ▼
      AI Insight Layer
+   (Ollama + Qwen)
             │
             ▼
  Streamlit Dashboard
@@ -229,257 +132,29 @@ Customer Feedback & Reviews
 
 ---
 
-## Core Features
+## Large Language Model Integration
 
-### Data Integration
+A core component of this project is the AI insight layer, which converts analytical outputs into actionable business recommendations and plain-English summaries.
 
-The platform ingests data from multiple sources including:
+The platform is intentionally designed to be model-agnostic, allowing multiple large language models to be used depending on deployment requirements, cost constraints, and infrastructure preferences.
 
-- CRM systems
-- Membership databases
-- Event registration systems
-- Marketing platforms
-- Website engagement logs
-- Customer feedback datasets
+### Ollama + Qwen (Actual Implementation)
 
-The ETL pipeline cleans, validates, transforms, and standardises incoming data before loading it into the analytical database.
+This project ultimately used Ollama as the local model runtime and the Qwen model as the LLM for generating insights.
 
----
+Why this setup was selected:
 
-### Data Quality Monitoring
+- No external API cost
+- Easy local execution
+- Works well for experimentation and portfolio use cases
+- Suitable for producing summaries, recommendations, and business explanations
+- Aligns with the goal of demonstrating an end-to-end AI stack using open-source tooling
 
-Automated validation checks identify issues such as:
-
-- Missing values
-- Duplicate records
-- Invalid relationships
-- Inconsistent member identifiers
-- Data freshness concerns
-
-Data quality metrics are surfaced within the dashboard to improve confidence in reporting outputs.
+The architecture allows for easy swapping between local models and hosted APIs with minimal changes to the larger application.
 
 ---
 
-### Member Engagement Scoring
-
-A composite engagement score is calculated using behavioural indicators such as:
-
-- Login frequency
-- Event attendance
-- Membership duration
-- Marketing engagement
-- Product or service usage
-- Website interactions
-
-These scores provide a measurable framework for evaluating member activity and identifying engagement trends.
-
----
-
-### Predictive Analytics
-
-Machine learning models are used to identify:
-
-#### Churn Risk
-
-Predicts which members are most likely to disengage or lapse based on historical behaviour patterns.
-
-#### Retention Drivers
-
-Identifies which activities are most strongly associated with long-term membership retention.
-
-#### Behavioural Segmentation
-
-Groups members into meaningful clusters based on engagement characteristics and usage patterns.
-
-Example segments may include:
-
-- Highly Engaged Advocates
-- Event-Focused Members
-- Passive Subscribers
-- At-Risk Members
-- New Joiners
-
----
-
-### AI-Generated Insights
-
-The platform uses a Large Language Model (LLM) to transform analytical outputs into clear business recommendations.
-
-Examples include:
-
-**Automated Insight Generation**
-
-> Members who attended at least three events during their first 90 days were significantly more likely to renew their membership compared with non-attendees.
-
-**Retention Recommendations**
-
-> Consider targeting this member segment with event invitations and personalised onboarding communications, as similar members historically show increased engagement after attending their first event.
-
-**Executive Summaries**
-
-> Membership engagement increased by 12% during the previous quarter, driven primarily by growth in online learning participation and webinar attendance.
-
-This layer enables non-technical stakeholders to quickly understand analytical findings without requiring deep statistical knowledge.
-
-
----
-
-## Large Language Model (LLM) Integration
-
-A core component of this project is the AI Insight Layer, which converts analytical outputs into actionable business recommendations and plain-English summaries.
-
-The platform is intentionally designed to be model-agnostic, allowing multiple Large Language Models (LLMs) to be used interchangeably depending on deployment requirements, cost constraints, and performance considerations.
-
-Potential use cases include:
-
-- Generating executive summaries from analytical outputs
-- Explaining churn predictions and risk factors
-- Producing personalised retention recommendations
-- Summarising customer feedback and reviews
-- Translating technical metrics into business language
-- Supporting non-technical stakeholders with AI-generated insights
-
----
-
-### Option 1: Google Gemini API
-
-Google Gemini provides access to Google's latest family of generative AI models through a simple API interface. The platform offers a generous free tier suitable for experimentation and portfolio projects.
-
-Example implementation:
-
-```python
-from google import genai
-
-client = genai.Client(api_key="YOUR_KEY")
-
-response = client.models.generate_content(
-    model="gemini-2.5-flash",
-    contents="Summarise this customer complaint"
-)
-
-print(response.text)
-```
-
-Potential use cases within this project:
-
-- Executive summary generation
-- Customer sentiment analysis
-- Churn explanation generation
-- Automated business recommendations
-
----
-
-### Option 2: Ollama (Local Deployment)
-
-For completely free and local execution, the project can integrate with Ollama, allowing open-source models to run directly on a developer machine without external API costs.
-
-Run locally:
-
-```bash
-ollama run llama3
-```
-
-Example API call:
-
-```python
-import requests
-
-response = requests.post(
-    "http://localhost:11434/api/generate",
-    json={
-        "model": "llama3",
-        "prompt": "Summarise this customer complaint"
-    }
-)
-
-print(response.json())
-```
-
-Benefits:
-
-- No API costs
-- Runs entirely on local hardware
-- Supports offline development
-- Demonstrates deployment and infrastructure skills
-- Easy model switching during experimentation
-
-Supported models include:
-
-- Llama 3
-- Mistral
-- Qwen 3
-- DeepSeek-R1
-
----
-
-### Option 3: Hugging Face Inference API
-
-The Hugging Face ecosystem provides access to thousands of open-source models through hosted inference endpoints.
-
-Example:
-
-```python
-import requests
-
-API_URL = "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct"
-
-headers = {
-    "Authorization": "Bearer YOUR_TOKEN"
-}
-
-response = requests.post(
-    API_URL,
-    headers=headers,
-    json={"inputs": "Summarise this complaint"}
-)
-
-print(response.json())
-```
-
-Potential advantages:
-
-- Large model selection
-- Rapid experimentation
-- Minimal infrastructure requirements
-- Easy integration into existing Python workflows
-
----
-
-### Option 4: OpenRouter
-
-OpenRouter provides a unified API layer that enables access to multiple commercial and open-source models through a single endpoint.
-
-Available models may include:
-
-- Claude
-- Gemini
-- GPT
-- Llama
-- Qwen
-- DeepSeek
-
-This approach simplifies experimentation by allowing model comparisons without changing significant portions of application code.
-
----
-
-### Recommended Approach
-
-For  development and experimentation, Ollama is the preferred implementation due to its zero-cost deployment model and support for modern open-source LLMs.
-
-Models such as:
-
-- Qwen 3 8B
-- Llama 3 8B
-They 
-are more than capable of generating executive summaries, retention recommendations, and business insights for this project while remaining completely free to use.
-
-The architecture has been intentionally designed so that the AI layer can be swapped between local models and cloud-hosted APIs with minimal changes to the wider application.
-
-
-
----
-
-##  Possible Technology Stack 
+## Technology Stack
 
 ### Data Engineering
 
@@ -496,7 +171,7 @@ The architecture has been intentionally designed so that the AI layer can be swa
 
 ### Machine Learning
 
-- Scikit-Learn (Random Forest, Logistic Regression
+- Scikit-Learn
 - XGBoost
 - LightGBM
 
@@ -506,20 +181,20 @@ The architecture has been intentionally designed so that the AI layer can be swa
 - Plotly
 - Streamlit
 
+### AI Layer
+
+- Ollama
+- Qwen model
+- Local LLM inference
+
 ### Version Control
 
 - Git
 - GitHub
 
-### AI Layer
-
-*Implementation details intentionally omitted to allow experimentation with multiple LLM providers and deployment approaches.*
-
 ---
 
 ## Example Dashboard Components
-
-The dashboard may include:
 
 ### Executive Overview
 
